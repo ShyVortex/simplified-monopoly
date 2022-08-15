@@ -66,7 +66,7 @@ public class ContractManager implements Serializable {
      */
     public void saveContracts() throws IOException {
         try (
-            FileOutputStream fileOutStr = new FileOutputStream("src/it/unimol/monopoly/saves/contracts.sr");
+            FileOutputStream fileOutStr = new FileOutputStream("src/main/saves/contracts.sr");
             ObjectOutputStream objOutStr = new ObjectOutputStream(fileOutStr);
         ) {
             objOutStr.writeObject(this);
@@ -84,7 +84,7 @@ public class ContractManager implements Serializable {
      */
     public static ContractManager loadContracts() throws FileNotFoundException {
         try (
-            FileInputStream fileInStr = new FileInputStream("src/it/unimol/monopoly/saves/contracts.sr");
+            FileInputStream fileInStr = new FileInputStream("src/main/saves/contracts.sr");
             ObjectInputStream objInStr = new ObjectInputStream(fileInStr);
         ) {
            Object o = objInStr.readObject();

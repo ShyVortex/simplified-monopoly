@@ -24,7 +24,7 @@ public class ContractFrame extends JFrame {
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         try {
-            this.icon = ImageIO.read(new File("src/it/unimol/monopoly/icons/Monopoly.png"));
+            this.icon = ImageIO.read(new File("src/main/resources/icons/Monopoly.png"));
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this,

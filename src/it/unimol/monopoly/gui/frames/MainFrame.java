@@ -27,7 +27,7 @@ public class MainFrame extends JFrame {
         this.setMinimumSize(new Dimension(450,400));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {
-            this.icon = ImageIO.read(new File("src/it/unimol/monopoly/icons/Monopoly.png"));
+            this.icon = ImageIO.read(new File("src/main/resources/icons/Monopoly.png"));
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this,

@@ -11,131 +11,131 @@ new FormModel {
 			"background": new java.awt.Color( 254, 255, 254, 255 )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "parkingLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/Parking.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/Parking.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "nyAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/NewYorkAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/NewYorkAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "tennAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/TennesseeAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/TennesseeAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "stJamesLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/StJamesPlace.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/StJamesPlace.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "pennRailroadLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/PennsylvaniaRailroad.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/PennsylvaniaAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "virginiaAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/VirginiaAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/VirginiaAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "statesAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/StatesAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/StatesAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "stCharlesLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/StCharlesPlace.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/StCharlesPlace.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "prisonLabel"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/Prison.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/Prison.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "connecticutAveLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/ConnecticutAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/ConnecticutAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "vermontAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/VermontAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/VermontAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "orientalAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/OrientalAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/OrientalAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "readRailroadLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/ReadingRailroad.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/ReadingRailroad.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "waterWorksLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/WaterWorks.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/WaterWorks.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "balticAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/BalticAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/BalticAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "meditAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/MediterraneanAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/MediterraneanAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "goLabel"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/GOv2.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/GOv2.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "kentuckyAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/KentuckyAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/KentuckyAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "indianaAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/IndianaAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/IndianaAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "illinoisAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/IllinoisAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/IllinoisAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "bEoRailroadLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/B&ORailroad.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/B&ORailroad.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "atlanticAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/AtlanticAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/AtlanticAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "ventnorAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/VentnorAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/VentnorAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "marvinGardensLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/MarvinGardens.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/MarvinGardens.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "transitLabel"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/Transit.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/Transit.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "pacificAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/PacificAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/PacificAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "northCarAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/NorthCarolinaAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/NorthCarolinaAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "pennAvenueLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/PennsylvaniaAvenue.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/PennsylvaniaAvenue.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "shortLineLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/ShortLine.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/ShortLine.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "electricCompanyLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/ElectricCompany.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/ElectricCompany.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "parkPlaceLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/ParkPlace.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/ParkPlace.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "boardwalkLab"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/boxes/BoardWalk.jpg" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/boxes/BoardWalk.jpg" )
 			} )
 			add( new FormComponent( "javax.swing.JTextArea" ) {
 				name: "turnTextArea"

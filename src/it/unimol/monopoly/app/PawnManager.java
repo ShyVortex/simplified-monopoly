@@ -36,12 +36,12 @@ public class PawnManager {
 
     private void setDefaultPawns() {
         try {
-            Image barrowPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Wheelbarrow.png"));
-            Image shoePic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Shoe.png"));
-            Image dogPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Dog.png"));
-            Image carPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Car.png"));
-            Image hatPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/TopHat.png"));
-            Image shipPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Battleship.png"));
+            Image barrowPic = ImageIO.read(new File("src/main/resources/pawns/Wheelbarrow.png"));
+            Image shoePic = ImageIO.read(new File("src/main/resources/pawns/Shoe.png"));
+            Image dogPic = ImageIO.read(new File("src/main/resources/pawns/Dog.png"));
+            Image carPic = ImageIO.read(new File("src/main/resources/pawns/Car.png"));
+            Image hatPic = ImageIO.read(new File("src/main/resources/pawns/TopHat.png"));
+            Image shipPic = ImageIO.read(new File("src/main/resources/pawns/Battleship.png"));
 
             ImageIcon barrowIcon = new ImageIcon(barrowPic);
             ImageIcon shoeIcon = new ImageIcon(shoePic);

@@ -122,109 +122,108 @@ public class GameForm extends JPanel {
 
         //======== this ========
         setBackground(new Color(254, 255, 254));
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.
-        swing.border.EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border
-        .TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog"
-        ,java.awt.Font.BOLD,12),java.awt.Color.red), getBorder
-        ())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java
-        .beans.PropertyChangeEvent e){if("\u0062ord\u0065r".equals(e.getPropertyName()))throw new RuntimeException
-        ();}});
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border
+        .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing .border . TitledBorder. CENTER ,javax
+        . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,
+        12 ) ,java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans
+        .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r" .equals ( e.
+        getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
         //---- parkingLab ----
-        parkingLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/Parking.jpg")));
+        parkingLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/Parking.jpg")));
 
         //---- nyAvenueLab ----
-        nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/NewYorkAvenue.jpg")));
+        nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/NewYorkAvenue.jpg")));
 
         //---- tennAvenueLab ----
-        tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/TennesseeAvenue.jpg")));
+        tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/TennesseeAvenue.jpg")));
 
         //---- stJamesLab ----
-        stJamesLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/StJamesPlace.jpg")));
+        stJamesLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/StJamesPlace.jpg")));
 
         //---- pennRailroadLab ----
-        pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/PennsylvaniaRailroad.jpg")));
+        pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/PennsylvaniaRailroad.jpg")));
 
         //---- virginiaAvenueLab ----
-        virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/VirginiaAvenue.jpg")));
+        virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/VirginiaAvenue.jpg")));
 
         //---- statesAvenueLab ----
-        statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/StatesAvenue.jpg")));
+        statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/StatesAvenue.jpg")));
 
         //---- stCharlesLab ----
-        stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/StCharlesPlace.jpg")));
+        stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/StCharlesPlace.jpg")));
 
         //---- prisonLabel ----
-        prisonLabel.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/Prison.jpg")));
+        prisonLabel.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/Prison.jpg")));
 
         //---- connecticutAveLab ----
-        connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/ConnecticutAvenue.jpg")));
+        connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ConnecticutAvenue.jpg")));
 
         //---- vermontAvenueLab ----
-        vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/VermontAvenue.jpg")));
+        vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/VermontAvenue.jpg")));
 
         //---- orientalAvenueLab ----
-        orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/OrientalAvenue.jpg")));
+        orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/OrientalAvenue.jpg")));
 
         //---- readRailroadLab ----
-        readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/ReadingRailroad.jpg")));
+        readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ReadingRailroad.jpg")));
 
         //---- waterWorksLab ----
-        waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/WaterWorks.jpg")));
+        waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/WaterWorks.jpg")));
 
         //---- balticAvenueLab ----
-        balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/BalticAvenue.jpg")));
+        balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/BalticAvenue.jpg")));
 
         //---- meditAvenueLab ----
-        meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/MediterraneanAvenue.jpg")));
+        meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/MediterraneanAvenue.jpg")));
 
         //---- goLabel ----
-        goLabel.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/GOv2.jpg")));
+        goLabel.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/GOv2.jpg")));
 
         //---- kentuckyAvenueLab ----
-        kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/KentuckyAvenue.jpg")));
+        kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/KentuckyAvenue.jpg")));
 
         //---- indianaAvenueLab ----
-        indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/IndianaAvenue.jpg")));
+        indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/IndianaAvenue.jpg")));
 
         //---- illinoisAvenueLab ----
-        illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/IllinoisAvenue.jpg")));
+        illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/IllinoisAvenue.jpg")));
 
         //---- bEoRailroadLab ----
-        bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/B&ORailroad.jpg")));
+        bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/B&ORailroad.jpg")));
 
         //---- atlanticAvenueLab ----
-        atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/AtlanticAvenue.jpg")));
+        atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/AtlanticAvenue.jpg")));
 
         //---- ventnorAvenueLab ----
-        ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/VentnorAvenue.jpg")));
+        ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/VentnorAvenue.jpg")));
 
         //---- marvinGardensLab ----
-        marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/MarvinGardens.jpg")));
+        marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/MarvinGardens.jpg")));
 
         //---- transitLabel ----
-        transitLabel.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/Transit.jpg")));
+        transitLabel.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/Transit.jpg")));
 
         //---- pacificAvenueLab ----
-        pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/PacificAvenue.jpg")));
+        pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/PacificAvenue.jpg")));
 
         //---- northCarAvenueLab ----
-        northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/NorthCarolinaAvenue.jpg")));
+        northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/NorthCarolinaAvenue.jpg")));
 
         //---- pennAvenueLab ----
-        pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/PennsylvaniaAvenue.jpg")));
+        pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/PennsylvaniaAvenue.jpg")));
 
         //---- shortLineLab ----
-        shortLineLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/ShortLine.jpg")));
+        shortLineLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ShortLine.jpg")));
 
         //---- electricCompanyLab ----
-        electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/ElectricCompany.jpg")));
+        electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ElectricCompany.jpg")));
 
         //---- parkPlaceLab ----
-        parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/ParkPlace.jpg")));
+        parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ParkPlace.jpg")));
 
         //---- boardwalkLab ----
-        boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/it/unimol/monopoly/boxes/BoardWalk.jpg")));
+        boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/BoardWalk.jpg")));
 
         //---- turnTextArea ----
         turnTextArea.setText("Turn of:");
@@ -741,9 +740,9 @@ public class GameForm extends JPanel {
                     "Quit without saving",
                     JOptionPane.INFORMATION_MESSAGE
             );
-            File contractData = new File("src/it/unimol/monopoly/saves/contracts.sr");
-            File playerData = new File("src/it/unimol/monopoly/saves/players.sr");
-            File turnoData = new File("src/it/unimol/monopoly/saves/turn.sr");
+            File contractData = new File("src/main/saves/contracts.sr");
+            File playerData = new File("src/main/saves/players.sr");
+            File turnoData = new File("src/main/saves/turn.sr");
             contractData.delete();
             playerData.delete();
             turnoData.delete();

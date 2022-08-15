@@ -26,7 +26,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "diceLabel"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/pawns/Dice.png" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/main/resources/pawns/Dice.png" )
 			} )
 			add( new FormComponent( "javax.swing.JTextArea" ) {
 				name: "diceRollTextArea"

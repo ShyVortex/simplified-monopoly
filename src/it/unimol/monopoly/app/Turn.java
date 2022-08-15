@@ -61,7 +61,7 @@ public class Turn implements Serializable {
      */
     public void saveTurn() {
         try (
-            FileOutputStream fileOutStr = new FileOutputStream("src/it/unimol/monopoly/saves/turn.sr");
+            FileOutputStream fileOutStr = new FileOutputStream("src/main/saves/turn.sr");
             ObjectOutputStream objOutStr = new ObjectOutputStream(fileOutStr);
         ) {
             objOutStr.writeObject(playerId);
@@ -78,7 +78,7 @@ public class Turn implements Serializable {
      */
     public static int loadTurn() throws FileNotFoundException {
         try (
-            FileInputStream fileInStr = new FileInputStream("src/it/unimol/monopoly/saves/turn.sr");
+            FileInputStream fileInStr = new FileInputStream("src/main/saves/turn.sr");
             ObjectInputStream objInStr = new ObjectInputStream(fileInStr);
         ) {
             playerId = (int) objInStr.readObject();

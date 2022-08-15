@@ -24,7 +24,7 @@ public class RollFrame extends JFrame {
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {
-            this.icon = ImageIO.read(new File("src/it/unimol/monopoly/icons/Monopoly.png"));
+            this.icon = ImageIO.read(new File("src/main/resources/icons/Monopoly.png"));
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this,

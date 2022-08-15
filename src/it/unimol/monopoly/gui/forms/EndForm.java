@@ -20,7 +20,7 @@ public class EndForm {
         this.givenFrame = myFrame;
 
         try {
-            this.gameOverImage = ImageIO.read(new File("src/it/unimol/monopoly/icons/GameOver.jpg"));
+            this.gameOverImage = ImageIO.read(new File("src/main/resources/icons/GameOver.jpg"));
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this.givenFrame,
@@ -50,9 +50,9 @@ public class EndForm {
     }
 
     private void handleEndGame() {
-        File contractData = new File("src/it/unimol/monopoly/saves/contracts.sr");
-        File playerData = new File("src/it/unimol/monopoly/saves/players.sr");
-        File turnoData = new File("src/it/unimol/monopoly/saves/turn.sr");
+        File contractData = new File("src/main/saves/contracts.sr");
+        File playerData = new File("src/main/saves/players.sr");
+        File turnoData = new File("src/main/saves/turn.sr");
         contractData.delete();
         playerData.delete();
         turnoData.delete();
