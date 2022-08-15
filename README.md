@@ -1,11 +1,13 @@
 # simplified-monopoly
-# My first university Java project
 
+# Course Details
 Simplified Monopoly is my first "big" Java project, done in University in the second semester of the first year. 
 The course I attended in which we were asked to do a final project was called Programming II and it teached us the basics of the Java language, 
 after the Programming I course in the first semester which teached us the basics of C instead. 
 I've learned the positive and negative sides of object-oriented programming, the differences between programming paradigms and how to achieve 
-the best workflow for developing a personal project. 
+the best workflow for developing a personal project.
+
+# Project Description
 It's a simplifed version of the Monopoly game because this was initially a pure CLI project, which we were asked to turn into a GUI one once we learned 
 how to use tools like GUI Designer and JFormDesigner, without changing the logic of the code we had previously written. 
 I study in an Italian university, so I had to make some changes before sharing my project here on GitHub. First of all, the documentation was 
