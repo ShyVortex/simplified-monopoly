@@ -1,5 +1,5 @@
 # simplified-monopoly
-My first university Java project
+# My first university Java project
 
 Simplified Monopoly is my first "big" Java project, done in University in the second semester of the first year. 
 The course I attended in which we were asked to do a final project was called Programming II and it teached us the basics of the Java language, 
