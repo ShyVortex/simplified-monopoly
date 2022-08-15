@@ -1,0 +1,70 @@
+JFDML JFormDesigner: "7.0.7.0.1134" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:139:p, comp playerTextArea:::p::p, space :::p, comp playerTextPane:::p::p, space ::1613:x}, seq t {space ::753:x, par l {seq t {par l {comp diceRollTextArea:::p::p, comp diceLabel:::p:480:p, seq l {comp positionTextArea:::p::p, space :::p, comp positionIDTextPane:::p::p}, comp positionNameTextPane::l:p::p}, space :p:687:p}, seq t {comp okButton:::p::p, space :p:78:p}}}}"
+			"$verticalGroup": "par l {seq l {space :p:92:p, par l {comp playerTextPane:::p::p, comp playerTextArea:::p::p}, space :p:106:p, comp diceLabel:::p:254:p, space :p:33:p, comp diceRollTextArea:::p::p, space :p:71:p, par l {comp positionTextArea:::p::p, comp positionIDTextPane:::p::p}, space :::p, comp positionNameTextPane:::p::p, space ::173:x, comp okButton:::p::p, space :p:90:p}}"
+		} ) {
+			name: "this"
+			"background": new java.awt.Color( 254, 255, 254, 255 )
+			add( new FormComponent( "javax.swing.JTextArea" ) {
+				name: "playerTextArea"
+				"font": new java.awt.Font( "Noto Sans", 1, 40 )
+				"text": "Turn of:"
+				"background": new java.awt.Color( 254, 255, 254, 255 )
+				"foreground": new java.awt.Color( 122, 140, 147, 255 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextPane" ) {
+				name: "playerTextPane"
+				"font": new java.awt.Font( "Noto Sans", 1, 40 )
+				"background": new java.awt.Color( 254, 255, 254, 255 )
+				"foreground": new java.awt.Color( 122, 140, 147, 255 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "diceLabel"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/it/unimol/monopoly/pawns/Dice.png" )
+			} )
+			add( new FormComponent( "javax.swing.JTextArea" ) {
+				name: "diceRollTextArea"
+				"text": "Rolling the dice..."
+				"font": new java.awt.Font( "Noto Sans", 1, 40 )
+				"background": new java.awt.Color( 254, 255, 254, 255 )
+				"foreground": new java.awt.Color( 122, 140, 147, 255 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextArea" ) {
+				name: "positionTextArea"
+				"font": new java.awt.Font( "Noto Sans", 1, 40 )
+				"text": "Your position is:"
+				"background": new java.awt.Color( 254, 255, 254, 255 )
+				"foreground": new java.awt.Color( 122, 140, 147, 255 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextPane" ) {
+				name: "positionIDTextPane"
+				"font": new java.awt.Font( "Noto Sans", 1, 40 )
+				"background": new java.awt.Color( 254, 255, 254, 255 )
+				"foreground": new java.awt.Color( 122, 140, 147, 255 )
+			} )
+			add( new FormComponent( "javax.swing.JTextPane" ) {
+				name: "positionNameTextPane"
+				"background": new java.awt.Color( 254, 255, 254, 255 )
+				"foreground": new java.awt.Color( 0, 0, 0, 255 )
+				"font": new java.awt.Font( "Noto Sans", 1, 30 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "okButton"
+				"text": "OK"
+				"background": new java.awt.Color( 206, 217, 220, 255 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1920, 1080 )
+		} )
+	}
+}
