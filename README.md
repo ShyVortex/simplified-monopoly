@@ -2,7 +2,7 @@
 Simplified Monopoly is my first "big" Java project, done in University in the second semester of the first year. 
 
 # Course Details
-The course I attended in which we were asked to do a final project was called Programming II and it teached us the basics of the Java language, 
+The course I attended to, in which we were asked to do a final project was called Programming II and it teached us the basics of the Java language, 
 after the Programming I course in the first semester which teached us the basics of C instead. 
 I've learned the positive and negative sides of object-oriented programming, the differences between programming paradigms and how to achieve 
 the best workflow for developing a personal project.
