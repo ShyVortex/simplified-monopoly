@@ -12,6 +12,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 
 public class MainFrame extends JFrame {
     private MainForm mainForm;
@@ -27,7 +28,8 @@ public class MainFrame extends JFrame {
         this.setMinimumSize(new Dimension(450,400));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {
-            this.icon = ImageIO.read(new File("src/main/resources/icons/Monopoly.png"));
+            URL iconUrl = ClassLoader.getSystemResource("Monopoly.png");
+            this.icon = ImageIO.read(iconUrl);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this,

@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,12 +37,19 @@ public class PawnManager {
 
     private void setDefaultPawns() {
         try {
-            Image barrowPic = ImageIO.read(new File("src/main/resources/pawns/Wheelbarrow.png"));
-            Image shoePic = ImageIO.read(new File("src/main/resources/pawns/Shoe.png"));
-            Image dogPic = ImageIO.read(new File("src/main/resources/pawns/Dog.png"));
-            Image carPic = ImageIO.read(new File("src/main/resources/pawns/Car.png"));
-            Image hatPic = ImageIO.read(new File("src/main/resources/pawns/TopHat.png"));
-            Image shipPic = ImageIO.read(new File("src/main/resources/pawns/Battleship.png"));
+            URL barrowUrl = ClassLoader.getSystemResource("Wheelbarrow.png");
+            URL shoeUrl = ClassLoader.getSystemResource("Shoe.png");
+            URL dogUrl = ClassLoader.getSystemResource("Dog.png");
+            URL carUrl = ClassLoader.getSystemResource("Car.png");
+            URL hatUrl = ClassLoader.getSystemResource("TopHat.png");
+            URL shipUrl = ClassLoader.getSystemResource("Battleship.png");
+
+            Image barrowPic = ImageIO.read(barrowUrl);
+            Image shoePic = ImageIO.read(shoeUrl);
+            Image dogPic = ImageIO.read(dogUrl);
+            Image carPic = ImageIO.read(carUrl);
+            Image hatPic = ImageIO.read(hatUrl);
+            Image shipPic = ImageIO.read(shipUrl);
 
             ImageIcon barrowIcon = new ImageIcon(barrowPic);
             ImageIcon shoeIcon = new ImageIcon(shoePic);

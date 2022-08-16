@@ -123,7 +123,7 @@ public class PlayerManager implements Serializable {
      */
     public void savePlayers() throws IOException {
         try (
-                FileOutputStream fileOutStr = new FileOutputStream("src/main/saves/players.sr");
+                FileOutputStream fileOutStr = new FileOutputStream("players.sr");
                 ObjectOutputStream objOutStr = new ObjectOutputStream(fileOutStr);
         ) {
             objOutStr.writeObject(this);
@@ -141,7 +141,7 @@ public class PlayerManager implements Serializable {
      */
     public static PlayerManager loadPlayers() throws FileNotFoundException {
         try (
-                FileInputStream fileInStr = new FileInputStream("src/main/saves/players.sr");
+                FileInputStream fileInStr = new FileInputStream("players.sr");
                 ObjectInputStream objInStr = new ObjectInputStream(fileInStr);
         ) {
             Object o = objInStr.readObject();

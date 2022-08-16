@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class RollFrame extends JFrame {
     private RollForm rollForm;
@@ -24,7 +25,8 @@ public class RollFrame extends JFrame {
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {
-            this.icon = ImageIO.read(new File("src/main/resources/icons/Monopoly.png"));
+            URL iconUrl = ClassLoader.getSystemResource("Monopoly.png");
+            this.icon = ImageIO.read(iconUrl);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this,

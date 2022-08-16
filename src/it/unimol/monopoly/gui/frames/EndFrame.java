@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class EndFrame extends JFrame {
     private EndForm endForm;
@@ -21,7 +22,8 @@ public class EndFrame extends JFrame {
         this.setMinimumSize(new Dimension(450,400));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {
-            this.icon = ImageIO.read(new File("ssrc/main/resources/icons/Monopoly.png"));
+            URL iconUrl = ClassLoader.getSystemResource("Monopoly.png");
+            this.icon = ImageIO.read(iconUrl);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this,

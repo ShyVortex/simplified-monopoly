@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class GameFrame extends JFrame {
     private GameForm gameForm;
@@ -32,7 +33,8 @@ public class GameFrame extends JFrame {
         ////////////////////////////////////////////
 
         try {
-            this.icon = ImageIO.read(new File("src/main/resources/icons/Monopoly.png"));
+            URL iconUrl = ClassLoader.getSystemResource("Monopoly.png");
+            this.icon = ImageIO.read(iconUrl);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this,

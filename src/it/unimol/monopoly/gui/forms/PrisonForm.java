@@ -11,6 +11,7 @@ import it.unimol.monopoly.gui.frames.RollFrame;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -93,108 +94,140 @@ public class PrisonForm extends JPanel {
 
         //======== this ========
         setBackground(new Color(254, 255, 254));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
-        ( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax. swing. border
-        . TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
-        propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( )
-        ; }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
+        border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER
+        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font
+        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
+        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r"
+        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //---- parkingLab ----
-        parkingLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/Parking.jpg")));
+        URL parkingUrl = ClassLoader.getSystemResource("Parking.jpg");
+        parkingLab.setIcon(new ImageIcon(parkingUrl));
 
         //---- nyAvenueLab ----
-        nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/NewYorkAvenue.jpg")));
+        URL nyAvenueUrl = ClassLoader.getSystemResource("NewYorkAvenue.jpg");
+        nyAvenueLab.setIcon(new ImageIcon(nyAvenueUrl));
 
         //---- tennAvenueLab ----
-        tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/TennesseeAvenue.jpg")));
+        URL tennAvenueUrl = ClassLoader.getSystemResource("TennesseeAvenue.jpg");
+        tennAvenueLab.setIcon(new ImageIcon(tennAvenueUrl));
 
         //---- stJamesLab ----
-        stJamesLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/StJamesPlace.jpg")));
+        URL stJamesUrl = ClassLoader.getSystemResource("StJamesPlace.jpg");
+        stJamesLab.setIcon(new ImageIcon(tennAvenueUrl));
 
         //---- pennRailroadLab ----
-        pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/PennsylvaniaAvenue.jpg")));
+        URL pennRailroadUrl = ClassLoader.getSystemResource("PennsylvaniaRailroad.jpg");
+        pennRailroadLab.setIcon(new ImageIcon(pennRailroadUrl));
 
         //---- virginiaAvenueLab ----
-        virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/VirginiaAvenue.jpg")));
+        URL virginiaAvenueUrl = ClassLoader.getSystemResource("VirginiaAvenue.jpg");
+        virginiaAvenueLab.setIcon(new ImageIcon(virginiaAvenueUrl));
 
         //---- statesAvenueLab ----
-        statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/StatesAvenue.jpg")));
+        URL statesAvenueUrl = ClassLoader.getSystemResource("StatesAvenue.jpg");
+        statesAvenueLab.setIcon(new ImageIcon(statesAvenueUrl));
 
         //---- stCharlesLab ----
-        stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/StCharlesPlace.jpg")));
+        URL stCharlesUrl = ClassLoader.getSystemResource("StCharlesPlace.jpg");
+        stCharlesLab.setIcon(new ImageIcon(stCharlesUrl));
 
         //---- prisonLabel ----
-        prisonLabel.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/Prison.jpg")));
+        URL prisonUrl = ClassLoader.getSystemResource("Prison.jpg");
+        prisonLabel.setIcon(new ImageIcon(prisonUrl));
 
         //---- connecticutAveLab ----
-        connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ConnecticutAvenue.jpg")));
+        URL connecticutAveUrl = ClassLoader.getSystemResource("ConnecticutAvenue.jpg");
+        connecticutAveLab.setIcon(new ImageIcon(connecticutAveUrl));
 
         //---- vermontAvenueLab ----
-        vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/VermontAvenue.jpg")));
+        URL vermontAvenueUrl = ClassLoader.getSystemResource("VermontAvenue.jpg");
+        vermontAvenueLab.setIcon(new ImageIcon(vermontAvenueUrl));
 
         //---- orientalAvenueLab ----
-        orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/OrientalAvenue.jpg")));
+        URL orientalAvenueUrl = ClassLoader.getSystemResource("OrientalAvenue.jpg");
+        orientalAvenueLab.setIcon(new ImageIcon(orientalAvenueUrl));
 
         //---- readRailroadLab ----
-        readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ReadingRailroad.jpg")));
+        URL readRailroadUrl = ClassLoader.getSystemResource("ReadingRailroad.jpg");
+        readRailroadLab.setIcon(new ImageIcon(readRailroadUrl));
 
         //---- waterWorksLab ----
-        waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/WaterWorks.jpg")));
+        URL waterWorksUrl = ClassLoader.getSystemResource("WaterWorks.jpg");
+        waterWorksLab.setIcon(new ImageIcon(waterWorksUrl));
 
         //---- balticAvenueLab ----
-        balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/BalticAvenue.jpg")));
+        URL balticAvenueUrl = ClassLoader.getSystemResource("BalticAvenue.jpg");
+        balticAvenueLab.setIcon(new ImageIcon(balticAvenueUrl));
 
         //---- meditAvenueLab ----
-        meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/MediterraneanAvenue.jpg")));
+        URL meditAvenueUrl = ClassLoader.getSystemResource("MediterraneanAvenue.jpg");
+        meditAvenueLab.setIcon(new ImageIcon(meditAvenueUrl));
 
         //---- goLabel ----
-        goLabel.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/GOv2.jpg")));
+        URL goUrl = ClassLoader.getSystemResource("GOv2.jpg");
+        goLabel.setIcon(new ImageIcon(goUrl));
 
         //---- kentuckyAvenueLab ----
-        kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/KentuckyAvenue.jpg")));
+        URL kentuckyAvenueUrl = ClassLoader.getSystemResource("KentuckyAvenue.jpg");
+        kentuckyAvenueLab.setIcon(new ImageIcon(kentuckyAvenueUrl));
 
         //---- indianaAvenueLab ----
-        indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/IndianaAvenue.jpg")));
+        URL indianaAvenueUrl = ClassLoader.getSystemResource("IndianaAvenue.jpg");
+        indianaAvenueLab.setIcon(new ImageIcon(indianaAvenueUrl));
 
         //---- illinoisAvenueLab ----
-        illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/IllinoisAvenue.jpg")));
+        URL illinoisAvenueUrl = ClassLoader.getSystemResource("IllinoisAvenue.jpg");
+        illinoisAvenueLab.setIcon(new ImageIcon(illinoisAvenueUrl));
 
         //---- bEoRailroadLab ----
-        bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/B&ORailroad.jpg")));
+        URL bEoRailroadUrl = ClassLoader.getSystemResource("B&ORailroad.jpg");
+        bEoRailroadLab.setIcon(new ImageIcon(bEoRailroadUrl));
 
         //---- atlanticAvenueLab ----
-        atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/AtlanticAvenue.jpg")));
+        URL atlanticAvenueUrl = ClassLoader.getSystemResource("AtlanticAvenue.jpg");
+        atlanticAvenueLab.setIcon(new ImageIcon(atlanticAvenueUrl));
 
         //---- ventnorAvenueLab ----
-        ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/VentnorAvenue.jpg")));
+        URL ventnorAvenueUrl = ClassLoader.getSystemResource("VentnorAvenue.jpg");
+        ventnorAvenueLab.setIcon(new ImageIcon(ventnorAvenueUrl));
 
         //---- marvinGardensLab ----
-        marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/MarvinGardens.jpg")));
+        URL marvinGardensUrl = ClassLoader.getSystemResource("MarvinGardens.jpg");
+        marvinGardensLab.setIcon(new ImageIcon(marvinGardensUrl));
 
         //---- transitLabel ----
-        transitLabel.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/Transit.jpg")));
+        URL transitUrl = ClassLoader.getSystemResource("Transit.jpg");
+        transitLabel.setIcon(new ImageIcon(transitUrl));
 
         //---- pacificAvenueLab ----
-        pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/PacificAvenue.jpg")));
+        URL pacificAvenueUrl = ClassLoader.getSystemResource("PacificAvenue.jpg");
+        pacificAvenueLab.setIcon(new ImageIcon(pacificAvenueUrl));
 
         //---- northCarAvenueLab ----
-        northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/NorthCarolinaAvenue.jpg")));
+        URL northCarAvenueUrl = ClassLoader.getSystemResource("NorthCarolinaAvenue.jpg");
+        northCarAvenueLab.setIcon(new ImageIcon(northCarAvenueUrl));
 
         //---- pennAvenueLab ----
-        pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/PennsylvaniaAvenue.jpg")));
+        URL pennAvenueUrl = ClassLoader.getSystemResource("PennsylvaniaAvenue.jpg");
+        pennAvenueLab.setIcon(new ImageIcon(pennAvenueUrl));
 
         //---- shortLineLab ----
-        shortLineLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ShortLine.jpg")));
+        URL shortLineUrl = ClassLoader.getSystemResource("ShortLine.jpg");
+        shortLineLab.setIcon(new ImageIcon(shortLineUrl));
 
         //---- electricCompanyLab ----
-        electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ElectricCompany.jpg")));
+        URL electricCompanyUrl = ClassLoader.getSystemResource("ElectricCompany.jpg");
+        electricCompanyLab.setIcon(new ImageIcon(electricCompanyUrl));
 
         //---- parkPlaceLab ----
-        parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/ParkPlace.jpg")));
+        URL parkPlaceUrl = ClassLoader.getSystemResource("ParkPlace.jpg");
+        parkPlaceLab.setIcon(new ImageIcon(parkPlaceUrl));
 
         //---- boardwalkLab ----
-        boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/main/resources/boxes/BoardWalk.jpg")));
+        URL boardwalkUrl = ClassLoader.getSystemResource("BoardWalk.jpg");
+        boardwalkLab.setIcon(new ImageIcon(boardwalkUrl));
 
         //---- turnTextArea ----
         turnTextArea.setText("Turn of:");
@@ -633,9 +666,9 @@ public class PrisonForm extends JPanel {
                     "Quit without saving",
                     JOptionPane.INFORMATION_MESSAGE
             );
-            File contractData = new File("src/main/saves/contracts.sr");
-            File playerData = new File("src/main/saves/players.sr");
-            File turnoData = new File("src/main/saves/turn.sr");
+            File contractData = new File("contracts.sr");
+            File playerData = new File("players.sr");
+            File turnoData = new File("turn.sr");
             contractData.delete();
             playerData.delete();
             turnoData.delete();

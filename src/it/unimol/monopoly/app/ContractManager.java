@@ -1,6 +1,7 @@
 package it.unimol.monopoly.app;
 
 import java.io.*;
+import java.net.URL;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -66,7 +67,7 @@ public class ContractManager implements Serializable {
      */
     public void saveContracts() throws IOException {
         try (
-            FileOutputStream fileOutStr = new FileOutputStream("src/main/saves/contracts.sr");
+            FileOutputStream fileOutStr = new FileOutputStream("contracts.sr");
             ObjectOutputStream objOutStr = new ObjectOutputStream(fileOutStr);
         ) {
             objOutStr.writeObject(this);
@@ -84,7 +85,7 @@ public class ContractManager implements Serializable {
      */
     public static ContractManager loadContracts() throws FileNotFoundException {
         try (
-            FileInputStream fileInStr = new FileInputStream("src/main/saves/contracts.sr");
+            FileInputStream fileInStr = new FileInputStream("contracts.sr");
             ObjectInputStream objInStr = new ObjectInputStream(fileInStr);
         ) {
            Object o = objInStr.readObject();
