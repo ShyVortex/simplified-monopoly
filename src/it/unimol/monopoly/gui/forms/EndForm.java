@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class EndForm {
     private JLabel gameOverLabel;
@@ -20,7 +21,8 @@ public class EndForm {
         this.givenFrame = myFrame;
 
         try {
-            this.gameOverImage = ImageIO.read(new File("main/resources/icons/GameOver.jpg"));
+            URL gameOverUrl = ClassLoader.getSystemResource("GameOver.jpg");
+            this.gameOverImage = ImageIO.read(gameOverUrl);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(
                     this.givenFrame,
