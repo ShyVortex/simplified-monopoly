@@ -18,3 +18,13 @@ First, I'd like to have my own record of projects publicly available so that I c
 as I learn more programming languages and I become more expert and efficient in coding. 
 Second, I'd love if what I've learned with this course can be of help to other students across the globe who are facing some difficulties 
 in learning Java or programming as a whole, since it's not an easy subject and it requires patience and many attempts to get what you want done right.  
+
+# Screenshots
+![Schermata del 2022-08-16 13 17 35](https://user-images.githubusercontent.com/111277410/184867372-a01db479-8379-45a3-9e15-f694c5b8767f.png)
+![Schermata del 2022-08-16 13 19 41](https://user-images.githubusercontent.com/111277410/184867661-6d0799c5-d15c-4532-8864-83874ecefb2d.png)
+![Schermata del 2022-08-16 13 20 08](https://user-images.githubusercontent.com/111277410/184867677-3f2c8e1a-2bb8-4762-978f-6a475953ab77.png)
+![Schermata del 2022-08-16 13 20 22](https://user-images.githubusercontent.com/111277410/184867689-7d662546-d759-450e-bea4-2be37fece90b.png)
+
+# License
+- This project is distributed under the [BSD-3-Clause License](https://github.com/ShyVortex/simplified-monopoly/blob/master/LICENSE.md).
+- Copyright of [@ShyVortex](https://github.com/ShyVortex), 2022.
