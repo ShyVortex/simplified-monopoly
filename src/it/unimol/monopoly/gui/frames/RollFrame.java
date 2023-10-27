@@ -15,12 +15,11 @@ import java.net.URL;
 public class RollFrame extends JFrame {
     private RollForm rollForm;
     private Image icon;
-    public static Dimension screenSize;
 
     public RollFrame(Player player, PlayerManager players, ContractManager contracts) {
         super();
 
-        pack();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize);
         this.setTitle("Monopoly - Initialization");
         this.setResizable(false);

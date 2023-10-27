@@ -17,22 +17,19 @@ public class GameFrame extends JFrame {
     private GameForm gameForm;
     private PrisonForm prisonForm;
     private Image icon;
-    public static short displayValue;
-    public static Dimension screenSize;
 
     public GameFrame(Player player, PlayerManager players, ContractManager contracts) {
         super();
 
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize);
         this.setTitle("MonopolyGame");
         this.setResizable(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //              Fullscreen                //
-        if (displayValue == 1) {
-            this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-            this.setUndecorated(true);
-        }
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setUndecorated(true);
         ////////////////////////////////////////////
 
         try {
