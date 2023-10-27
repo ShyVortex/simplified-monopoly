@@ -36,7 +36,6 @@ public class RollForm extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Angelo Trotta
         playerTextArea = new JTextArea();
         playerTextPane = new JTextPane();
         diceLabel = new JLabel();
@@ -47,59 +46,52 @@ public class RollForm extends JPanel {
         okButton = new JButton();
 
         //======== this ========
-        setBackground(new Color(254, 255, 254));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border.
-        EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing. border. TitledBorder. CENTER, javax. swing
-        . border. TitledBorder. BOTTOM, new java .awt .Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ),
-        java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( )
-        { @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName () ))
-        throw new RuntimeException( ); }} );
+        setBackground(new Color(0xfefffe));
 
         //---- playerTextArea ----
         playerTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
         playerTextArea.setText("Turn of:");
-        playerTextArea.setBackground(new Color(254, 255, 254));
-        playerTextArea.setForeground(new Color(122, 140, 147));
+        playerTextArea.setBackground(new Color(0xfefffe));
+        playerTextArea.setForeground(new Color(0x7a8c93));
         playerTextArea.setEditable(false);
 
         //---- playerTextPane ----
         playerTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        playerTextPane.setBackground(new Color(254, 255, 254));
-        playerTextPane.setForeground(new Color(122, 140, 147));
+        playerTextPane.setBackground(new Color(0xfefffe));
+        playerTextPane.setForeground(new Color(0x7a8c93));
         playerTextPane.setEditable(false);
 
         //---- diceLabel ----
-        URL diceUrl = ClassLoader.getSystemResource("Dice.png");
-        diceLabel.setIcon(new ImageIcon(diceUrl));
+        diceLabel.setIcon(new ImageIcon(getClass().getResource("/resources/pawns/Dice.png")));
 
         //---- diceRollTextArea ----
         diceRollTextArea.setText("Rolling the dice...");
         diceRollTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        diceRollTextArea.setBackground(new Color(254, 255, 254));
-        diceRollTextArea.setForeground(new Color(122, 140, 147));
+        diceRollTextArea.setBackground(new Color(0xfefffe));
+        diceRollTextArea.setForeground(new Color(0x7a8c93));
         diceRollTextArea.setEditable(false);
 
         //---- positionTextArea ----
         positionTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
         positionTextArea.setText("Your position is:");
-        positionTextArea.setBackground(new Color(254, 255, 254));
-        positionTextArea.setForeground(new Color(122, 140, 147));
+        positionTextArea.setBackground(new Color(0xfefffe));
+        positionTextArea.setForeground(new Color(0x7a8c93));
         positionTextArea.setEditable(false);
 
         //---- positionIDTextPane ----
         positionIDTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        positionIDTextPane.setBackground(new Color(254, 255, 254));
-        positionIDTextPane.setForeground(new Color(122, 140, 147));
+        positionIDTextPane.setBackground(new Color(0xfefffe));
+        positionIDTextPane.setForeground(new Color(0x7a8c93));
 
         //---- positionNameTextPane ----
-        positionNameTextPane.setBackground(new Color(254, 255, 254));
+        positionNameTextPane.setBackground(new Color(0xfefffe));
         positionNameTextPane.setForeground(Color.black);
         positionNameTextPane.setFont(new Font("Noto Sans", Font.BOLD, 30));
         positionNameTextPane.setEditable(false);
 
         //---- okButton ----
         okButton.setText("OK");
-        okButton.setBackground(new Color(206, 217, 220));
+        okButton.setBackground(new Color(0xced9dc));
 
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
@@ -153,7 +145,6 @@ public class RollForm extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Angelo Trotta
     private JTextArea playerTextArea;
     private JTextPane playerTextPane;
     private JLabel diceLabel;
