@@ -4,10 +4,13 @@ import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.exceptions.BlankNameException;
 import it.unimol.monopoly.exceptions.SpecialCharException;
 import it.unimol.monopoly.exceptions.StartingSpaceException;
+import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
+import it.unimol.monopoly.gui.frames.SettingsFrame;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,6 +30,7 @@ public class MainForm {
     private JButton okButton;
     private JPanel playerListPanel;
     private JTextPane playerArea;
+    private JButton settingsButton;
     private JFrame givenFrame;
     private Player playerToAdd;
     private Pawn pawnToAdd;
@@ -67,6 +71,10 @@ public class MainForm {
 
         this.confirmButton.addActionListener(
                 actionEvent -> handleAddPlayer(players)
+        );
+
+        this.settingsButton.addActionListener(
+                actionEvent -> handleSettingsMenu()
         );
     }
 
@@ -175,6 +183,11 @@ public class MainForm {
         }
     }
 
+    public void handleSettingsMenu() {
+        SettingsFrame settingsFrame = new SettingsFrame();
+        settingsFrame.setVisible(true);
+    }
+
     public void handleStartGame(PlayerManager players, ContractManager contracts) {
         if (players.getPlayers().size() < 2) {
             JOptionPane.showMessageDialog(
@@ -202,6 +215,14 @@ public class MainForm {
                 );
             }
             Player player = game.setFirstPlayer(players);
+
+            // Default behaviour if settings page is not visited
+            if (RollFrame.screenSize == null && GameFrame.screenSize == null) {
+                Dimension defaultRes = Toolkit.getDefaultToolkit().getScreenSize();
+                RollFrame.screenSize = defaultRes;
+                GameFrame.screenSize = defaultRes;
+            }
+
             RollFrame rollFrame = new RollFrame(player, players, contracts);
             rollFrame.setVisible(true);
             this.givenFrame.dispose();
