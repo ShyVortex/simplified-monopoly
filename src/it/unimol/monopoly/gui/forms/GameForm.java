@@ -625,7 +625,7 @@ public class GameForm {
         updateTimer(player, players, contracts);
 
         // Box illumination
-        if (GameFrame.scalingFactor == 1)
+        if (GameFrame.screenSize.equals(SettingsFrame.DEFAULT_RES) || GameFrame.scalingFactor == 1)
             this.setBoxLight(player);
     }
 
