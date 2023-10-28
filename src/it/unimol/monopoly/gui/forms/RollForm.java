@@ -17,7 +17,7 @@ import static it.unimol.monopoly.app.PositionManager.*;
 /**
  * @author unknown
  */
-public class RollForm extends JPanel {
+public class RollForm {
     private JFrame givenFrame;
     private static JFrame messageFrame;
     private static boolean skipMessage;
@@ -37,6 +37,8 @@ public class RollForm extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        rollScrollPane = new JScrollPane();
+        rollPanel = new JPanel();
         playerTextArea = new JTextArea();
         playerTextPane = new JTextPane();
         diceLabel = new JLabel();
@@ -46,106 +48,116 @@ public class RollForm extends JPanel {
         positionNameTextPane = new JTextPane();
         okButton = new JButton();
 
-        //======== this ========
-        setBackground(new Color(0xfefffe));
+        //======== rollScrollPane ========
+        {
 
-        //---- playerTextArea ----
-        playerTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        playerTextArea.setText("Turn of:");
-        playerTextArea.setBackground(new Color(0xfefffe));
-        playerTextArea.setForeground(new Color(0x7a8c93));
-        playerTextArea.setEditable(false);
+            //======== rollPanel ========
+            {
+                rollPanel.setBackground(new Color(0xfefffe));
+                rollPanel.setMinimumSize(new Dimension(640, 360));
 
-        //---- playerTextPane ----
-        playerTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        playerTextPane.setBackground(new Color(0xfefffe));
-        playerTextPane.setForeground(new Color(0x7a8c93));
-        playerTextPane.setEditable(false);
+                //---- playerTextArea ----
+                playerTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                playerTextArea.setText("Turn of:");
+                playerTextArea.setBackground(new Color(0xfefffe));
+                playerTextArea.setForeground(new Color(0x7a8c93));
+                playerTextArea.setEditable(false);
 
-        //---- diceLabel ----
-        diceLabel.setIcon(new ImageIcon(getClass().getResource("/Dice.png")));
+                //---- playerTextPane ----
+                playerTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                playerTextPane.setBackground(new Color(0xfefffe));
+                playerTextPane.setForeground(new Color(0x7a8c93));
+                playerTextPane.setEditable(false);
 
-        //---- diceRollTextArea ----
-        diceRollTextArea.setText("Rolling the dice...");
-        diceRollTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        diceRollTextArea.setBackground(new Color(0xfefffe));
-        diceRollTextArea.setForeground(new Color(0x7a8c93));
-        diceRollTextArea.setEditable(false);
+                //---- diceLabel ----
+                diceLabel.setIcon(new ImageIcon(getClass().getResource("/Dice.png")));
 
-        //---- positionTextArea ----
-        positionTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        positionTextArea.setText("Your position is:");
-        positionTextArea.setBackground(new Color(0xfefffe));
-        positionTextArea.setForeground(new Color(0x7a8c93));
-        positionTextArea.setEditable(false);
+                //---- diceRollTextArea ----
+                diceRollTextArea.setText("Rolling the dice...");
+                diceRollTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                diceRollTextArea.setBackground(new Color(0xfefffe));
+                diceRollTextArea.setForeground(new Color(0x7a8c93));
+                diceRollTextArea.setEditable(false);
 
-        //---- positionIDTextPane ----
-        positionIDTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        positionIDTextPane.setBackground(new Color(0xfefffe));
-        positionIDTextPane.setForeground(new Color(0x7a8c93));
+                //---- positionTextArea ----
+                positionTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                positionTextArea.setText("Your position is:");
+                positionTextArea.setBackground(new Color(0xfefffe));
+                positionTextArea.setForeground(new Color(0x7a8c93));
+                positionTextArea.setEditable(false);
 
-        //---- positionNameTextPane ----
-        positionNameTextPane.setBackground(new Color(0xfefffe));
-        positionNameTextPane.setForeground(Color.black);
-        positionNameTextPane.setFont(new Font("Noto Sans", Font.BOLD, 30));
-        positionNameTextPane.setEditable(false);
+                //---- positionIDTextPane ----
+                positionIDTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                positionIDTextPane.setBackground(new Color(0xfefffe));
+                positionIDTextPane.setForeground(new Color(0x7a8c93));
 
-        //---- okButton ----
-        okButton.setText("OK");
-        okButton.setBackground(new Color(0xced9dc));
+                //---- positionNameTextPane ----
+                positionNameTextPane.setBackground(new Color(0xfefffe));
+                positionNameTextPane.setForeground(Color.black);
+                positionNameTextPane.setFont(new Font("Noto Sans", Font.BOLD, 30));
+                positionNameTextPane.setEditable(false);
 
-        GroupLayout layout = new GroupLayout(this);
-        setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup()
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(139, 139, 139)
-                    .addComponent(playerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(playerTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(2093, Short.MAX_VALUE))
-                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(1233, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup()
-                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(diceRollTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(diceLabel, GroupLayout.PREFERRED_SIZE, 480, GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(positionTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(positionIDTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                            .addGap(687, 687, 687))
-                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                //---- okButton ----
+                okButton.setText("OK");
+                okButton.setBackground(new Color(0xced9dc));
+
+                GroupLayout rollPanelLayout = new GroupLayout(rollPanel);
+                rollPanel.setLayout(rollPanelLayout);
+                rollPanelLayout.setHorizontalGroup(
+                    rollPanelLayout.createParallelGroup()
+                        .addGroup(rollPanelLayout.createSequentialGroup()
+                            .addGap(139, 139, 139)
+                            .addComponent(playerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(playerTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(2093, Short.MAX_VALUE))
+                        .addGroup(GroupLayout.Alignment.TRAILING, rollPanelLayout.createSequentialGroup()
+                            .addContainerGap(1233, Short.MAX_VALUE)
+                            .addGroup(rollPanelLayout.createParallelGroup()
+                                .addGroup(GroupLayout.Alignment.TRAILING, rollPanelLayout.createSequentialGroup()
+                                    .addGroup(rollPanelLayout.createParallelGroup()
+                                        .addComponent(diceRollTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(diceLabel, GroupLayout.PREFERRED_SIZE, 480, GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(rollPanelLayout.createSequentialGroup()
+                                            .addComponent(positionTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(positionIDTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(687, 687, 687))
+                                .addGroup(GroupLayout.Alignment.TRAILING, rollPanelLayout.createSequentialGroup()
+                                    .addComponent(okButton)
+                                    .addGap(78, 78, 78))))
+                );
+                rollPanelLayout.setVerticalGroup(
+                    rollPanelLayout.createParallelGroup()
+                        .addGroup(rollPanelLayout.createSequentialGroup()
+                            .addGap(92, 92, 92)
+                            .addGroup(rollPanelLayout.createParallelGroup()
+                                .addComponent(playerTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addGap(106, 106, 106)
+                            .addComponent(diceLabel, GroupLayout.PREFERRED_SIZE, 254, GroupLayout.PREFERRED_SIZE)
+                            .addGap(33, 33, 33)
+                            .addComponent(diceRollTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addGap(71, 71, 71)
+                            .addGroup(rollPanelLayout.createParallelGroup()
+                                .addComponent(positionTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(positionIDTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 443, Short.MAX_VALUE)
                             .addComponent(okButton)
-                            .addGap(78, 78, 78))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup()
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(92, 92, 92)
-                    .addGroup(layout.createParallelGroup()
-                        .addComponent(playerTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(playerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(106, 106, 106)
-                    .addComponent(diceLabel, GroupLayout.PREFERRED_SIZE, 254, GroupLayout.PREFERRED_SIZE)
-                    .addGap(33, 33, 33)
-                    .addComponent(diceRollTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addGap(71, 71, 71)
-                    .addGroup(layout.createParallelGroup()
-                        .addComponent(positionTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(positionIDTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 443, Short.MAX_VALUE)
-                    .addComponent(okButton)
-                    .addGap(90, 90, 90))
-        );
+                            .addGap(90, 90, 90))
+                );
+            }
+            rollScrollPane.setViewportView(rollPanel);
+        }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    private JScrollPane rollScrollPane;
+    private JPanel rollPanel;
     private JTextArea playerTextArea;
     private JTextPane playerTextPane;
     private JLabel diceLabel;
@@ -156,14 +168,18 @@ public class RollForm extends JPanel {
     private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
+    public JScrollPane getRollScrollPane() {
+        return rollScrollPane;
+    }
+
     private void autoResize() {
         Dimension defaultRes = SettingsFrame.DEFAULT_RES;
         Dimension resolution = RollFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
-        this.setSize(resolution);
-        this.setPreferredSize(resolution);
-        for (Component comp : this.getComponents()) {
+        this.rollPanel.setSize(resolution);
+        this.rollPanel.setPreferredSize(resolution);
+        for (Component comp : this.rollPanel.getComponents()) {
             int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
             int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
             Dimension newSize = new Dimension(newSizeX, newSizeY);

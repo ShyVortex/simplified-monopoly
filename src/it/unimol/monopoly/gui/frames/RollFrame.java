@@ -40,6 +40,6 @@ public class RollFrame extends JFrame {
         this.setIconImage(icon);
 
         this.rollForm = new RollForm(this, player, players, contracts);
-        this.setContentPane(this.rollForm);
+        this.setContentPane(this.rollForm.getRollScrollPane());
     }
 }

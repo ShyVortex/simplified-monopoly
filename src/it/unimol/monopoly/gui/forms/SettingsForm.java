@@ -33,7 +33,7 @@ public class SettingsForm {
         this.givenFrame = myFrame;
         this.videoBox.addItem("Select Video Mode");
         this.videoBox.addItem("Windowed");
-        this.videoBox.addItem("Fullscreen");
+        this.videoBox.addItem("Borderless");
         this.resolutionBox.addItem("Auto");
 
         this.videoBox.addActionListener(
@@ -76,7 +76,7 @@ public class SettingsForm {
 
         if (selectedInput.equals("Windowed"))
             this.fullscreen = false;
-        else // equals("Fullscreen")
+        else // equals("Borderless")
             this.fullscreen = true;
     }
 

@@ -51,11 +51,11 @@ public class GameFrame extends JFrame {
 
         if (!player.isPrisoner()) {
             this.gameForm = new GameForm(this, player, players, contracts);
-            this.setContentPane(this.gameForm);
+            this.setContentPane(this.gameForm.getGameScrollPane());
         }
         else {
             this.prisonForm = new PrisonForm(this, player, players, contracts);
-            this.setContentPane(this.prisonForm);
+            this.setContentPane(this.prisonForm.getPrisonScrollPane());
         }
     }
 }

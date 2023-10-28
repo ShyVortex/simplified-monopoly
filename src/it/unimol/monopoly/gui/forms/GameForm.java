@@ -26,7 +26,7 @@ import static it.unimol.monopoly.app.PositionManager.GO;
  * @author unknown
  */
 
-public class GameForm extends JPanel {
+public class GameForm {
     private static int remainingTime;
     private final AtomicBoolean running = new AtomicBoolean(false);
     private JFrame givenFrame;
@@ -72,6 +72,8 @@ public class GameForm extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        gameScrollPane = new JScrollPane();
+        gamePanel = new JPanel();
         parkingLab = new JLabel();
         nyAvenueLab = new JLabel();
         tennAvenueLab = new JLabel();
@@ -121,368 +123,378 @@ public class GameForm extends JPanel {
         timerTextPane = new JTextPane();
         timerTextArea = new JTextArea();
 
-        //======== this ========
-        setBackground(new Color(0xfefffe));
-
-        //---- parkingLab ----
-        parkingLab.setIcon(new ImageIcon(getClass().getResource("/Parking.jpg")));
-
-        //---- nyAvenueLab ----
-        nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NewYorkAvenue.jpg")));
-
-        //---- tennAvenueLab ----
-        tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/TennesseeAvenue.jpg")));
-
-        //---- stJamesLab ----
-        stJamesLab.setIcon(new ImageIcon(getClass().getResource("/StJamesPlace.jpg")));
-
-        //---- pennRailroadLab ----
-        pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaRailroad.jpg")));
-
-        //---- virginiaAvenueLab ----
-        virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VirginiaAvenue.jpg")));
-
-        //---- statesAvenueLab ----
-        statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/StatesAvenue.jpg")));
-
-        //---- stCharlesLab ----
-        stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/StCharlesPlace.jpg")));
-
-        //---- prisonLabel ----
-        prisonLabel.setIcon(new ImageIcon(getClass().getResource("/Prison.jpg")));
-
-        //---- connecticutAveLab ----
-        connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/ConnecticutAvenue.jpg")));
-
-        //---- vermontAvenueLab ----
-        vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VermontAvenue.jpg")));
-
-        //---- orientalAvenueLab ----
-        orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/OrientalAvenue.jpg")));
-
-        //---- readRailroadLab ----
-        readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/ReadingRailroad.jpg")));
-
-        //---- waterWorksLab ----
-        waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/WaterWorks.jpg")));
-
-        //---- balticAvenueLab ----
-        balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/BalticAvenue.jpg")));
-
-        //---- meditAvenueLab ----
-        meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/MediterraneanAvenue.jpg")));
-
-        //---- goLabel ----
-        goLabel.setIcon(new ImageIcon(getClass().getResource("/GOv2.jpg")));
-
-        //---- kentuckyAvenueLab ----
-        kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/KentuckyAvenue.jpg")));
-
-        //---- indianaAvenueLab ----
-        indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IndianaAvenue.jpg")));
-
-        //---- illinoisAvenueLab ----
-        illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IllinoisAvenue.jpg")));
-
-        //---- bEoRailroadLab ----
-        bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/B&ORailroad.jpg")));
-
-        //---- atlanticAvenueLab ----
-        atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/AtlanticAvenue.jpg")));
-
-        //---- ventnorAvenueLab ----
-        ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VentnorAvenue.jpg")));
-
-        //---- marvinGardensLab ----
-        marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/MarvinGardens.jpg")));
-
-        //---- transitLabel ----
-        transitLabel.setIcon(new ImageIcon(getClass().getResource("/Transit.jpg")));
-
-        //---- pacificAvenueLab ----
-        pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PacificAvenue.jpg")));
-
-        //---- northCarAvenueLab ----
-        northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NorthCarolinaAvenue.jpg")));
-
-        //---- pennAvenueLab ----
-        pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaAvenue.jpg")));
-
-        //---- shortLineLab ----
-        shortLineLab.setIcon(new ImageIcon(getClass().getResource("/ShortLine.jpg")));
-
-        //---- electricCompanyLab ----
-        electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/ElectricCompany.jpg")));
-
-        //---- parkPlaceLab ----
-        parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/ParkPlace.jpg")));
-
-        //---- boardwalkLab ----
-        boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/BoardWalk.jpg")));
-
-        //---- turnTextArea ----
-        turnTextArea.setText("Turn of:");
-        turnTextArea.setBackground(new Color(0xfefffe));
-        turnTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        turnTextArea.setForeground(new Color(0x7a8c93));
-        turnTextArea.setEditable(false);
-
-        //---- turnTextPane ----
-        turnTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        turnTextPane.setBackground(new Color(0xfefffe));
-        turnTextPane.setForeground(new Color(0x7a8c93));
-        turnTextPane.setEditable(false);
-
-        //---- bankTextPane ----
-        bankTextPane.setFont(new Font("Noto Sans", Font.BOLD, 34));
-        bankTextPane.setBackground(new Color(0xfefffe));
-        bankTextPane.setForeground(new Color(0x7a8c93));
-        bankTextPane.setEditable(false);
-
-        //---- contractsTextArea ----
-        contractsTextArea.setFont(new Font("Noto Sans", Font.BOLD, 36));
-        contractsTextArea.setText("Contracts:");
-        contractsTextArea.setBackground(new Color(0xfefffe));
-        contractsTextArea.setForeground(new Color(0x7a8c93));
-        contractsTextArea.setEditable(false);
-
-        //---- contractButton ----
-        contractButton.setText("Buy contract");
-        contractButton.setBackground(new Color(0xced9dc));
-        contractButton.setIcon(null);
-
-        //---- rentButton ----
-        rentButton.setText("Pay rent");
-        rentButton.setBackground(new Color(0xced9dc));
-
-        //---- feeButton ----
-        feeButton.setText("Pay fee");
-        feeButton.setBackground(new Color(0xced9dc));
-
-        //---- goButton ----
-        goButton.setText("Pass by GO!");
-        goButton.setBackground(new Color(0xced9dc));
-
-        //---- prisonButton ----
-        prisonButton.setText("Go to prison");
-        prisonButton.setBackground(new Color(0xced9dc));
-
-        //---- endTurnButton ----
-        endTurnButton.setText("End turn");
-        endTurnButton.setBackground(new Color(0xced9dc));
-
-        //---- quitButton ----
-        quitButton.setText("Quit");
-        quitButton.setBackground(new Color(0xced9dc));
-
-        //---- pawnLabel ----
-        pawnLabel.setIcon(null);
-
-        //======== contractsScrollPane ========
+        //======== gameScrollPane ========
         {
 
-            //---- contractsTextPane ----
-            contractsTextPane.setFont(new Font("Noto Sans", Font.BOLD, 20));
-            contractsTextPane.setEditable(false);
-            contractsScrollPane.setViewportView(contractsTextPane);
+            //======== gamePanel ========
+            {
+                gamePanel.setBackground(new Color(0xfefffe));
+                gamePanel.setMinimumSize(new Dimension(640, 360));
+
+                //---- parkingLab ----
+                parkingLab.setIcon(new ImageIcon(getClass().getResource("/Parking.jpg")));
+
+                //---- nyAvenueLab ----
+                nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NewYorkAvenue.jpg")));
+
+                //---- tennAvenueLab ----
+                tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/TennesseeAvenue.jpg")));
+
+                //---- stJamesLab ----
+                stJamesLab.setIcon(new ImageIcon(getClass().getResource("/StJamesPlace.jpg")));
+
+                //---- pennRailroadLab ----
+                pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaRailroad.jpg")));
+
+                //---- virginiaAvenueLab ----
+                virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VirginiaAvenue.jpg")));
+
+                //---- statesAvenueLab ----
+                statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/StatesAvenue.jpg")));
+
+                //---- stCharlesLab ----
+                stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/StCharlesPlace.jpg")));
+
+                //---- prisonLabel ----
+                prisonLabel.setIcon(new ImageIcon(getClass().getResource("/Prison.jpg")));
+
+                //---- connecticutAveLab ----
+                connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/ConnecticutAvenue.jpg")));
+
+                //---- vermontAvenueLab ----
+                vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VermontAvenue.jpg")));
+
+                //---- orientalAvenueLab ----
+                orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/OrientalAvenue.jpg")));
+
+                //---- readRailroadLab ----
+                readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/ReadingRailroad.jpg")));
+
+                //---- waterWorksLab ----
+                waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/WaterWorks.jpg")));
+
+                //---- balticAvenueLab ----
+                balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/BalticAvenue.jpg")));
+
+                //---- meditAvenueLab ----
+                meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/MediterraneanAvenue.jpg")));
+
+                //---- goLabel ----
+                goLabel.setIcon(new ImageIcon(getClass().getResource("/GOv2.jpg")));
+
+                //---- kentuckyAvenueLab ----
+                kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/KentuckyAvenue.jpg")));
+
+                //---- indianaAvenueLab ----
+                indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IndianaAvenue.jpg")));
+
+                //---- illinoisAvenueLab ----
+                illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IllinoisAvenue.jpg")));
+
+                //---- bEoRailroadLab ----
+                bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/B&ORailroad.jpg")));
+
+                //---- atlanticAvenueLab ----
+                atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/AtlanticAvenue.jpg")));
+
+                //---- ventnorAvenueLab ----
+                ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VentnorAvenue.jpg")));
+
+                //---- marvinGardensLab ----
+                marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/MarvinGardens.jpg")));
+
+                //---- transitLabel ----
+                transitLabel.setIcon(new ImageIcon(getClass().getResource("/Transit.jpg")));
+
+                //---- pacificAvenueLab ----
+                pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PacificAvenue.jpg")));
+
+                //---- northCarAvenueLab ----
+                northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NorthCarolinaAvenue.jpg")));
+
+                //---- pennAvenueLab ----
+                pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaAvenue.jpg")));
+
+                //---- shortLineLab ----
+                shortLineLab.setIcon(new ImageIcon(getClass().getResource("/ShortLine.jpg")));
+
+                //---- electricCompanyLab ----
+                electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/ElectricCompany.jpg")));
+
+                //---- parkPlaceLab ----
+                parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/ParkPlace.jpg")));
+
+                //---- boardwalkLab ----
+                boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/BoardWalk.jpg")));
+
+                //---- turnTextArea ----
+                turnTextArea.setText("Turn of:");
+                turnTextArea.setBackground(new Color(0xfefffe));
+                turnTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                turnTextArea.setForeground(new Color(0x7a8c93));
+                turnTextArea.setEditable(false);
+
+                //---- turnTextPane ----
+                turnTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                turnTextPane.setBackground(new Color(0xfefffe));
+                turnTextPane.setForeground(new Color(0x7a8c93));
+                turnTextPane.setEditable(false);
+
+                //---- bankTextPane ----
+                bankTextPane.setFont(new Font("Noto Sans", Font.BOLD, 34));
+                bankTextPane.setBackground(new Color(0xfefffe));
+                bankTextPane.setForeground(new Color(0x7a8c93));
+                bankTextPane.setEditable(false);
+
+                //---- contractsTextArea ----
+                contractsTextArea.setFont(new Font("Noto Sans", Font.BOLD, 36));
+                contractsTextArea.setText("Contracts:");
+                contractsTextArea.setBackground(new Color(0xfefffe));
+                contractsTextArea.setForeground(new Color(0x7a8c93));
+                contractsTextArea.setEditable(false);
+
+                //---- contractButton ----
+                contractButton.setText("Buy contract");
+                contractButton.setBackground(new Color(0xced9dc));
+                contractButton.setIcon(null);
+
+                //---- rentButton ----
+                rentButton.setText("Pay rent");
+                rentButton.setBackground(new Color(0xced9dc));
+
+                //---- feeButton ----
+                feeButton.setText("Pay fee");
+                feeButton.setBackground(new Color(0xced9dc));
+
+                //---- goButton ----
+                goButton.setText("Pass by GO!");
+                goButton.setBackground(new Color(0xced9dc));
+
+                //---- prisonButton ----
+                prisonButton.setText("Go to prison");
+                prisonButton.setBackground(new Color(0xced9dc));
+
+                //---- endTurnButton ----
+                endTurnButton.setText("End turn");
+                endTurnButton.setBackground(new Color(0xced9dc));
+
+                //---- quitButton ----
+                quitButton.setText("Quit");
+                quitButton.setBackground(new Color(0xced9dc));
+
+                //---- pawnLabel ----
+                pawnLabel.setIcon(null);
+
+                //======== contractsScrollPane ========
+                {
+
+                    //---- contractsTextPane ----
+                    contractsTextPane.setFont(new Font("Noto Sans", Font.BOLD, 20));
+                    contractsTextPane.setEditable(false);
+                    contractsScrollPane.setViewportView(contractsTextPane);
+                }
+
+                //---- timerTextPane ----
+                timerTextPane.setBackground(new Color(0xfefffe));
+                timerTextPane.setForeground(Color.black);
+                timerTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                timerTextPane.setEditable(false);
+
+                //---- timerTextArea ----
+                timerTextArea.setBackground(new Color(0xfefffe));
+                timerTextArea.setForeground(new Color(0xcc3300));
+                timerTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
+                timerTextArea.setText("End of turn:");
+                timerTextArea.setEditable(false);
+
+                GroupLayout gamePanelLayout = new GroupLayout(gamePanel);
+                gamePanel.setLayout(gamePanelLayout);
+                gamePanelLayout.setHorizontalGroup(
+                    gamePanelLayout.createParallelGroup()
+                        .addGroup(gamePanelLayout.createSequentialGroup()
+                            .addGap(62, 62, 62)
+                            .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addComponent(parkingLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(kentuckyAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(indianaAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(illinoisAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(bEoRailroadLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(atlanticAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ventnorAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(marvinGardensLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(nyAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tennAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(stJamesLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pennRailroadLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(virginiaAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(statesAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(stCharlesLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addComponent(prisonLabel, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(connecticutAveLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(vermontAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(orientalAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(readRailroadLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(waterWorksLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(balticAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(meditAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(gamePanelLayout.createParallelGroup()
+                                .addComponent(pacificAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(transitLabel, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(northCarAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pennAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(shortLineLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(electricCompanyLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(parkPlaceLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boardwalkLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(goLabel, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 792, Short.MAX_VALUE)
+                            .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addComponent(contractsTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(contractButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(feeButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(prisonButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(quitButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(rentButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(goButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(endTurnButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(contractsScrollPane, GroupLayout.PREFERRED_SIZE, 292, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addComponent(turnTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(turnTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(bankTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pawnLabel, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(timerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(timerTextPane, GroupLayout.PREFERRED_SIZE, 217, GroupLayout.PREFERRED_SIZE))))
+                            .addGap(201, 201, 201))
+                );
+                gamePanelLayout.setVerticalGroup(
+                    gamePanelLayout.createParallelGroup()
+                        .addGroup(gamePanelLayout.createSequentialGroup()
+                            .addGap(42, 42, 42)
+                            .addGroup(gamePanelLayout.createParallelGroup()
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(parkingLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(kentuckyAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(indianaAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(illinoisAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bEoRailroadLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(atlanticAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ventnorAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(marvinGardensLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(transitLabel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(pacificAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(nyAvenueLab, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(turnTextPane)
+                                        .addComponent(turnTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addGroup(gamePanelLayout.createSequentialGroup()
+                                            .addComponent(bankTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(timerTextArea))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(pawnLabel, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(timerTextPane))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addComponent(contractsTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(contractsScrollPane, GroupLayout.PREFERRED_SIZE, 370, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(20, 20, 20))
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(northCarAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tennAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(pennAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(stJamesLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(shortLineLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pennRailroadLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(electricCompanyLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(virginiaAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(parkPlaceLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(statesAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(gamePanelLayout.createParallelGroup()
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(boardwalkLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(stCharlesLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup()
+                                        .addComponent(goLabel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(prisonLabel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(meditAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(balticAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(waterWorksLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(readRailroadLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(orientalAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(vermontAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(connecticutAveLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(gamePanelLayout.createSequentialGroup()
+                                    .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(contractButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rentButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(feeButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(goButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(gamePanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(prisonButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(endTurnButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(quitButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)))
+                            .addGap(530, 530, 530))
+                );
+            }
+            gameScrollPane.setViewportView(gamePanel);
         }
-
-        //---- timerTextPane ----
-        timerTextPane.setBackground(new Color(0xfefffe));
-        timerTextPane.setForeground(Color.black);
-        timerTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        timerTextPane.setEditable(false);
-
-        //---- timerTextArea ----
-        timerTextArea.setBackground(new Color(0xfefffe));
-        timerTextArea.setForeground(new Color(0xcc3300));
-        timerTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        timerTextArea.setText("End of turn:");
-        timerTextArea.setEditable(false);
-
-        GroupLayout layout = new GroupLayout(this);
-        setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup()
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(62, 62, 62)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(parkingLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(kentuckyAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(indianaAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(illinoisAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(bEoRailroadLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(atlanticAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(ventnorAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(marvinGardensLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
-                        .addComponent(nyAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tennAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(stJamesLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pennRailroadLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(virginiaAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(statesAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(stCharlesLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(prisonLabel, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(connecticutAveLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(vermontAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(orientalAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(readRailroadLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(waterWorksLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(balticAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(meditAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup()
-                        .addComponent(pacificAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(transitLabel, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(northCarAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pennAvenueLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(shortLineLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(electricCompanyLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(parkPlaceLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(boardwalkLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(goLabel, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 792, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addComponent(contractsTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(contractButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(feeButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(prisonButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(quitButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(rentButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(goButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(endTurnButton, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(contractsScrollPane, GroupLayout.PREFERRED_SIZE, 292, GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(turnTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(turnTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(bankTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pawnLabel, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(timerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(timerTextPane, GroupLayout.PREFERRED_SIZE, 217, GroupLayout.PREFERRED_SIZE))))
-                    .addGap(201, 201, 201))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup()
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(42, 42, 42)
-                    .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(parkingLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(kentuckyAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(indianaAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(illinoisAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(bEoRailroadLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(atlanticAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ventnorAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(marvinGardensLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(transitLabel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(pacificAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(nyAvenueLab, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(turnTextPane)
-                                .addComponent(turnTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(bankTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addComponent(timerTextArea))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(pawnLabel, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(timerTextPane))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)))
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(contractsTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(contractsScrollPane, GroupLayout.PREFERRED_SIZE, 370, GroupLayout.PREFERRED_SIZE)
-                            .addGap(20, 20, 20))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(northCarAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tennAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(pennAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(stJamesLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(shortLineLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pennRailroadLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(electricCompanyLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(virginiaAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(parkPlaceLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(statesAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(boardwalkLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(stCharlesLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(goLabel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(prisonLabel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(meditAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(balticAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(waterWorksLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(readRailroadLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(orientalAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(vermontAvenueLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(connecticutAveLab, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(contractButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rentButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(feeButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(goButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(prisonButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(endTurnButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(quitButton, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)))
-                    .addGap(530, 530, 530))
-        );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    private JScrollPane gameScrollPane;
+    private JPanel gamePanel;
     public JLabel parkingLab;
     public JLabel nyAvenueLab;
     public JLabel tennAvenueLab;
@@ -533,14 +545,18 @@ public class GameForm extends JPanel {
     private JTextArea timerTextArea;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
+    public JScrollPane getGameScrollPane() {
+        return gameScrollPane;
+    }
+
     private void autoResize() {
         Dimension defaultRes = SettingsFrame.DEFAULT_RES;
         Dimension resolution = GameFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
-        this.setSize(resolution);
-        this.setPreferredSize(resolution);
-        for (Component comp : this.getComponents()) {
+        this.gamePanel.setSize(resolution);
+        this.gamePanel.setPreferredSize(resolution);
+        for (Component comp : this.gamePanel.getComponents()) {
             int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
             int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
             Dimension newSize = new Dimension(newSizeX, newSizeY);
@@ -688,7 +704,7 @@ public class GameForm extends JPanel {
         player.addMoney(500);
         player.setPosition(GO);
         JOptionPane.showMessageDialog(
-                this,
+                this.gamePanel,
                 "You've passed by GO! 500€ have been added to your account.",
                 "Passage by GO",
                 JOptionPane.INFORMATION_MESSAGE
@@ -708,7 +724,9 @@ public class GameForm extends JPanel {
         player.setPrisoner(true);
         player.setPosition(PRISON);
         PrisonForm prisonForm = new PrisonForm(this.givenFrame, player, players, contracts);
-        this.givenFrame.setContentPane(prisonForm);
+        this.givenFrame.setContentPane(prisonForm.getPrisonScrollPane());
+        this.givenFrame.revalidate();
+        this.givenFrame.repaint();
     }
 
     private void handleEndTurnButton(Player player, PlayerManager players, ContractManager contracts) {
@@ -735,7 +753,9 @@ public class GameForm extends JPanel {
         }
         else {
             PrisonForm newForm = new PrisonForm(this.givenFrame, newPlayer, players, contracts);
-            this.givenFrame.setContentPane(newForm);
+            this.givenFrame.setContentPane(newForm.getPrisonScrollPane());
+            this.givenFrame.revalidate();
+            this.givenFrame.repaint();
         }
     }
 
@@ -830,7 +850,7 @@ public class GameForm extends JPanel {
         }
         else {
             PrisonForm newForm = new PrisonForm(this.givenFrame, newPlayer, players, contracts);
-            this.givenFrame.setContentPane(newForm);
+            this.givenFrame.setContentPane(newForm.getPrisonScrollPane());
         }
     }
 
