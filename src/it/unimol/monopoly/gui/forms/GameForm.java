@@ -38,6 +38,7 @@ public class GameForm extends JPanel {
     public GameForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         this.givenFrame = myFrame;
         initComponents();
+        autoResize();
         spawnPlayer(player, players, contracts);
 
         this.contractButton.addActionListener(
@@ -532,6 +533,46 @@ public class GameForm extends JPanel {
     private JTextArea timerTextArea;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
+    private void autoResize() {
+        Dimension defaultRes = SettingsFrame.DEFAULT_RES;
+        Dimension resolution = GameFrame.screenSize;
+        double ratioX = (double) resolution.width / defaultRes.width;
+        double ratioY = (double) resolution.height / defaultRes.height;
+        this.setSize(resolution);
+        this.setPreferredSize(resolution);
+        for (Component comp : this.getComponents()) {
+            int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
+            int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
+            Dimension newSize = new Dimension(newSizeX, newSizeY);
+            if (comp instanceof JTextArea || comp instanceof JTextPane) {
+                Font currentFont = comp.getFont();
+                int newFontSize = (int) Math.floor(currentFont.getSize() * ratioX);
+                Font scaledFont = new Font(currentFont.getName(), currentFont.getStyle(), newFontSize);
+                comp.setFont(scaledFont);
+            } else {
+                comp.setSize(newSize);
+                comp.setPreferredSize(newSize);
+                if (comp instanceof JLabel) {
+                    comp.setBounds(comp.getX(), comp.getY(), newSizeX, newSizeY);
+                    if (((JLabel) comp).getIcon() != null) {
+                        ImageIcon originalIcon = (ImageIcon) ((JLabel) comp).getIcon();
+                        Image originalImage = originalIcon.getImage();
+
+                        // Creating scaled version of the Icon
+                        int newImageX = (int) Math.floor(originalIcon.getIconWidth() * ratioX);
+                        int newImageY = (int) Math.floor(originalIcon.getIconHeight() * ratioY);
+                        Image scaledImage = originalImage.getScaledInstance(newImageX, newImageY, Image.SCALE_SMOOTH);
+                        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                        ((JLabel) comp).setIcon(scaledIcon);
+                    }
+                }
+            }
+        }
+        this.givenFrame.revalidate();
+        this.givenFrame.repaint();
+    }
+
     private void spawnPlayer(Player player, PlayerManager players, ContractManager contracts) {
         PositionManager positions = PositionManager.getInstance();
 
@@ -555,7 +596,8 @@ public class GameForm extends JPanel {
         updateTimer(player, players, contracts);
 
         // Box illumination
-        this.setBoxLight(player);
+        if (GameFrame.screenSize.equals(SettingsFrame.DEFAULT_RES))
+            this.setBoxLight(player);
     }
 
     private void setBoxLight(Player player) {

@@ -6,7 +6,9 @@ package it.unimol.monopoly.gui.forms;
 
 import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.gui.LightsUI;
+import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
+import it.unimol.monopoly.gui.frames.SettingsFrame;
 
 import java.awt.*;
 import java.io.File;
@@ -23,6 +25,7 @@ public class PrisonForm extends JPanel {
     public PrisonForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         this.givenFrame = myFrame;
         initComponents();
+        autoResize();
         spawnPlayer(player);
 
         this.freeExitButton.addActionListener(
@@ -44,7 +47,6 @@ public class PrisonForm extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Angelo Trotta
         parkingLab = new JLabel();
         nyAvenueLab = new JLabel();
         tennAvenueLab = new JLabel();
@@ -93,184 +95,146 @@ public class PrisonForm extends JPanel {
         positionTextPane = new JTextPane();
 
         //======== this ========
-        setBackground(new Color(254, 255, 254));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
-        border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER
-        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font
-        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
-        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r"
-        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+        setBackground(new Color(0xfefffe));
 
         //---- parkingLab ----
-        URL parkingUrl = ClassLoader.getSystemResource("Parking.jpg");
-        parkingLab.setIcon(new ImageIcon(parkingUrl));
+        parkingLab.setIcon(new ImageIcon(getClass().getResource("/Parking.jpg")));
 
         //---- nyAvenueLab ----
-        URL nyAvenueUrl = ClassLoader.getSystemResource("NewYorkAvenue.jpg");
-        nyAvenueLab.setIcon(new ImageIcon(nyAvenueUrl));
+        nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NewYorkAvenue.jpg")));
 
         //---- tennAvenueLab ----
-        URL tennAvenueUrl = ClassLoader.getSystemResource("TennesseeAvenue.jpg");
-        tennAvenueLab.setIcon(new ImageIcon(tennAvenueUrl));
+        tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/TennesseeAvenue.jpg")));
 
         //---- stJamesLab ----
-        URL stJamesUrl = ClassLoader.getSystemResource("StJamesPlace.jpg");
-        stJamesLab.setIcon(new ImageIcon(tennAvenueUrl));
+        stJamesLab.setIcon(new ImageIcon(getClass().getResource("/StJamesPlace.jpg")));
 
         //---- pennRailroadLab ----
-        URL pennRailroadUrl = ClassLoader.getSystemResource("PennsylvaniaRailroad.jpg");
-        pennRailroadLab.setIcon(new ImageIcon(pennRailroadUrl));
+        pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaRailroad.jpg")));
 
         //---- virginiaAvenueLab ----
-        URL virginiaAvenueUrl = ClassLoader.getSystemResource("VirginiaAvenue.jpg");
-        virginiaAvenueLab.setIcon(new ImageIcon(virginiaAvenueUrl));
+        virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VirginiaAvenue.jpg")));
 
         //---- statesAvenueLab ----
-        URL statesAvenueUrl = ClassLoader.getSystemResource("StatesAvenue.jpg");
-        statesAvenueLab.setIcon(new ImageIcon(statesAvenueUrl));
+        statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/StatesAvenue.jpg")));
 
         //---- stCharlesLab ----
-        URL stCharlesUrl = ClassLoader.getSystemResource("StCharlesPlace.jpg");
-        stCharlesLab.setIcon(new ImageIcon(stCharlesUrl));
+        stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/StCharlesPlace.jpg")));
 
         //---- prisonLabel ----
-        URL prisonUrl = ClassLoader.getSystemResource("Prison.jpg");
-        prisonLabel.setIcon(new ImageIcon(prisonUrl));
+        prisonLabel.setIcon(new ImageIcon(getClass().getResource("/Prison.jpg")));
 
         //---- connecticutAveLab ----
-        URL connecticutAveUrl = ClassLoader.getSystemResource("ConnecticutAvenue.jpg");
-        connecticutAveLab.setIcon(new ImageIcon(connecticutAveUrl));
+        connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/ConnecticutAvenue.jpg")));
 
         //---- vermontAvenueLab ----
-        URL vermontAvenueUrl = ClassLoader.getSystemResource("VermontAvenue.jpg");
-        vermontAvenueLab.setIcon(new ImageIcon(vermontAvenueUrl));
+        vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VermontAvenue.jpg")));
 
         //---- orientalAvenueLab ----
-        URL orientalAvenueUrl = ClassLoader.getSystemResource("OrientalAvenue.jpg");
-        orientalAvenueLab.setIcon(new ImageIcon(orientalAvenueUrl));
+        orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/OrientalAvenue.jpg")));
 
         //---- readRailroadLab ----
-        URL readRailroadUrl = ClassLoader.getSystemResource("ReadingRailroad.jpg");
-        readRailroadLab.setIcon(new ImageIcon(readRailroadUrl));
+        readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/ReadingRailroad.jpg")));
 
         //---- waterWorksLab ----
-        URL waterWorksUrl = ClassLoader.getSystemResource("WaterWorks.jpg");
-        waterWorksLab.setIcon(new ImageIcon(waterWorksUrl));
+        waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/WaterWorks.jpg")));
 
         //---- balticAvenueLab ----
-        URL balticAvenueUrl = ClassLoader.getSystemResource("BalticAvenue.jpg");
-        balticAvenueLab.setIcon(new ImageIcon(balticAvenueUrl));
+        balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/BalticAvenue.jpg")));
 
         //---- meditAvenueLab ----
-        URL meditAvenueUrl = ClassLoader.getSystemResource("MediterraneanAvenue.jpg");
-        meditAvenueLab.setIcon(new ImageIcon(meditAvenueUrl));
+        meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/MediterraneanAvenue.jpg")));
 
         //---- goLabel ----
-        URL goUrl = ClassLoader.getSystemResource("GOv2.jpg");
-        goLabel.setIcon(new ImageIcon(goUrl));
+        goLabel.setIcon(new ImageIcon(getClass().getResource("/GOv2.jpg")));
 
         //---- kentuckyAvenueLab ----
-        URL kentuckyAvenueUrl = ClassLoader.getSystemResource("KentuckyAvenue.jpg");
-        kentuckyAvenueLab.setIcon(new ImageIcon(kentuckyAvenueUrl));
+        kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/KentuckyAvenue.jpg")));
 
         //---- indianaAvenueLab ----
-        URL indianaAvenueUrl = ClassLoader.getSystemResource("IndianaAvenue.jpg");
-        indianaAvenueLab.setIcon(new ImageIcon(indianaAvenueUrl));
+        indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IndianaAvenue.jpg")));
 
         //---- illinoisAvenueLab ----
-        URL illinoisAvenueUrl = ClassLoader.getSystemResource("IllinoisAvenue.jpg");
-        illinoisAvenueLab.setIcon(new ImageIcon(illinoisAvenueUrl));
+        illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IllinoisAvenue.jpg")));
 
         //---- bEoRailroadLab ----
-        URL bEoRailroadUrl = ClassLoader.getSystemResource("B&ORailroad.jpg");
-        bEoRailroadLab.setIcon(new ImageIcon(bEoRailroadUrl));
+        bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/B&ORailroad.jpg")));
 
         //---- atlanticAvenueLab ----
-        URL atlanticAvenueUrl = ClassLoader.getSystemResource("AtlanticAvenue.jpg");
-        atlanticAvenueLab.setIcon(new ImageIcon(atlanticAvenueUrl));
+        atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/AtlanticAvenue.jpg")));
 
         //---- ventnorAvenueLab ----
-        URL ventnorAvenueUrl = ClassLoader.getSystemResource("VentnorAvenue.jpg");
-        ventnorAvenueLab.setIcon(new ImageIcon(ventnorAvenueUrl));
+        ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VentnorAvenue.jpg")));
 
         //---- marvinGardensLab ----
-        URL marvinGardensUrl = ClassLoader.getSystemResource("MarvinGardens.jpg");
-        marvinGardensLab.setIcon(new ImageIcon(marvinGardensUrl));
+        marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/MarvinGardens.jpg")));
 
         //---- transitLabel ----
-        URL transitUrl = ClassLoader.getSystemResource("Transit.jpg");
-        transitLabel.setIcon(new ImageIcon(transitUrl));
+        transitLabel.setIcon(new ImageIcon(getClass().getResource("/Transit.jpg")));
 
         //---- pacificAvenueLab ----
-        URL pacificAvenueUrl = ClassLoader.getSystemResource("PacificAvenue.jpg");
-        pacificAvenueLab.setIcon(new ImageIcon(pacificAvenueUrl));
+        pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PacificAvenue.jpg")));
 
         //---- northCarAvenueLab ----
-        URL northCarAvenueUrl = ClassLoader.getSystemResource("NorthCarolinaAvenue.jpg");
-        northCarAvenueLab.setIcon(new ImageIcon(northCarAvenueUrl));
+        northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NorthCarolinaAvenue.jpg")));
 
         //---- pennAvenueLab ----
-        URL pennAvenueUrl = ClassLoader.getSystemResource("PennsylvaniaAvenue.jpg");
-        pennAvenueLab.setIcon(new ImageIcon(pennAvenueUrl));
+        pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaAvenue.jpg")));
 
         //---- shortLineLab ----
-        URL shortLineUrl = ClassLoader.getSystemResource("ShortLine.jpg");
-        shortLineLab.setIcon(new ImageIcon(shortLineUrl));
+        shortLineLab.setIcon(new ImageIcon(getClass().getResource("/ShortLine.jpg")));
 
         //---- electricCompanyLab ----
-        URL electricCompanyUrl = ClassLoader.getSystemResource("ElectricCompany.jpg");
-        electricCompanyLab.setIcon(new ImageIcon(electricCompanyUrl));
+        electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/ElectricCompany.jpg")));
 
         //---- parkPlaceLab ----
-        URL parkPlaceUrl = ClassLoader.getSystemResource("ParkPlace.jpg");
-        parkPlaceLab.setIcon(new ImageIcon(parkPlaceUrl));
+        parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/ParkPlace.jpg")));
 
         //---- boardwalkLab ----
-        URL boardwalkUrl = ClassLoader.getSystemResource("BoardWalk.jpg");
-        boardwalkLab.setIcon(new ImageIcon(boardwalkUrl));
+        boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/BoardWalk.jpg")));
 
         //---- turnTextArea ----
         turnTextArea.setText("Turn of:");
-        turnTextArea.setBackground(new Color(254, 255, 254));
+        turnTextArea.setBackground(new Color(0xfefffe));
         turnTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        turnTextArea.setForeground(new Color(122, 140, 147));
+        turnTextArea.setForeground(new Color(0x7a8c93));
         turnTextArea.setEditable(false);
 
         //---- turnTextPane ----
         turnTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
-        turnTextPane.setBackground(new Color(254, 255, 254));
-        turnTextPane.setForeground(new Color(122, 140, 147));
+        turnTextPane.setBackground(new Color(0xfefffe));
+        turnTextPane.setForeground(new Color(0x7a8c93));
         turnTextPane.setEditable(false);
 
         //---- bancaTextPane ----
         bancaTextPane.setFont(new Font("Noto Sans", Font.BOLD, 34));
-        bancaTextPane.setBackground(new Color(254, 255, 254));
-        bancaTextPane.setForeground(new Color(122, 140, 147));
+        bancaTextPane.setBackground(new Color(0xfefffe));
+        bancaTextPane.setForeground(new Color(0x7a8c93));
         bancaTextPane.setEditable(false);
 
         //---- contractsTextArea ----
         contractsTextArea.setFont(new Font("Noto Sans", Font.BOLD, 36));
         contractsTextArea.setText("Contracts:");
-        contractsTextArea.setBackground(new Color(254, 255, 254));
-        contractsTextArea.setForeground(new Color(122, 140, 147));
+        contractsTextArea.setBackground(new Color(0xfefffe));
+        contractsTextArea.setForeground(new Color(0x7a8c93));
         contractsTextArea.setEditable(false);
 
         //---- freeExitButton ----
         freeExitButton.setText("Free exit");
-        freeExitButton.setBackground(new Color(206, 217, 220));
+        freeExitButton.setBackground(new Color(0xced9dc));
         freeExitButton.setIcon(null);
 
         //---- paidExitButton ----
         paidExitButton.setText("Paid exit");
-        paidExitButton.setBackground(new Color(206, 217, 220));
+        paidExitButton.setBackground(new Color(0xced9dc));
 
         //---- stayButton ----
         stayButton.setText("Stay in prison");
-        stayButton.setBackground(new Color(206, 217, 220));
+        stayButton.setBackground(new Color(0xced9dc));
 
         //---- quitButton ----
         quitButton.setText("Quit from the game");
-        quitButton.setBackground(new Color(206, 217, 220));
+        quitButton.setBackground(new Color(0xced9dc));
 
         //---- pawnLabel ----
         pawnLabel.setIcon(null);
@@ -288,18 +252,18 @@ public class PrisonForm extends JPanel {
         prisonTextArea.setText("In prison!");
         prisonTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
         prisonTextArea.setEditable(false);
-        prisonTextArea.setBackground(new Color(254, 255, 254));
-        prisonTextArea.setForeground(new Color(122, 140, 147));
+        prisonTextArea.setBackground(new Color(0xfefffe));
+        prisonTextArea.setForeground(new Color(0x7a8c93));
 
         //---- positionTextArea ----
-        positionTextArea.setBackground(new Color(254, 255, 254));
-        positionTextArea.setForeground(new Color(255, 204, 102));
+        positionTextArea.setBackground(new Color(0xfefffe));
+        positionTextArea.setForeground(new Color(0xffcc66));
         positionTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
         positionTextArea.setText("Position:");
         positionTextArea.setEditable(false);
 
         //---- positionTextPane ----
-        positionTextPane.setBackground(new Color(254, 255, 254));
+        positionTextPane.setBackground(new Color(0xfefffe));
         positionTextPane.setForeground(Color.black);
         positionTextPane.setFont(new Font("Noto Sans", Font.BOLD, 20));
         positionTextPane.setEditable(false);
@@ -361,7 +325,7 @@ public class PrisonForm extends JPanel {
                         .addComponent(shortLineLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
                         .addComponent(electricCompanyLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
                         .addComponent(parkPlaceLab, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 802, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup()
                         .addComponent(prisonTextArea, GroupLayout.PREFERRED_SIZE, 250, GroupLayout.PREFERRED_SIZE)
                         .addComponent(contractsTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -478,7 +442,6 @@ public class PrisonForm extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Angelo Trotta
     private JLabel parkingLab;
     private JLabel nyAvenueLab;
     private JLabel tennAvenueLab;
@@ -532,6 +495,46 @@ public class PrisonForm extends JPanel {
         return prisonLabel;
     }
 
+    private void autoResize() {
+        Dimension defaultRes = SettingsFrame.DEFAULT_RES;
+        Dimension resolution = GameFrame.screenSize;
+        double ratioX = (double) resolution.width / defaultRes.width;
+        double ratioY = (double) resolution.height / defaultRes.height;
+        this.setSize(resolution);
+        this.setPreferredSize(resolution);
+        for (Component comp : this.getComponents()) {
+            int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
+            int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
+            Dimension newSize = new Dimension(newSizeX, newSizeY);
+            if (comp instanceof JTextArea || comp instanceof JTextPane) {
+                Font currentFont = comp.getFont();
+                int newFontSize = (int) Math.floor(currentFont.getSize() * ratioX);
+                Font scaledFont = new Font(currentFont.getName(), currentFont.getStyle(), newFontSize);
+                comp.setFont(scaledFont);
+            } else {
+                comp.setSize(newSize);
+                comp.setPreferredSize(newSize);
+                if (comp instanceof JLabel) {
+                    comp.setBounds(comp.getX(), comp.getY(), newSizeX, newSizeY);
+                    if (((JLabel) comp).getIcon() != null) {
+                        ImageIcon originalIcon = (ImageIcon) ((JLabel) comp).getIcon();
+                        Image originalImage = originalIcon.getImage();
+
+                        // Creating scaled version of the Icon
+                        int newImageX = (int) Math.floor(originalIcon.getIconWidth() * ratioX);
+                        int newImageY = (int) Math.floor(originalIcon.getIconHeight() * ratioY);
+                        Image scaledImage = originalImage.getScaledInstance(newImageX, newImageY, Image.SCALE_SMOOTH);
+                        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                        ((JLabel) comp).setIcon(scaledIcon);
+                    }
+                }
+            }
+        }
+        this.givenFrame.revalidate();
+        this.givenFrame.repaint();
+    }
+
     private void spawnPlayer(Player player) {
         PositionManager positions = PositionManager.getInstance();
 
@@ -554,7 +557,8 @@ public class PrisonForm extends JPanel {
         this.positionTextPane.setText(positions.getPositions().get(player.getPosition()).getName());
 
         // Box illumination
-        this.setBoxLight();
+        if (GameFrame.screenSize.equals(SettingsFrame.DEFAULT_RES))
+            this.setBoxLight();
     }
 
     private void setBoxLight() {

@@ -4,6 +4,7 @@ import it.unimol.monopoly.exceptions.NoVideoModeException;
 import it.unimol.monopoly.exceptions.UnsupportedResException;
 import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
+import it.unimol.monopoly.gui.frames.SettingsFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -156,6 +157,17 @@ public class SettingsForm {
 
                     if (resolution.width > maxWidth || resolution.height > maxHeight)
                         throw new UnsupportedResException();
+                }
+
+                if (!resolution.equals(SettingsFrame.DEFAULT_RES)) {
+                    JOptionPane.showMessageDialog(
+                            this.givenFrame,
+                            "This software was designed to work correctly only when in 1920x1080. " +
+                                    "Changing resolution may lead to unexpected results, as this feature is still " +
+                                    "being worked on.",
+                            "WARNING: Resolution Scaling",
+                            JOptionPane.WARNING_MESSAGE
+                    );
                 }
 
                 RollFrame.screenSize = resolution;

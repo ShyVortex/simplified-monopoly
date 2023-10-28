@@ -6,14 +6,14 @@ package it.unimol.monopoly.gui.forms;
 
 import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.gui.frames.GameFrame;
+import it.unimol.monopoly.gui.frames.RollFrame;
+import it.unimol.monopoly.gui.frames.SettingsFrame;
 
 import java.awt.*;
-import java.net.URL;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
 import static it.unimol.monopoly.app.PositionManager.*;
-
 /**
  * @author unknown
  */
@@ -26,6 +26,7 @@ public class RollForm extends JPanel {
         initComponents();
         this.givenFrame = myFrame;
         messageFrame = this.givenFrame;
+        autoResize();
         initialize(player);
         elaboratePosition(player);
 
@@ -154,6 +155,46 @@ public class RollForm extends JPanel {
     private JTextPane positionNameTextPane;
     private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+
+    private void autoResize() {
+        Dimension defaultRes = SettingsFrame.DEFAULT_RES;
+        Dimension resolution = RollFrame.screenSize;
+        double ratioX = (double) resolution.width / defaultRes.width;
+        double ratioY = (double) resolution.height / defaultRes.height;
+        this.setSize(resolution);
+        this.setPreferredSize(resolution);
+        for (Component comp : this.getComponents()) {
+            int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
+            int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
+            Dimension newSize = new Dimension(newSizeX, newSizeY);
+            if (comp instanceof JTextArea || comp instanceof JTextPane) {
+                Font currentFont = comp.getFont();
+                int newFontSize = (int) Math.floor(currentFont.getSize() * ratioX);
+                Font scaledFont = new Font(currentFont.getName(), currentFont.getStyle(), newFontSize);
+                comp.setFont(scaledFont);
+            } else {
+                comp.setSize(newSize);
+                comp.setPreferredSize(newSize);
+                if (comp instanceof JLabel) {
+                    comp.setBounds(comp.getX(), comp.getY(), newSizeX, newSizeY);
+                    if (((JLabel) comp).getIcon() != null) {
+                        ImageIcon originalIcon = (ImageIcon) ((JLabel) comp).getIcon();
+                        Image originalImage = originalIcon.getImage();
+
+                        // Creating scaled version of the Icon
+                        int newImageX = (int) Math.floor(originalIcon.getIconWidth() * ratioX);
+                        int newImageY = (int) Math.floor(originalIcon.getIconHeight() * ratioY);
+                        Image scaledImage = originalImage.getScaledInstance(newImageX, newImageY, Image.SCALE_SMOOTH);
+                        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                        ((JLabel) comp).setIcon(scaledIcon);
+                    }
+                }
+            }
+        }
+        this.givenFrame.revalidate();
+        this.givenFrame.repaint();
+    }
 
     private void initialize(Player player) {
         // Setting name of the turn
