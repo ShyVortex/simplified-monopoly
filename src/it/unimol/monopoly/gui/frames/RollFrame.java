@@ -15,16 +15,25 @@ import java.net.URL;
 public class RollFrame extends JFrame {
     private RollForm rollForm;
     private Image icon;
-    public static Dimension screenSize;
+    public static short displayValue;
+    public static Dimension screenSize = SettingsFrame.NATIVE_RES;
 
     public RollFrame(Player player, PlayerManager players, ContractManager contracts) {
         super();
 
-        pack();
+        //pack();
         this.setSize(screenSize);
         this.setTitle("Monopoly - Initialization");
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        //              Borderless               //
+        if (displayValue == 1) {
+            this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            this.setUndecorated(true);
+        }
+        ////////////////////////////////////////////
+
         try {
             URL iconUrl = ClassLoader.getSystemResource("Monopoly.png");
             this.icon = ImageIO.read(iconUrl);

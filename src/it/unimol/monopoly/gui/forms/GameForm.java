@@ -28,7 +28,6 @@ import static it.unimol.monopoly.app.PositionManager.GO;
 
 public class GameForm {
     private static int remainingTime;
-    private final AtomicBoolean running = new AtomicBoolean(false);
     private JFrame givenFrame;
     private Countdown timer;
     private StoppableThread refreshProcess;
@@ -38,7 +37,9 @@ public class GameForm {
     public GameForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         this.givenFrame = myFrame;
         initComponents();
-        autoResize();
+        if (GameFrame.scalingFactor == 2)
+            autoResize();
+        manageScrollBar();
         spawnPlayer(player, players, contracts);
 
         this.contractButton.addActionListener(
@@ -589,6 +590,18 @@ public class GameForm {
         this.givenFrame.repaint();
     }
 
+    private void manageScrollBar() {
+        // Let JScrollPane take up all available space
+        this.givenFrame.setLayout(new BorderLayout());
+        this.givenFrame.add(this.gameScrollPane, BorderLayout.CENTER);
+
+        // Disable scrollbars at native resolution
+        if (GameFrame.screenSize.equals(SettingsFrame.NATIVE_RES)) {
+            this.gameScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+            this.gameScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        }
+    }
+
     private void spawnPlayer(Player player, PlayerManager players, ContractManager contracts) {
         PositionManager positions = PositionManager.getInstance();
 
@@ -612,7 +625,7 @@ public class GameForm {
         updateTimer(player, players, contracts);
 
         // Box illumination
-        if (GameFrame.screenSize.equals(SettingsFrame.DEFAULT_RES))
+        if (GameFrame.scalingFactor == 1)
             this.setBoxLight(player);
     }
 

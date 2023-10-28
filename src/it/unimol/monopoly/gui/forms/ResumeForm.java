@@ -67,13 +67,6 @@ public class ResumeForm {
     public void handleResume(PlayerManager players, ContractManager contracts) {
         Player lastPlayer = players.changePlayer(Turn.playerId);
 
-        // Default behaviour if settings page is not visited
-        if (RollFrame.screenSize == null && GameFrame.screenSize == null) {
-            Dimension defaultRes = Toolkit.getDefaultToolkit().getScreenSize();
-            RollFrame.screenSize = defaultRes;
-            GameFrame.screenSize = defaultRes;
-        }
-
         RollFrame rollFrame = new RollFrame(lastPlayer, players, contracts);
         this.givenFrame.dispose();
         rollFrame.setVisible(true);

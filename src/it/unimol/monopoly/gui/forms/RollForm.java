@@ -26,7 +26,9 @@ public class RollForm {
         initComponents();
         this.givenFrame = myFrame;
         messageFrame = this.givenFrame;
-        autoResize();
+        if (GameFrame.scalingFactor == 2)
+            autoResize();
+        manageScrollBar();
         initialize(player);
         elaboratePosition(player);
 
@@ -78,6 +80,7 @@ public class RollForm {
                 diceRollTextArea.setBackground(new Color(0xfefffe));
                 diceRollTextArea.setForeground(new Color(0x7a8c93));
                 diceRollTextArea.setEditable(false);
+                diceRollTextArea.setAutoscrolls(false);
 
                 //---- positionTextArea ----
                 positionTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
@@ -85,6 +88,7 @@ public class RollForm {
                 positionTextArea.setBackground(new Color(0xfefffe));
                 positionTextArea.setForeground(new Color(0x7a8c93));
                 positionTextArea.setEditable(false);
+                positionTextArea.setAutoscrolls(false);
 
                 //---- positionIDTextPane ----
                 positionIDTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
@@ -106,15 +110,14 @@ public class RollForm {
                 rollPanelLayout.setHorizontalGroup(
                     rollPanelLayout.createParallelGroup()
                         .addGroup(rollPanelLayout.createSequentialGroup()
-                            .addGap(139, 139, 139)
-                            .addComponent(playerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(playerTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(2093, Short.MAX_VALUE))
-                        .addGroup(GroupLayout.Alignment.TRAILING, rollPanelLayout.createSequentialGroup()
-                            .addContainerGap(1233, Short.MAX_VALUE)
                             .addGroup(rollPanelLayout.createParallelGroup()
-                                .addGroup(GroupLayout.Alignment.TRAILING, rollPanelLayout.createSequentialGroup()
+                                .addGroup(rollPanelLayout.createSequentialGroup()
+                                    .addGap(139, 139, 139)
+                                    .addComponent(playerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(playerTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(rollPanelLayout.createSequentialGroup()
+                                    .addGap(759, 759, 759)
                                     .addGroup(rollPanelLayout.createParallelGroup()
                                         .addComponent(diceRollTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(diceLabel, GroupLayout.PREFERRED_SIZE, 480, GroupLayout.PREFERRED_SIZE)
@@ -122,11 +125,12 @@ public class RollForm {
                                             .addComponent(positionTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(positionIDTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(687, 687, 687))
-                                .addGroup(GroupLayout.Alignment.TRAILING, rollPanelLayout.createSequentialGroup()
-                                    .addComponent(okButton)
-                                    .addGap(78, 78, 78))))
+                                        .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                            .addContainerGap(1246, Short.MAX_VALUE))
+                        .addGroup(GroupLayout.Alignment.TRAILING, rollPanelLayout.createSequentialGroup()
+                            .addGap(0, 1733, Short.MAX_VALUE)
+                            .addComponent(okButton)
+                            .addGap(674, 674, 674))
                 );
                 rollPanelLayout.setVerticalGroup(
                     rollPanelLayout.createParallelGroup()
@@ -135,19 +139,20 @@ public class RollForm {
                             .addGroup(rollPanelLayout.createParallelGroup()
                                 .addComponent(playerTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(playerTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                            .addGap(106, 106, 106)
+                            .addGap(110, 110, 110)
                             .addComponent(diceLabel, GroupLayout.PREFERRED_SIZE, 254, GroupLayout.PREFERRED_SIZE)
-                            .addGap(33, 33, 33)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(diceRollTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(71, 71, 71)
                             .addGroup(rollPanelLayout.createParallelGroup()
-                                .addComponent(positionTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(rollPanelLayout.createSequentialGroup()
+                                    .addComponent(positionTextArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addComponent(positionIDTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(positionNameTextPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 443, Short.MAX_VALUE)
+                            .addGap(133, 133, 133)
                             .addComponent(okButton)
-                            .addGap(90, 90, 90))
+                            .addContainerGap(1048, Short.MAX_VALUE))
                 );
             }
             rollScrollPane.setViewportView(rollPanel);
@@ -210,6 +215,18 @@ public class RollForm {
         }
         this.givenFrame.revalidate();
         this.givenFrame.repaint();
+    }
+
+    private void manageScrollBar() {
+        // Let JScrollPane take up all available space
+        this.givenFrame.setLayout(new BorderLayout());
+        this.givenFrame.add(this.rollScrollPane, BorderLayout.CENTER);
+
+        // Disable scrollbars at native resolution
+        if (GameFrame.screenSize.equals(SettingsFrame.NATIVE_RES)) {
+            this.rollScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+            this.rollScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        }
     }
 
     private void initialize(Player player) {

@@ -216,13 +216,6 @@ public class MainForm {
             }
             Player player = game.setFirstPlayer(players);
 
-            // Default behaviour if settings page is not visited
-            if (RollFrame.screenSize == null && GameFrame.screenSize == null) {
-                Dimension defaultRes = Toolkit.getDefaultToolkit().getScreenSize();
-                RollFrame.screenSize = defaultRes;
-                GameFrame.screenSize = defaultRes;
-            }
-
             RollFrame rollFrame = new RollFrame(player, players, contracts);
             rollFrame.setVisible(true);
             this.givenFrame.dispose();

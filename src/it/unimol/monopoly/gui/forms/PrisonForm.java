@@ -27,7 +27,9 @@ public class PrisonForm {
     public PrisonForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         this.givenFrame = myFrame;
         initComponents();
-        autoResize();
+        if (GameFrame.scalingFactor == 2)
+            autoResize();
+        manageScrollBar();
         spawnPlayer(player);
 
         this.freeExitButton.addActionListener(
@@ -552,6 +554,18 @@ public class PrisonForm {
         this.givenFrame.repaint();
     }
 
+    private void manageScrollBar() {
+        // Let JScrollPane take up all available space
+        this.givenFrame.setLayout(new BorderLayout());
+        this.givenFrame.add(this.prisonScrollPane, BorderLayout.CENTER);
+
+        // Disable scrollbars at native resolution
+        if (GameFrame.screenSize.equals(SettingsFrame.NATIVE_RES)) {
+            this.prisonScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+            this.prisonScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        }
+    }
+
     private void spawnPlayer(Player player) {
         PositionManager positions = PositionManager.getInstance();
 
@@ -574,7 +588,7 @@ public class PrisonForm {
         this.positionTextPane.setText(positions.getPositions().get(player.getPosition()).getName());
 
         // Box illumination
-        if (GameFrame.screenSize.equals(SettingsFrame.DEFAULT_RES))
+        if (GameFrame.scalingFactor == 1)
             this.setBoxLight();
     }
 

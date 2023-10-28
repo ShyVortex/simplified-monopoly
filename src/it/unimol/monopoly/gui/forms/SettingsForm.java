@@ -1,5 +1,6 @@
 package it.unimol.monopoly.gui.forms;
 
+import it.unimol.monopoly.exceptions.NoScalingMethodException;
 import it.unimol.monopoly.exceptions.NoVideoModeException;
 import it.unimol.monopoly.exceptions.UnsupportedResException;
 import it.unimol.monopoly.gui.frames.GameFrame;
@@ -15,14 +16,13 @@ public class SettingsForm {
     private JButton applyButton;
     private JComboBox videoBox;
     private JComboBox resolutionBox;
-    private JLabel videoLabel;
-    private JLabel resLabel;
     private JPanel mainPanel;
     private JButton AR_43_Button;
     private JButton AR_1610_Button;
     private JButton AR_169_Button;
+    private JComboBox scalingBox;
     private JFrame givenFrame;
-    private boolean fullscreen;
+    private boolean borderless;
     private short aspectRatio;
 
     public JPanel getMainPanel() {
@@ -31,13 +31,20 @@ public class SettingsForm {
 
     public SettingsForm(JFrame myFrame) {
         this.givenFrame = myFrame;
-        this.videoBox.addItem("Select Video Mode");
+        this.videoBox.addItem("");
         this.videoBox.addItem("Windowed");
         this.videoBox.addItem("Borderless");
         this.resolutionBox.addItem("Auto");
+        this.scalingBox.addItem("");
+        this.scalingBox.addItem("Zoom In");
+        this.scalingBox.addItem("Linear");
 
         this.videoBox.addActionListener(
-                actionEvent -> handleVideoSettings()
+                actionEvent -> handleVideoMode()
+        );
+
+        this.scalingBox.addActionListener(
+                actionEvent -> handleScalingMethod()
         );
 
         this.cancelButton.addActionListener(
@@ -70,14 +77,14 @@ public class SettingsForm {
         );
     }
 
-    public void handleVideoSettings() {
-        this.videoBox.removeItem("Select Video Mode");
+    public void handleVideoMode() {
+        this.videoBox.removeItem("");
         String selectedInput = Objects.requireNonNull(this.videoBox.getSelectedItem()).toString();
 
         if (selectedInput.equals("Windowed"))
-            this.fullscreen = false;
+            this.borderless = false;
         else // equals("Borderless")
-            this.fullscreen = true;
+            this.borderless = true;
     }
 
     public void handleResolutions() {
@@ -128,28 +135,45 @@ public class SettingsForm {
         }
     }
 
+    public void handleScalingMethod() {
+        this.scalingBox.removeItem("");
+
+        String selectedInput = Objects.requireNonNull(this.scalingBox.getSelectedItem()).toString();
+
+        if (selectedInput.equals("Zoom In"))
+            GameFrame.scalingFactor = 1;
+        else
+            GameFrame.scalingFactor = 2;
+    }
+
     public void handleApply() {
-        String breakable = Objects.requireNonNull(this.videoBox.getSelectedItem()).toString();
+        String vidBreakable = Objects.requireNonNull(this.videoBox.getSelectedItem()).toString();
+        String scaleBreakable = this.scalingBox.getSelectedItem().toString();
         try {
-            if (breakable.equals("Select Video Mode"))
+            if (vidBreakable.isEmpty())
                 throw new NoVideoModeException();
+            if (scaleBreakable.isEmpty())
+                throw new NoScalingMethodException();
 
-            if (fullscreen) {
+            if (borderless) {
+                RollFrame.displayValue = 1;
                 GameFrame.displayValue = 1;
-            } else
+            } else {
+                RollFrame.displayValue = 0;
                 GameFrame.displayValue = 0;
+            }
 
-            String selectedInput = Objects.requireNonNull(this.resolutionBox.getSelectedItem()).toString();
+            String videoInput = Objects.requireNonNull(this.resolutionBox.getSelectedItem()).toString();
             Dimension resolution;
             Dimension maxDisplaySize = Toolkit.getDefaultToolkit().getScreenSize();
             int maxWidth = maxDisplaySize.width;
             int maxHeight = maxDisplaySize.height;
 
             try {
-                if (selectedInput.equals("Auto")) {
+                if (videoInput.equals("Auto")) {
                     resolution = maxDisplaySize;
                 } else {
-                    String[] input = selectedInput.split("x");
+                    String[] input = videoInput.split("x");
                     int[] convertedInput = new int[2];
                     convertedInput[0] = Integer.parseInt(input[0]);
                     convertedInput[1] = Integer.parseInt(input[1]);
@@ -157,6 +181,16 @@ public class SettingsForm {
 
                     if (resolution.width > maxWidth || resolution.height > maxHeight)
                         throw new UnsupportedResException();
+                }
+                if (resolution.equals(SettingsFrame.NATIVE_RES)) {
+                    GameFrame.scalingFactor = 2;
+
+                    JOptionPane.showMessageDialog(
+                            this.givenFrame,
+                            "You have selected your monitor's native resolution. Scaling has been disabled.",
+                            "WARNING: Scaling not supported",
+                            JOptionPane.WARNING_MESSAGE
+                    );
                 }
 
                 if (!resolution.equals(SettingsFrame.DEFAULT_RES)) {
@@ -181,12 +215,18 @@ public class SettingsForm {
                         JOptionPane.ERROR_MESSAGE
                 );
             }
-
         } catch (NoVideoModeException novme) {
             JOptionPane.showMessageDialog(
                     this.givenFrame,
                     "You didn't select a video mode.",
                     "ERROR: No Video Mode",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        } catch (NoScalingMethodException nosme) {
+            JOptionPane.showMessageDialog(
+                    this.givenFrame,
+                    "You didn't select a scaling method.",
+                    "ERROR: No Scaling Method",
                     JOptionPane.ERROR_MESSAGE
             );
         }
