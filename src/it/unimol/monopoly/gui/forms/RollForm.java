@@ -38,6 +38,8 @@ public class RollForm {
         messageFrame = this.givenFrame;
         if (GameFrame.scalingFactor == 2)
             autoResize();
+        else
+            applyResolution();
         this.givenFrame.add(this.rollScrollPane);
         initialize(player);
         elaboratePosition(player);
@@ -189,15 +191,24 @@ public class RollForm {
         return rollScrollPane;
     }
 
+    private void applyResolution() {
+        Dimension resolution = GameFrame.screenSize;
+        this.rollScrollPane.setSize(resolution);
+        this.rollScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.rollPanel.setSize(resolution);
+        this.rollPanel.setPreferredSize(SettingsFrame.NATIVE_RES);
+        refreshGUI();
+    }
+
     private void autoResize() {
         Dimension defaultRes = SettingsFrame.DEFAULT_RES;
         Dimension resolution = RollFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
         this.rollScrollPane.setSize(resolution);
-        this.rollScrollPane.setPreferredSize(resolution);
+        this.rollScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
         this.rollPanel.setSize(resolution);
-        this.rollPanel.setPreferredSize(resolution);
+        this.rollPanel.setPreferredSize(SettingsFrame.NATIVE_RES);
         for (Component comp : this.rollPanel.getComponents()) {
             int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
             int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);

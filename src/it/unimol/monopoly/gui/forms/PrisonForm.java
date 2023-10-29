@@ -34,6 +34,8 @@ public class PrisonForm {
         this.givenFrame = myFrame;
         if (GameFrame.scalingFactor == 2)
             autoResize();
+        else
+            applyResolution();
         this.givenFrame.add(this.prisonScrollPane);
         spawnPlayer(player);
         checkResizing();
@@ -529,15 +531,24 @@ public class PrisonForm {
         return prisonScrollPane;
     }
 
+    private void applyResolution() {
+        Dimension resolution = GameFrame.screenSize;
+        this.prisonScrollPane.setSize(resolution);
+        this.prisonScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.prisonPanel.setSize(resolution);
+        this.prisonPanel.setPreferredSize(SettingsFrame.NATIVE_RES);
+        refreshGUI();
+    }
+
     private void autoResize() {
         Dimension defaultRes = SettingsFrame.DEFAULT_RES;
         Dimension resolution = GameFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
         this.prisonScrollPane.setSize(resolution);
-        this.prisonScrollPane.setPreferredSize(resolution);
+        this.prisonScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
         this.prisonPanel.setSize(resolution);
-        this.prisonPanel.setPreferredSize(resolution);
+        this.prisonPanel.setPreferredSize(SettingsFrame.NATIVE_RES);
         for (Component comp : this.prisonPanel.getComponents()) {
             int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
             int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
