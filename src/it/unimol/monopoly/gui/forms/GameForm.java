@@ -12,6 +12,8 @@ import it.unimol.monopoly.threads.Countdown;
 import it.unimol.monopoly.threads.StoppableThread;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -33,14 +35,28 @@ public class GameForm {
     private StoppableThread refreshProcess;
     private StoppableThread textUpdater;
     private StoppableThread turnChanger;
+    private StoppableThread resizingChecker;
+    private Action exitAction;
 
     public GameForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
-        this.givenFrame = myFrame;
         initComponents();
+        this.givenFrame = myFrame;
         if (GameFrame.scalingFactor == 2)
             autoResize();
-        manageScrollBar();
+        else
+            applyResolution();
+        this.givenFrame.add(this.gameScrollPane);
         spawnPlayer(player, players, contracts);
+        checkResizing();
+
+        // Allows to quit the game by using a custom shortcut instead of a mouse click
+        exitAction = new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleQuitButton(players, contracts);
+            }
+        };
+        bindKeyToQuit();
 
         this.contractButton.addActionListener(
                 actionEvent -> handleContractButton(player, contracts, players)
@@ -550,13 +566,24 @@ public class GameForm {
         return gameScrollPane;
     }
 
+    private void applyResolution() {
+        Dimension resolution = GameFrame.screenSize;
+        this.gameScrollPane.setSize(resolution);
+        this.gameScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.gamePanel.setSize(resolution);
+        this.gamePanel.setPreferredSize(SettingsFrame.NATIVE_RES);
+        refreshGUI();
+    }
+
     private void autoResize() {
         Dimension defaultRes = SettingsFrame.DEFAULT_RES;
         Dimension resolution = GameFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
+        this.gameScrollPane.setSize(resolution);
+        this.gameScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
         this.gamePanel.setSize(resolution);
-        this.gamePanel.setPreferredSize(resolution);
+        this.gamePanel.setPreferredSize(SettingsFrame.NATIVE_RES);
         for (Component comp : this.gamePanel.getComponents()) {
             int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
             int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
@@ -586,25 +613,33 @@ public class GameForm {
                 }
             }
         }
-        this.givenFrame.revalidate();
-        this.givenFrame.repaint();
+        refreshGUI();
     }
 
-    private void manageScrollBar() {
-        // Let JScrollPane take up all available space
-        this.givenFrame.setLayout(new BorderLayout());
-        this.givenFrame.add(this.gameScrollPane, BorderLayout.CENTER);
+    private void enableScrollBar() {
+        this.gameScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        this.gameScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    }
 
-        // Disable scrollbars at native resolution
-        if (GameFrame.screenSize.equals(SettingsFrame.NATIVE_RES)) {
-            this.gameScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-            this.gameScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        }
+    private void disableScrollBar() {
+        this.gameScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        this.gameScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+    }
+
+    private void checkResizing() {
+        this.resizingChecker = new StoppableThread(() -> {
+            while (timer.isRunning()) {
+                if (this.givenFrame.getWidth() != SettingsFrame.NATIVE_RES.width &&
+                    this.givenFrame.getHeight() != SettingsFrame.NATIVE_RES.height)
+                        enableScrollBar();
+                else
+                    disableScrollBar();
+            }
+        });
+        this.resizingChecker.start();
     }
 
     private void spawnPlayer(Player player, PlayerManager players, ContractManager contracts) {
-        PositionManager positions = PositionManager.getInstance();
-
         // Icon generation
         ImageIcon pawnShape = player.getPawn().getShape();
         assert pawnShape != null;
@@ -625,7 +660,7 @@ public class GameForm {
         updateTimer(player, players, contracts);
 
         // Box illumination
-        if (GameFrame.screenSize.equals(SettingsFrame.DEFAULT_RES) || GameFrame.scalingFactor == 1)
+        if (GameFrame.scalingFactor == 1)
             this.setBoxLight(player);
     }
 
@@ -636,6 +671,21 @@ public class GameForm {
 
         LightsUI lights = LightsUI.getInstance();
         lights.setPositionLight(this, positionName);
+    }
+
+    private void refreshGUI() {
+        this.givenFrame.revalidate();
+        this.givenFrame.repaint();
+        this.gameScrollPane.revalidate();
+        this.gameScrollPane.repaint();
+        this.gamePanel.revalidate();
+        this.gamePanel.repaint();
+    }
+
+    private void bindKeyToQuit() {
+        this.quitButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "clickQuit");
+        this.quitButton.getActionMap().put("clickQuit", exitAction);
     }
 
     private void handleContractButton(Player player, ContractManager contracts, PlayerManager players) {
@@ -661,16 +711,13 @@ public class GameForm {
         this.timer = new Countdown();
         timer.start(timer);
 
-        this.textUpdater = new StoppableThread(new Runnable() {
-            @Override
-            public void run() {
-                while (timer.isRunning()) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ignored) {}
-                    remainingTime--;
-                    timerTextPane.setText(Integer.toString(remainingTime));
-                }
+        this.textUpdater = new StoppableThread(() -> {
+            while (timer.isRunning()) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ignored) {}
+                remainingTime--;
+                timerTextPane.setText(Integer.toString(remainingTime));
             }
         });
         textUpdater.start(textUpdater);
@@ -687,15 +734,12 @@ public class GameForm {
     }
 
     public void refresh(Player player, PlayerManager players) {
-        this.refreshProcess = new StoppableThread(new Runnable() {
-            @Override
-            public void run() {
-                updateBank(player);
-                updateContracts(player);
-                updateLight(player);
-                checkGameOver(players);
-                refreshProcess.stop(refreshProcess);
-            }
+        this.refreshProcess = new StoppableThread(() -> {
+            updateBank(player);
+            updateContracts(player);
+            updateLight(player);
+            checkGameOver(players);
+            refreshProcess.stop(refreshProcess);
         });
 
         refreshProcess.start(refreshProcess);
@@ -733,6 +777,7 @@ public class GameForm {
         this.timer.stop(timer);
         this.textUpdater.stop(textUpdater);
         this.turnChanger.stop(turnChanger);
+        this.resizingChecker.stop(resizingChecker);
 
         player.setPrisoner(true);
         player.setPosition(PRISON);
@@ -758,6 +803,7 @@ public class GameForm {
         this.timer.stop(timer);
         this.textUpdater.stop(textUpdater);
         this.turnChanger.stop(turnChanger);
+        this.resizingChecker.stop(resizingChecker);
 
         if (!newPlayer.isPrisoner()) {
             RollFrame rollFrame = new RollFrame(newPlayer, players, contracts);
@@ -821,23 +867,20 @@ public class GameForm {
     }
 
     private void handleNoTimeLeft(Countdown timer, Player player, PlayerManager players, ContractManager contracts) {
-        this.turnChanger = new StoppableThread(new Runnable() {
-            @Override
-            public void run() {
-                while (timer.isRunning()) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException ignored) {}
-                }
-                if (timer.isJobCompleted()) {
-                    JOptionPane.showMessageDialog(
-                            givenFrame,
-                            "You have run out of time.",
-                            "INFO: Turn time exceeded",
-                            JOptionPane.ERROR_MESSAGE
-                    );
-                    elapsedTurnChange(player, players, contracts);
-                }
+        this.turnChanger = new StoppableThread(() -> {
+            while (timer.isRunning()) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ignored) {}
+            }
+            if (timer.isJobCompleted()) {
+                JOptionPane.showMessageDialog(
+                        givenFrame,
+                        "You have run out of time.",
+                        "INFO: Turn time exceeded",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                elapsedTurnChange(player, players, contracts);
             }
         });
         turnChanger.start(turnChanger);
@@ -854,6 +897,7 @@ public class GameForm {
         this.timer.stop(timer);
         this.textUpdater.stop(textUpdater);
         this.turnChanger.stop(turnChanger);
+        this.resizingChecker.stop(resizingChecker);
 
         // Changing window
         if (!newPlayer.isPrisoner()) {
@@ -891,6 +935,7 @@ public class GameForm {
             this.timer.stop(timer);
             this.textUpdater.stop(textUpdater);
             this.turnChanger.stop(turnChanger);
+            this.resizingChecker.stop(resizingChecker);
 
             assert winner != null;
             EndFrame endFrame = new EndFrame(winner);

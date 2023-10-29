@@ -21,10 +21,9 @@ public class RollFrame extends JFrame {
     public RollFrame(Player player, PlayerManager players, ContractManager contracts) {
         super();
 
-        //pack();
         this.setSize(screenSize);
         this.setTitle("Monopoly - Initialization");
-        this.setResizable(false);
+        this.setResizable(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //              Borderless               //

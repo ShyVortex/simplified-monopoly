@@ -1,12 +1,11 @@
 package it.unimol.monopoly;
 
+import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
 import it.unimol.monopoly.gui.frames.MainFrame;
 
 public class Main {
     public static void main(String[] args) {
-       /* try {
-            javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
-        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException ignored) {} */
+        FlatArcOrangeIJTheme.setup();
         MainFrame window = new MainFrame();
         window.setVisible(true);
     }

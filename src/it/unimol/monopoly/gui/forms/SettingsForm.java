@@ -148,11 +148,25 @@ public class SettingsForm {
 
     public void handleApply() {
         String vidBreakable = Objects.requireNonNull(this.videoBox.getSelectedItem()).toString();
-        String scaleBreakable = this.scalingBox.getSelectedItem().toString();
+        String resBreakable = Objects.requireNonNull(this.resolutionBox.getSelectedItem()).toString();
+        String scaleBreakable = Objects.requireNonNull(this.scalingBox.getSelectedItem()).toString();
+
+        String[] input = new String[2];
+        if (!resBreakable.equals("Auto"))
+            input = resBreakable.split("x");
+        else {
+            input[0] = String.valueOf(SettingsFrame.NATIVE_RES.width);
+            input[1] = String.valueOf(SettingsFrame.NATIVE_RES.height);
+        }
+        int[] convertedInput = new int[2];
+        convertedInput[0] = Integer.parseInt(input[0]);
+        convertedInput[1] = Integer.parseInt(input[1]);
+        Dimension resolution = new Dimension(convertedInput[0], convertedInput[1]);
+
         try {
             if (vidBreakable.isEmpty())
                 throw new NoVideoModeException();
-            if (scaleBreakable.isEmpty())
+            if (scaleBreakable.isEmpty() && !resolution.equals(SettingsFrame.NATIVE_RES))
                 throw new NoScalingMethodException();
 
             if (borderless) {
@@ -164,7 +178,6 @@ public class SettingsForm {
             }
 
             String videoInput = Objects.requireNonNull(this.resolutionBox.getSelectedItem()).toString();
-            Dimension resolution;
             Dimension maxDisplaySize = Toolkit.getDefaultToolkit().getScreenSize();
             int maxWidth = maxDisplaySize.width;
             int maxHeight = maxDisplaySize.height;
@@ -173,17 +186,11 @@ public class SettingsForm {
                 if (videoInput.equals("Auto")) {
                     resolution = maxDisplaySize;
                 } else {
-                    String[] input = videoInput.split("x");
-                    int[] convertedInput = new int[2];
-                    convertedInput[0] = Integer.parseInt(input[0]);
-                    convertedInput[1] = Integer.parseInt(input[1]);
-                    resolution = new Dimension(convertedInput[0], convertedInput[1]);
-
                     if (resolution.width > maxWidth || resolution.height > maxHeight)
                         throw new UnsupportedResException();
                 }
                 if (resolution.equals(SettingsFrame.NATIVE_RES)) {
-                    GameFrame.scalingFactor = 2;
+                    GameFrame.scalingFactor = 1;
 
                     JOptionPane.showMessageDialog(
                             this.givenFrame,

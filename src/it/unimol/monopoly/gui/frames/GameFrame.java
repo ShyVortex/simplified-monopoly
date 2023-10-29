@@ -18,7 +18,7 @@ public class GameFrame extends JFrame {
     private PrisonForm prisonForm;
     private Image icon;
     public static short displayValue;
-    public static short scalingFactor = 2;
+    public static short scalingFactor = 1;
     public static Dimension screenSize = SettingsFrame.NATIVE_RES;
 
     public GameFrame(Player player, PlayerManager players, ContractManager contracts) {

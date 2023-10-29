@@ -9,8 +9,11 @@ import it.unimol.monopoly.gui.LightsUI;
 import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
 import it.unimol.monopoly.gui.frames.SettingsFrame;
+import it.unimol.monopoly.threads.StoppableThread;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -23,14 +26,26 @@ import javax.swing.GroupLayout;
 public class PrisonForm {
     private JFrame givenFrame;
     private boolean poorSkip;
+    private Action exitAction;
+    private StoppableThread resizingChecker;
 
     public PrisonForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
-        this.givenFrame = myFrame;
         initComponents();
+        this.givenFrame = myFrame;
         if (GameFrame.scalingFactor == 2)
             autoResize();
-        manageScrollBar();
+        this.givenFrame.add(this.prisonScrollPane);
         spawnPlayer(player);
+        checkResizing();
+
+        // Allows to quit the game by using a custom shortcut instead of a mouse click
+        exitAction = new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleQuit(players, contracts);
+            }
+        };
+        bindKeyToQuit();
 
         this.freeExitButton.addActionListener(
                 actionEvent -> handleFreeExit(player, players, contracts)
@@ -519,6 +534,8 @@ public class PrisonForm {
         Dimension resolution = GameFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
+        this.prisonScrollPane.setSize(resolution);
+        this.prisonScrollPane.setPreferredSize(resolution);
         this.prisonPanel.setSize(resolution);
         this.prisonPanel.setPreferredSize(resolution);
         for (Component comp : this.prisonPanel.getComponents()) {
@@ -550,20 +567,30 @@ public class PrisonForm {
                 }
             }
         }
-        this.givenFrame.revalidate();
-        this.givenFrame.repaint();
+        refreshGUI();
     }
 
-    private void manageScrollBar() {
-        // Let JScrollPane take up all available space
-        this.givenFrame.setLayout(new BorderLayout());
-        this.givenFrame.add(this.prisonScrollPane, BorderLayout.CENTER);
+    private void enableScrollBar() {
+        this.prisonScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        this.prisonScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    }
 
-        // Disable scrollbars at native resolution
-        if (GameFrame.screenSize.equals(SettingsFrame.NATIVE_RES)) {
-            this.prisonScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-            this.prisonScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        }
+    private void disableScrollBar() {
+        this.prisonScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        this.prisonScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+    }
+
+    private void checkResizing() {
+        this.resizingChecker = new StoppableThread(() -> {
+            while (true) {
+                if (this.givenFrame.getWidth() != SettingsFrame.NATIVE_RES.width &&
+                        this.givenFrame.getHeight() != SettingsFrame.NATIVE_RES.height)
+                    enableScrollBar();
+                else
+                    disableScrollBar();
+            }
+        });
+        this.resizingChecker.start();
     }
 
     private void spawnPlayer(Player player) {
@@ -597,6 +624,21 @@ public class PrisonForm {
         lights.setPrisonLight(this);
     }
 
+    private void refreshGUI() {
+        this.givenFrame.revalidate();
+        this.givenFrame.repaint();
+        this.prisonScrollPane.revalidate();
+        this.prisonScrollPane.repaint();
+        this.prisonPanel.revalidate();
+        this.prisonPanel.repaint();
+    }
+
+    private void bindKeyToQuit() {
+        this.quitButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false), "clickQuit");
+        this.quitButton.getActionMap().put("clickQuit", exitAction);
+    }
+
     private void handleFreeExit(Player player, PlayerManager players, ContractManager contracts) {
         Prison prison = Prison.getInstance();
         prison.freeExit(player);
@@ -606,6 +648,7 @@ public class PrisonForm {
                 "INFO: Free exit",
                 JOptionPane.INFORMATION_MESSAGE
         );
+        this.resizingChecker.stop(resizingChecker);
 
         GameForm gameForm = new GameForm(this.givenFrame, player, players, contracts);
         this.givenFrame.setContentPane(gameForm.getGameScrollPane());
@@ -624,6 +667,7 @@ public class PrisonForm {
                     "INFO: Paid exit",
                     JOptionPane.INFORMATION_MESSAGE
             );
+            this.resizingChecker.stop(resizingChecker);
 
             GameForm gameForm = new GameForm(this.givenFrame, player, players, contracts);
             this.givenFrame.setContentPane(gameForm.getGameScrollPane());
@@ -656,6 +700,7 @@ public class PrisonForm {
         }
 
         Player changePlayer = players.changePlayer(Turn.playerId);
+        this.resizingChecker.stop(resizingChecker);
         if (!changePlayer.isPrisoner()) {
             RollFrame rollFrame = new RollFrame(changePlayer, players, contracts);
             this.givenFrame.dispose();

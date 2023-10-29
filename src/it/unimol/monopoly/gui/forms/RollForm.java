@@ -8,8 +8,10 @@ import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
 import it.unimol.monopoly.gui.frames.SettingsFrame;
+import it.unimol.monopoly.threads.StoppableThread;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -22,15 +24,25 @@ public class RollForm {
     private static JFrame messageFrame;
     private static boolean skipMessage;
     public static boolean wentDownStart;
+    private StoppableThread resizingChecker;
+    private Action buttonClickAction = new AbstractAction() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            okButton.doClick();
+        }
+    };
+
     public RollForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         initComponents();
         this.givenFrame = myFrame;
         messageFrame = this.givenFrame;
         if (GameFrame.scalingFactor == 2)
             autoResize();
-        manageScrollBar();
+        this.givenFrame.add(this.rollScrollPane);
         initialize(player);
         elaboratePosition(player);
+        bindKeyToButton();
+        checkResizing();
 
         this.okButton.addActionListener(
                 actionEvent -> handleOK(player, players, contracts)
@@ -182,6 +194,8 @@ public class RollForm {
         Dimension resolution = RollFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
+        this.rollScrollPane.setSize(resolution);
+        this.rollScrollPane.setPreferredSize(resolution);
         this.rollPanel.setSize(resolution);
         this.rollPanel.setPreferredSize(resolution);
         for (Component comp : this.rollPanel.getComponents()) {
@@ -213,20 +227,30 @@ public class RollForm {
                 }
             }
         }
-        this.givenFrame.revalidate();
-        this.givenFrame.repaint();
+        refreshGUI();
     }
 
-    private void manageScrollBar() {
-        // Let JScrollPane take up all available space
-        this.givenFrame.setLayout(new BorderLayout());
-        this.givenFrame.add(this.rollScrollPane, BorderLayout.CENTER);
+    private void enableScrollBar() {
+        this.rollScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        this.rollScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    }
 
-        // Disable scrollbars at native resolution
-        if (GameFrame.screenSize.equals(SettingsFrame.NATIVE_RES)) {
-            this.rollScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-            this.rollScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        }
+    private void disableScrollBar() {
+        this.rollScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        this.rollScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+    }
+
+    private void checkResizing() {
+        this.resizingChecker = new StoppableThread(() -> {
+            while (true) {
+                if (this.givenFrame.getWidth() != SettingsFrame.NATIVE_RES.width &&
+                        this.givenFrame.getHeight() != SettingsFrame.NATIVE_RES.height)
+                    enableScrollBar();
+                else
+                    disableScrollBar();
+            }
+        });
+        this.resizingChecker.start();
     }
 
     private void initialize(Player player) {
@@ -255,6 +279,21 @@ public class RollForm {
             this.positionIDTextPane.setText(Integer.toString(player.getPosition()));
             this.positionNameTextPane.setText(posizioni.getPositions().get(player.getPosition()).getName());
         }
+    }
+
+    private void refreshGUI() {
+        this.givenFrame.revalidate();
+        this.givenFrame.repaint();
+        this.rollScrollPane.revalidate();
+        this.rollScrollPane.repaint();
+        this.rollPanel.revalidate();
+        this.rollPanel.repaint();
+    }
+
+    private void bindKeyToButton() {
+        this.okButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0, false), "pressed");
+        this.okButton.getActionMap().put("pressed", buttonClickAction);
     }
 
     public static void goMessage() {
@@ -288,6 +327,7 @@ public class RollForm {
             );
             player.setPosition(PRISON);
         }
+        this.resizingChecker.stop(resizingChecker);
 
         GameFrame gameFrame = new GameFrame(player, giocatori, contratti);
         gameFrame.setVisible(true);
