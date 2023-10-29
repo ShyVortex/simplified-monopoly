@@ -8,7 +8,6 @@ import it.unimol.monopoly.gui.forms.FeeForm;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 

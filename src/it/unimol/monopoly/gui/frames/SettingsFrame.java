@@ -11,8 +11,6 @@ import java.net.URL;
 public class SettingsFrame extends JFrame {
     private SettingsForm settingsForm;
     private Image icon;
-    public static final Dimension DEFAULT_RES = new Dimension(1920, 1080);
-    public static final Dimension NATIVE_RES = Toolkit.getDefaultToolkit().getScreenSize();
 
     public SettingsFrame() {
         super();

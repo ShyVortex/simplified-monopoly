@@ -8,7 +8,7 @@ import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.gui.LightsUI;
 import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
-import it.unimol.monopoly.gui.frames.SettingsFrame;
+import it.unimol.monopoly.gui.frames.settings.FrameProperties;
 import it.unimol.monopoly.threads.StoppableThread;
 
 import java.awt.*;
@@ -16,7 +16,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -32,13 +31,14 @@ public class PrisonForm {
     public PrisonForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         initComponents();
         this.givenFrame = myFrame;
-        if (GameFrame.scalingFactor == 2)
+        if (FrameProperties.scalingFactor == 2)
             autoResize();
         else
             applyResolution();
         this.givenFrame.add(this.prisonScrollPane);
         spawnPlayer(player);
-        checkResizing();
+        if (FrameProperties.allowResizable)
+            checkResizing();
 
         // Allows to quit the game by using a custom shortcut instead of a mouse click
         exitAction = new AbstractAction() {
@@ -534,21 +534,21 @@ public class PrisonForm {
     private void applyResolution() {
         Dimension resolution = GameFrame.screenSize;
         this.prisonScrollPane.setSize(resolution);
-        this.prisonScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.prisonScrollPane.setPreferredSize(FrameProperties.NATIVE_RES);
         this.prisonPanel.setSize(resolution);
-        this.prisonPanel.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.prisonPanel.setPreferredSize(FrameProperties.NATIVE_RES);
         refreshGUI();
     }
 
     private void autoResize() {
-        Dimension defaultRes = SettingsFrame.DEFAULT_RES;
+        Dimension defaultRes = FrameProperties.DEFAULT_RES;
         Dimension resolution = GameFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
         this.prisonScrollPane.setSize(resolution);
-        this.prisonScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.prisonScrollPane.setPreferredSize(FrameProperties.NATIVE_RES);
         this.prisonPanel.setSize(resolution);
-        this.prisonPanel.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.prisonPanel.setPreferredSize(FrameProperties.NATIVE_RES);
         for (Component comp : this.prisonPanel.getComponents()) {
             int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
             int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
@@ -594,8 +594,8 @@ public class PrisonForm {
     private void checkResizing() {
         this.resizingChecker = new StoppableThread(() -> {
             while (true) {
-                if (this.givenFrame.getWidth() != SettingsFrame.NATIVE_RES.width &&
-                        this.givenFrame.getHeight() != SettingsFrame.NATIVE_RES.height)
+                if (this.givenFrame.getWidth() != FrameProperties.NATIVE_RES.width &&
+                        this.givenFrame.getHeight() != FrameProperties.NATIVE_RES.height)
                     enableScrollBar();
                 else
                     disableScrollBar();
@@ -608,9 +608,9 @@ public class PrisonForm {
         PositionManager positions = PositionManager.getInstance();
 
         // Generating icon
-        ImageIcon formaPedina = player.getPawn().getShape();
-        assert formaPedina != null;
-        this.pawnLabel.setIcon(formaPedina);
+        ImageIcon pawnShape = player.getPawn().getShape();
+        assert pawnShape != null;
+        this.pawnLabel.setIcon(pawnShape);
 
         // Setting turn text
         this.turnTextPane.setText(player.getName());
@@ -626,7 +626,7 @@ public class PrisonForm {
         this.positionTextPane.setText(positions.getPositions().get(player.getPosition()).getName());
 
         // Box illumination
-        if (GameFrame.scalingFactor == 1)
+        if (FrameProperties.scalingFactor == 1)
             this.setBoxLight();
     }
 
@@ -659,7 +659,8 @@ public class PrisonForm {
                 "INFO: Free exit",
                 JOptionPane.INFORMATION_MESSAGE
         );
-        this.resizingChecker.stop(resizingChecker);
+        if (this.resizingChecker != null)
+            this.resizingChecker.stop(resizingChecker);
 
         GameForm gameForm = new GameForm(this.givenFrame, player, players, contracts);
         this.givenFrame.setContentPane(gameForm.getGameScrollPane());
@@ -678,7 +679,8 @@ public class PrisonForm {
                     "INFO: Paid exit",
                     JOptionPane.INFORMATION_MESSAGE
             );
-            this.resizingChecker.stop(resizingChecker);
+            if (this.resizingChecker != null)
+                this.resizingChecker.stop(resizingChecker);
 
             GameForm gameForm = new GameForm(this.givenFrame, player, players, contracts);
             this.givenFrame.setContentPane(gameForm.getGameScrollPane());
@@ -711,7 +713,8 @@ public class PrisonForm {
         }
 
         Player changePlayer = players.changePlayer(Turn.playerId);
-        this.resizingChecker.stop(resizingChecker);
+        if (this.resizingChecker != null)
+            this.resizingChecker.stop(resizingChecker);
         if (!changePlayer.isPrisoner()) {
             RollFrame rollFrame = new RollFrame(changePlayer, players, contracts);
             this.givenFrame.dispose();

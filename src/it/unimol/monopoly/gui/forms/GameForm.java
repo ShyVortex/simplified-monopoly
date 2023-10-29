@@ -8,6 +8,7 @@ import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.app.Box;
 import it.unimol.monopoly.gui.LightsUI;
 import it.unimol.monopoly.gui.frames.*;
+import it.unimol.monopoly.gui.frames.settings.FrameProperties;
 import it.unimol.monopoly.threads.Countdown;
 import it.unimol.monopoly.threads.StoppableThread;
 
@@ -16,8 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.concurrent.atomic.AtomicBoolean;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -41,13 +40,14 @@ public class GameForm {
     public GameForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         initComponents();
         this.givenFrame = myFrame;
-        if (GameFrame.scalingFactor == 2)
+        if (FrameProperties.scalingFactor == 2)
             autoResize();
         else
             applyResolution();
         this.givenFrame.add(this.gameScrollPane);
         spawnPlayer(player, players, contracts);
-        checkResizing();
+        if (FrameProperties.allowResizable)
+            checkResizing();
 
         // Allows to quit the game by using a custom shortcut instead of a mouse click
         exitAction = new AbstractAction() {
@@ -569,21 +569,21 @@ public class GameForm {
     private void applyResolution() {
         Dimension resolution = GameFrame.screenSize;
         this.gameScrollPane.setSize(resolution);
-        this.gameScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.gameScrollPane.setPreferredSize(FrameProperties.NATIVE_RES);
         this.gamePanel.setSize(resolution);
-        this.gamePanel.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.gamePanel.setPreferredSize(FrameProperties.NATIVE_RES);
         refreshGUI();
     }
 
     private void autoResize() {
-        Dimension defaultRes = SettingsFrame.DEFAULT_RES;
+        Dimension defaultRes = FrameProperties.DEFAULT_RES;
         Dimension resolution = GameFrame.screenSize;
         double ratioX = (double) resolution.width / defaultRes.width;
         double ratioY = (double) resolution.height / defaultRes.height;
         this.gameScrollPane.setSize(resolution);
-        this.gameScrollPane.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.gameScrollPane.setPreferredSize(FrameProperties.NATIVE_RES);
         this.gamePanel.setSize(resolution);
-        this.gamePanel.setPreferredSize(SettingsFrame.NATIVE_RES);
+        this.gamePanel.setPreferredSize(FrameProperties.NATIVE_RES);
         for (Component comp : this.gamePanel.getComponents()) {
             int newSizeX = (int) Math.floor(comp.getWidth() * ratioX);
             int newSizeY = (int) Math.floor(comp.getHeight() * ratioY);
@@ -629,8 +629,8 @@ public class GameForm {
     private void checkResizing() {
         this.resizingChecker = new StoppableThread(() -> {
             while (timer.isRunning()) {
-                if (this.givenFrame.getWidth() != SettingsFrame.NATIVE_RES.width &&
-                    this.givenFrame.getHeight() != SettingsFrame.NATIVE_RES.height)
+                if (this.givenFrame.getWidth() != FrameProperties.NATIVE_RES.width &&
+                    this.givenFrame.getHeight() != FrameProperties.NATIVE_RES.height)
                         enableScrollBar();
                 else
                     disableScrollBar();
@@ -660,7 +660,7 @@ public class GameForm {
         updateTimer(player, players, contracts);
 
         // Box illumination
-        if (GameFrame.scalingFactor == 1)
+        if (FrameProperties.scalingFactor == 1)
             this.setBoxLight(player);
     }
 
@@ -777,7 +777,8 @@ public class GameForm {
         this.timer.stop(timer);
         this.textUpdater.stop(textUpdater);
         this.turnChanger.stop(turnChanger);
-        this.resizingChecker.stop(resizingChecker);
+        if (this.resizingChecker != null)
+            this.resizingChecker.stop(resizingChecker);
 
         player.setPrisoner(true);
         player.setPosition(PRISON);
@@ -803,7 +804,8 @@ public class GameForm {
         this.timer.stop(timer);
         this.textUpdater.stop(textUpdater);
         this.turnChanger.stop(turnChanger);
-        this.resizingChecker.stop(resizingChecker);
+        if (this.resizingChecker != null)
+            this.resizingChecker.stop(resizingChecker);
 
         if (!newPlayer.isPrisoner()) {
             RollFrame rollFrame = new RollFrame(newPlayer, players, contracts);
@@ -897,7 +899,8 @@ public class GameForm {
         this.timer.stop(timer);
         this.textUpdater.stop(textUpdater);
         this.turnChanger.stop(turnChanger);
-        this.resizingChecker.stop(resizingChecker);
+        if (this.resizingChecker != null)
+            this.resizingChecker.stop(resizingChecker);
 
         // Changing window
         if (!newPlayer.isPrisoner()) {
@@ -935,7 +938,8 @@ public class GameForm {
             this.timer.stop(timer);
             this.textUpdater.stop(textUpdater);
             this.turnChanger.stop(turnChanger);
-            this.resizingChecker.stop(resizingChecker);
+            if (this.resizingChecker != null)
+                this.resizingChecker.stop(resizingChecker);
 
             assert winner != null;
             EndFrame endFrame = new EndFrame(winner);

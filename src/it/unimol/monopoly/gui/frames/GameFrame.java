@@ -5,11 +5,11 @@ import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.app.Player;
 import it.unimol.monopoly.gui.forms.GameForm;
 import it.unimol.monopoly.gui.forms.PrisonForm;
+import it.unimol.monopoly.gui.frames.settings.FrameProperties;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -17,20 +17,18 @@ public class GameFrame extends JFrame {
     private GameForm gameForm;
     private PrisonForm prisonForm;
     private Image icon;
-    public static short displayValue;
-    public static short scalingFactor = 1;
-    public static Dimension screenSize = SettingsFrame.NATIVE_RES;
+    public static Dimension screenSize = FrameProperties.NATIVE_RES;
 
     public GameFrame(Player player, PlayerManager players, ContractManager contracts) {
         super();
 
         this.setSize(screenSize);
         this.setTitle("MonopolyGame");
-        this.setResizable(true);
+        this.setResizable(FrameProperties.allowResizable);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //              Borderless               //
-        if (displayValue == 1)
+        if (FrameProperties.displayValue == 1)
             this.setUndecorated(true);
         ////////////////////////////////////////////
 

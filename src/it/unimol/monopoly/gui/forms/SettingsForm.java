@@ -5,7 +5,7 @@ import it.unimol.monopoly.exceptions.NoVideoModeException;
 import it.unimol.monopoly.exceptions.UnsupportedResException;
 import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
-import it.unimol.monopoly.gui.frames.SettingsFrame;
+import it.unimol.monopoly.gui.frames.settings.FrameProperties;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +21,8 @@ public class SettingsForm {
     private JButton AR_1610_Button;
     private JButton AR_169_Button;
     private JComboBox scalingBox;
+    private JButton OFFButton;
+    private JButton ONButton;
     private JFrame givenFrame;
     private boolean borderless;
     private short aspectRatio;
@@ -74,6 +76,14 @@ public class SettingsForm {
                     this.aspectRatio = 3;
                     handleResolutions();
                 }
+        );
+
+        this.OFFButton.addActionListener(
+                actionEvent -> FrameProperties.allowResizable = false
+        );
+
+        this.ONButton.addActionListener(
+                actionEvent -> FrameProperties.allowResizable = true
         );
     }
 
@@ -141,9 +151,9 @@ public class SettingsForm {
         String selectedInput = Objects.requireNonNull(this.scalingBox.getSelectedItem()).toString();
 
         if (selectedInput.equals("Zoom In"))
-            GameFrame.scalingFactor = 1;
+            FrameProperties.scalingFactor = 1;
         else
-            GameFrame.scalingFactor = 2;
+            FrameProperties.scalingFactor = 2;
     }
 
     public void handleApply() {
@@ -155,8 +165,8 @@ public class SettingsForm {
         if (!resBreakable.equals("Auto"))
             input = resBreakable.split("x");
         else {
-            input[0] = String.valueOf(SettingsFrame.NATIVE_RES.width);
-            input[1] = String.valueOf(SettingsFrame.NATIVE_RES.height);
+            input[0] = String.valueOf(FrameProperties.NATIVE_RES.width);
+            input[1] = String.valueOf(FrameProperties.NATIVE_RES.height);
         }
         int[] convertedInput = new int[2];
         convertedInput[0] = Integer.parseInt(input[0]);
@@ -166,16 +176,13 @@ public class SettingsForm {
         try {
             if (vidBreakable.isEmpty())
                 throw new NoVideoModeException();
-            if (scaleBreakable.isEmpty() && !resolution.equals(SettingsFrame.NATIVE_RES))
+            if (scaleBreakable.isEmpty() && !resolution.equals(FrameProperties.NATIVE_RES))
                 throw new NoScalingMethodException();
 
-            if (borderless) {
-                RollFrame.displayValue = 1;
-                GameFrame.displayValue = 1;
-            } else {
-                RollFrame.displayValue = 0;
-                GameFrame.displayValue = 0;
-            }
+            if (borderless)
+                FrameProperties.displayValue = 1;
+            else
+                FrameProperties.displayValue = 0;
 
             String videoInput = Objects.requireNonNull(this.resolutionBox.getSelectedItem()).toString();
             Dimension maxDisplaySize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -189,8 +196,8 @@ public class SettingsForm {
                     if (resolution.width > maxWidth || resolution.height > maxHeight)
                         throw new UnsupportedResException();
                 }
-                if (resolution.equals(SettingsFrame.NATIVE_RES)) {
-                    GameFrame.scalingFactor = 1;
+                if (resolution.equals(FrameProperties.NATIVE_RES)) {
+                    FrameProperties.scalingFactor = 1;
 
                     JOptionPane.showMessageDialog(
                             this.givenFrame,
@@ -200,7 +207,7 @@ public class SettingsForm {
                     );
                 }
 
-                if (!resolution.equals(SettingsFrame.DEFAULT_RES)) {
+                if (!resolution.equals(FrameProperties.DEFAULT_RES)) {
                     JOptionPane.showMessageDialog(
                             this.givenFrame,
                             "This software was designed to work correctly only when in 1920x1080. " +
