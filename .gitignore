@@ -1,12 +1,4 @@
 # Project exclude paths
-/.idea/*
-/.idea/!vcs.xml
-/.idea/!encodings.xml
-/.idea/!codeStyleSettings.xml
-/.idea/!dictionaries
-/.idea/!copyrights
-/.idea/!misc.xml
-/.idea/!sqldialects.xml
 /doc/
 /out/
 contracts.sr
