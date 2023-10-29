@@ -126,99 +126,131 @@ public class PrisonForm {
 
                 //---- parkingLab ----
                 parkingLab.setIcon(new ImageIcon(getClass().getResource("/Parking.jpg")));
+                parkingLab.setFocusable(false);
 
                 //---- nyAvenueLab ----
                 nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NewYorkAvenue.jpg")));
+                nyAvenueLab.setFocusable(false);
 
                 //---- tennAvenueLab ----
                 tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/TennesseeAvenue.jpg")));
+                tennAvenueLab.setFocusable(false);
 
                 //---- stJamesLab ----
                 stJamesLab.setIcon(new ImageIcon(getClass().getResource("/StJamesPlace.jpg")));
+                stJamesLab.setFocusable(false);
 
                 //---- pennRailroadLab ----
                 pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaRailroad.jpg")));
+                pennRailroadLab.setFocusable(false);
 
                 //---- virginiaAvenueLab ----
                 virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VirginiaAvenue.jpg")));
+                virginiaAvenueLab.setFocusable(false);
 
                 //---- statesAvenueLab ----
                 statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/StatesAvenue.jpg")));
+                statesAvenueLab.setFocusable(false);
 
                 //---- stCharlesLab ----
                 stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/StCharlesPlace.jpg")));
+                stCharlesLab.setFocusable(false);
 
                 //---- prisonLabel ----
                 prisonLabel.setIcon(new ImageIcon(getClass().getResource("/Prison.jpg")));
+                prisonLabel.setFocusable(false);
 
                 //---- connecticutAveLab ----
                 connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/ConnecticutAvenue.jpg")));
+                connecticutAveLab.setFocusable(false);
 
                 //---- vermontAvenueLab ----
                 vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VermontAvenue.jpg")));
+                vermontAvenueLab.setFocusable(false);
 
                 //---- orientalAvenueLab ----
                 orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/OrientalAvenue.jpg")));
+                orientalAvenueLab.setFocusable(false);
 
                 //---- readRailroadLab ----
                 readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/ReadingRailroad.jpg")));
+                readRailroadLab.setFocusable(false);
 
                 //---- waterWorksLab ----
                 waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/WaterWorks.jpg")));
+                waterWorksLab.setFocusable(false);
 
                 //---- balticAvenueLab ----
                 balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/BalticAvenue.jpg")));
+                balticAvenueLab.setFocusable(false);
 
                 //---- meditAvenueLab ----
                 meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/MediterraneanAvenue.jpg")));
+                meditAvenueLab.setFocusable(false);
 
                 //---- goLabel ----
                 goLabel.setIcon(new ImageIcon(getClass().getResource("/GOv2.jpg")));
+                goLabel.setFocusable(false);
 
                 //---- kentuckyAvenueLab ----
                 kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/KentuckyAvenue.jpg")));
+                kentuckyAvenueLab.setFocusable(false);
 
                 //---- indianaAvenueLab ----
                 indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IndianaAvenue.jpg")));
+                indianaAvenueLab.setFocusable(false);
 
                 //---- illinoisAvenueLab ----
                 illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IllinoisAvenue.jpg")));
+                illinoisAvenueLab.setFocusable(false);
 
                 //---- bEoRailroadLab ----
                 bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/B&ORailroad.jpg")));
+                bEoRailroadLab.setFocusable(false);
 
                 //---- atlanticAvenueLab ----
                 atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/AtlanticAvenue.jpg")));
+                atlanticAvenueLab.setFocusable(false);
 
                 //---- ventnorAvenueLab ----
                 ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VentnorAvenue.jpg")));
+                ventnorAvenueLab.setFocusable(false);
 
                 //---- marvinGardensLab ----
                 marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/MarvinGardens.jpg")));
+                marvinGardensLab.setFocusable(false);
 
                 //---- transitLabel ----
                 transitLabel.setIcon(new ImageIcon(getClass().getResource("/Transit.jpg")));
+                transitLabel.setFocusable(false);
 
                 //---- pacificAvenueLab ----
                 pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PacificAvenue.jpg")));
+                pacificAvenueLab.setFocusable(false);
 
                 //---- northCarAvenueLab ----
                 northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NorthCarolinaAvenue.jpg")));
+                northCarAvenueLab.setFocusable(false);
 
                 //---- pennAvenueLab ----
                 pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaAvenue.jpg")));
+                pennAvenueLab.setFocusable(false);
 
                 //---- shortLineLab ----
                 shortLineLab.setIcon(new ImageIcon(getClass().getResource("/ShortLine.jpg")));
+                shortLineLab.setFocusable(false);
 
                 //---- electricCompanyLab ----
                 electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/ElectricCompany.jpg")));
+                electricCompanyLab.setFocusable(false);
 
                 //---- parkPlaceLab ----
                 parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/ParkPlace.jpg")));
+                parkPlaceLab.setFocusable(false);
 
                 //---- boardwalkLab ----
                 boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/BoardWalk.jpg")));
+                boardwalkLab.setFocusable(false);
 
                 //---- turnTextArea ----
                 turnTextArea.setText("Turn of:");
@@ -226,18 +258,21 @@ public class PrisonForm {
                 turnTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 turnTextArea.setForeground(new Color(0x7a8c93));
                 turnTextArea.setEditable(false);
+                turnTextArea.setFocusable(false);
 
                 //---- turnTextPane ----
                 turnTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 turnTextPane.setBackground(new Color(0xfefffe));
                 turnTextPane.setForeground(new Color(0x7a8c93));
                 turnTextPane.setEditable(false);
+                turnTextPane.setFocusable(false);
 
                 //---- bancaTextPane ----
                 bancaTextPane.setFont(new Font("Noto Sans", Font.BOLD, 34));
                 bancaTextPane.setBackground(new Color(0xfefffe));
                 bancaTextPane.setForeground(new Color(0x7a8c93));
                 bancaTextPane.setEditable(false);
+                bancaTextPane.setFocusable(false);
 
                 //---- contractsTextArea ----
                 contractsTextArea.setFont(new Font("Noto Sans", Font.BOLD, 36));
@@ -245,33 +280,41 @@ public class PrisonForm {
                 contractsTextArea.setBackground(new Color(0xfefffe));
                 contractsTextArea.setForeground(new Color(0x7a8c93));
                 contractsTextArea.setEditable(false);
+                contractsTextArea.setFocusable(false);
 
                 //---- freeExitButton ----
                 freeExitButton.setText("Free exit");
                 freeExitButton.setBackground(new Color(0xced9dc));
                 freeExitButton.setIcon(null);
+                freeExitButton.setFocusable(false);
 
                 //---- paidExitButton ----
                 paidExitButton.setText("Paid exit");
                 paidExitButton.setBackground(new Color(0xced9dc));
+                paidExitButton.setFocusable(false);
 
                 //---- stayButton ----
                 stayButton.setText("Stay in prison");
                 stayButton.setBackground(new Color(0xced9dc));
+                stayButton.setFocusable(false);
 
                 //---- quitButton ----
                 quitButton.setText("Quit from the game");
                 quitButton.setBackground(new Color(0xced9dc));
+                quitButton.setFocusable(false);
 
                 //---- pawnLabel ----
                 pawnLabel.setIcon(null);
+                pawnLabel.setFocusable(false);
 
                 //======== contractsScrollPane ========
                 {
+                    contractsScrollPane.setFocusable(false);
 
                     //---- contractsTextPane ----
                     contractsTextPane.setFont(new Font("Noto Sans", Font.BOLD, 20));
                     contractsTextPane.setEditable(false);
+                    contractsTextPane.setFocusable(false);
                     contractsScrollPane.setViewportView(contractsTextPane);
                 }
 
@@ -281,6 +324,7 @@ public class PrisonForm {
                 prisonTextArea.setEditable(false);
                 prisonTextArea.setBackground(new Color(0xfefffe));
                 prisonTextArea.setForeground(new Color(0x7a8c93));
+                prisonTextArea.setFocusable(false);
 
                 //---- positionTextArea ----
                 positionTextArea.setBackground(new Color(0xfefffe));
@@ -288,12 +332,14 @@ public class PrisonForm {
                 positionTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 positionTextArea.setText("Position:");
                 positionTextArea.setEditable(false);
+                positionTextArea.setFocusable(false);
 
                 //---- positionTextPane ----
                 positionTextPane.setBackground(new Color(0xfefffe));
                 positionTextPane.setForeground(Color.black);
                 positionTextPane.setFont(new Font("Noto Sans", Font.BOLD, 20));
                 positionTextPane.setEditable(false);
+                positionTextPane.setFocusable(false);
 
                 GroupLayout prisonPanelLayout = new GroupLayout(prisonPanel);
                 prisonPanel.setLayout(prisonPanelLayout);

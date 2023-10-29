@@ -15,6 +15,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "parkingLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Parking.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -22,6 +23,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "nyAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/NewYorkAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -29,6 +31,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "tennAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/TennesseeAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -36,6 +39,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "stJamesLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/StJamesPlace.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -43,6 +47,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "pennRailroadLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/PennsylvaniaRailroad.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -50,6 +55,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "virginiaAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/VirginiaAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -57,6 +63,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "statesAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/StatesAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -64,6 +71,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "stCharlesLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/StCharlesPlace.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -71,6 +79,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "prisonLabel"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Prison.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -78,6 +87,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "connecticutAveLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ConnecticutAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -85,6 +95,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "vermontAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/VermontAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -92,6 +103,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "orientalAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/OrientalAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -99,6 +111,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "readRailroadLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ReadingRailroad.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -106,6 +119,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "waterWorksLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/WaterWorks.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -113,6 +127,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "balticAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/BalticAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -120,6 +135,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "meditAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/MediterraneanAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -127,6 +143,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "goLabel"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/GOv2.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -134,6 +151,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "kentuckyAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/KentuckyAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -141,6 +159,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "indianaAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/IndianaAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -148,6 +167,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "illinoisAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/IllinoisAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -155,6 +175,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "bEoRailroadLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/B&ORailroad.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -162,6 +183,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "atlanticAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/AtlanticAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -169,6 +191,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "ventnorAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/VentnorAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -176,6 +199,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "marvinGardensLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/MarvinGardens.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -183,6 +207,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "transitLabel"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Transit.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -190,6 +215,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "pacificAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/PacificAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -197,6 +223,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "northCarAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/NorthCarolinaAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -204,6 +231,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "pennAvenueLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/PennsylvaniaAvenue.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -211,6 +239,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "shortLineLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ShortLine.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -218,6 +247,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "electricCompanyLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ElectricCompany.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -225,6 +255,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "parkPlaceLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ParkPlace.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -232,6 +263,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "boardwalkLab"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/BoardWalk.jpg" )
+					"focusable": false
 					auxiliary() {
 						"JavaCodeGenerator.variableModifiers": 1
 					}
@@ -243,6 +275,7 @@ new FormModel {
 					"font": new java.awt.Font( "Noto Sans", 1, 40 )
 					"foreground": new java.awt.Color( 122, 140, 147, 255 )
 					"editable": false
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JTextPane" ) {
 					name: "turnTextPane"
@@ -250,6 +283,7 @@ new FormModel {
 					"background": new java.awt.Color( 254, 255, 254, 255 )
 					"foreground": new java.awt.Color( 122, 140, 147, 255 )
 					"editable": false
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JTextPane" ) {
 					name: "bankTextPane"
@@ -257,6 +291,7 @@ new FormModel {
 					"background": new java.awt.Color( 254, 255, 254, 255 )
 					"foreground": new java.awt.Color( 122, 140, 147, 255 )
 					"editable": false
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JTextArea" ) {
 					name: "contractsTextArea"
@@ -265,42 +300,50 @@ new FormModel {
 					"background": new java.awt.Color( 254, 255, 254, 255 )
 					"foreground": new java.awt.Color( 122, 140, 147, 255 )
 					"editable": false
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "contractButton"
 					"text": "Buy contract"
 					"background": new java.awt.Color( 206, 217, 220, 255 )
 					"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "rentButton"
 					"text": "Pay rent"
 					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "feeButton"
 					"text": "Pay fee"
 					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "goButton"
 					"text": "Pass by GO!"
 					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "prisonButton"
 					"text": "Go to prison"
 					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "endTurnButton"
 					"text": "End turn"
 					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "quitButton"
 					"text": "Quit"
 					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "pawnLabel"
@@ -308,10 +351,12 @@ new FormModel {
 				} )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "contractsScrollPane"
+					"focusable": false
 					add( new FormComponent( "javax.swing.JTextPane" ) {
 						name: "contractsTextPane"
 						"font": new java.awt.Font( "Noto Sans", 1, 20 )
 						"editable": false
+						"focusable": false
 					} )
 				} )
 				add( new FormComponent( "javax.swing.JTextPane" ) {
@@ -320,6 +365,7 @@ new FormModel {
 					"foreground": new java.awt.Color( 0, 0, 0, 255 )
 					"font": new java.awt.Font( "Noto Sans", 1, 40 )
 					"editable": false
+					"focusable": false
 				} )
 				add( new FormComponent( "javax.swing.JTextArea" ) {
 					name: "timerTextArea"
@@ -328,6 +374,7 @@ new FormModel {
 					"font": new java.awt.Font( "Noto Sans", 1, 40 )
 					"text": "End of turn:"
 					"editable": false
+					"focusable": false
 				} )
 			} )
 		}, new FormLayoutConstraints( null ) {

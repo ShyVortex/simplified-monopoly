@@ -150,99 +150,131 @@ public class GameForm {
 
                 //---- parkingLab ----
                 parkingLab.setIcon(new ImageIcon(getClass().getResource("/Parking.jpg")));
+                parkingLab.setFocusable(false);
 
                 //---- nyAvenueLab ----
                 nyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NewYorkAvenue.jpg")));
+                nyAvenueLab.setFocusable(false);
 
                 //---- tennAvenueLab ----
                 tennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/TennesseeAvenue.jpg")));
+                tennAvenueLab.setFocusable(false);
 
                 //---- stJamesLab ----
                 stJamesLab.setIcon(new ImageIcon(getClass().getResource("/StJamesPlace.jpg")));
+                stJamesLab.setFocusable(false);
 
                 //---- pennRailroadLab ----
                 pennRailroadLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaRailroad.jpg")));
+                pennRailroadLab.setFocusable(false);
 
                 //---- virginiaAvenueLab ----
                 virginiaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VirginiaAvenue.jpg")));
+                virginiaAvenueLab.setFocusable(false);
 
                 //---- statesAvenueLab ----
                 statesAvenueLab.setIcon(new ImageIcon(getClass().getResource("/StatesAvenue.jpg")));
+                statesAvenueLab.setFocusable(false);
 
                 //---- stCharlesLab ----
                 stCharlesLab.setIcon(new ImageIcon(getClass().getResource("/StCharlesPlace.jpg")));
+                stCharlesLab.setFocusable(false);
 
                 //---- prisonLabel ----
                 prisonLabel.setIcon(new ImageIcon(getClass().getResource("/Prison.jpg")));
+                prisonLabel.setFocusable(false);
 
                 //---- connecticutAveLab ----
                 connecticutAveLab.setIcon(new ImageIcon(getClass().getResource("/ConnecticutAvenue.jpg")));
+                connecticutAveLab.setFocusable(false);
 
                 //---- vermontAvenueLab ----
                 vermontAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VermontAvenue.jpg")));
+                vermontAvenueLab.setFocusable(false);
 
                 //---- orientalAvenueLab ----
                 orientalAvenueLab.setIcon(new ImageIcon(getClass().getResource("/OrientalAvenue.jpg")));
+                orientalAvenueLab.setFocusable(false);
 
                 //---- readRailroadLab ----
                 readRailroadLab.setIcon(new ImageIcon(getClass().getResource("/ReadingRailroad.jpg")));
+                readRailroadLab.setFocusable(false);
 
                 //---- waterWorksLab ----
                 waterWorksLab.setIcon(new ImageIcon(getClass().getResource("/WaterWorks.jpg")));
+                waterWorksLab.setFocusable(false);
 
                 //---- balticAvenueLab ----
                 balticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/BalticAvenue.jpg")));
+                balticAvenueLab.setFocusable(false);
 
                 //---- meditAvenueLab ----
                 meditAvenueLab.setIcon(new ImageIcon(getClass().getResource("/MediterraneanAvenue.jpg")));
+                meditAvenueLab.setFocusable(false);
 
                 //---- goLabel ----
                 goLabel.setIcon(new ImageIcon(getClass().getResource("/GOv2.jpg")));
+                goLabel.setFocusable(false);
 
                 //---- kentuckyAvenueLab ----
                 kentuckyAvenueLab.setIcon(new ImageIcon(getClass().getResource("/KentuckyAvenue.jpg")));
+                kentuckyAvenueLab.setFocusable(false);
 
                 //---- indianaAvenueLab ----
                 indianaAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IndianaAvenue.jpg")));
+                indianaAvenueLab.setFocusable(false);
 
                 //---- illinoisAvenueLab ----
                 illinoisAvenueLab.setIcon(new ImageIcon(getClass().getResource("/IllinoisAvenue.jpg")));
+                illinoisAvenueLab.setFocusable(false);
 
                 //---- bEoRailroadLab ----
                 bEoRailroadLab.setIcon(new ImageIcon(getClass().getResource("/B&ORailroad.jpg")));
+                bEoRailroadLab.setFocusable(false);
 
                 //---- atlanticAvenueLab ----
                 atlanticAvenueLab.setIcon(new ImageIcon(getClass().getResource("/AtlanticAvenue.jpg")));
+                atlanticAvenueLab.setFocusable(false);
 
                 //---- ventnorAvenueLab ----
                 ventnorAvenueLab.setIcon(new ImageIcon(getClass().getResource("/VentnorAvenue.jpg")));
+                ventnorAvenueLab.setFocusable(false);
 
                 //---- marvinGardensLab ----
                 marvinGardensLab.setIcon(new ImageIcon(getClass().getResource("/MarvinGardens.jpg")));
+                marvinGardensLab.setFocusable(false);
 
                 //---- transitLabel ----
                 transitLabel.setIcon(new ImageIcon(getClass().getResource("/Transit.jpg")));
+                transitLabel.setFocusable(false);
 
                 //---- pacificAvenueLab ----
                 pacificAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PacificAvenue.jpg")));
+                pacificAvenueLab.setFocusable(false);
 
                 //---- northCarAvenueLab ----
                 northCarAvenueLab.setIcon(new ImageIcon(getClass().getResource("/NorthCarolinaAvenue.jpg")));
+                northCarAvenueLab.setFocusable(false);
 
                 //---- pennAvenueLab ----
                 pennAvenueLab.setIcon(new ImageIcon(getClass().getResource("/PennsylvaniaAvenue.jpg")));
+                pennAvenueLab.setFocusable(false);
 
                 //---- shortLineLab ----
                 shortLineLab.setIcon(new ImageIcon(getClass().getResource("/ShortLine.jpg")));
+                shortLineLab.setFocusable(false);
 
                 //---- electricCompanyLab ----
                 electricCompanyLab.setIcon(new ImageIcon(getClass().getResource("/ElectricCompany.jpg")));
+                electricCompanyLab.setFocusable(false);
 
                 //---- parkPlaceLab ----
                 parkPlaceLab.setIcon(new ImageIcon(getClass().getResource("/ParkPlace.jpg")));
+                parkPlaceLab.setFocusable(false);
 
                 //---- boardwalkLab ----
                 boardwalkLab.setIcon(new ImageIcon(getClass().getResource("/BoardWalk.jpg")));
+                boardwalkLab.setFocusable(false);
 
                 //---- turnTextArea ----
                 turnTextArea.setText("Turn of:");
@@ -250,18 +282,21 @@ public class GameForm {
                 turnTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 turnTextArea.setForeground(new Color(0x7a8c93));
                 turnTextArea.setEditable(false);
+                turnTextArea.setFocusable(false);
 
                 //---- turnTextPane ----
                 turnTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 turnTextPane.setBackground(new Color(0xfefffe));
                 turnTextPane.setForeground(new Color(0x7a8c93));
                 turnTextPane.setEditable(false);
+                turnTextPane.setFocusable(false);
 
                 //---- bankTextPane ----
                 bankTextPane.setFont(new Font("Noto Sans", Font.BOLD, 34));
                 bankTextPane.setBackground(new Color(0xfefffe));
                 bankTextPane.setForeground(new Color(0x7a8c93));
                 bankTextPane.setEditable(false);
+                bankTextPane.setFocusable(false);
 
                 //---- contractsTextArea ----
                 contractsTextArea.setFont(new Font("Noto Sans", Font.BOLD, 36));
@@ -269,45 +304,55 @@ public class GameForm {
                 contractsTextArea.setBackground(new Color(0xfefffe));
                 contractsTextArea.setForeground(new Color(0x7a8c93));
                 contractsTextArea.setEditable(false);
+                contractsTextArea.setFocusable(false);
 
                 //---- contractButton ----
                 contractButton.setText("Buy contract");
                 contractButton.setBackground(new Color(0xced9dc));
                 contractButton.setIcon(null);
+                contractButton.setFocusable(false);
 
                 //---- rentButton ----
                 rentButton.setText("Pay rent");
                 rentButton.setBackground(new Color(0xced9dc));
+                rentButton.setFocusable(false);
 
                 //---- feeButton ----
                 feeButton.setText("Pay fee");
                 feeButton.setBackground(new Color(0xced9dc));
+                feeButton.setFocusable(false);
 
                 //---- goButton ----
                 goButton.setText("Pass by GO!");
                 goButton.setBackground(new Color(0xced9dc));
+                goButton.setFocusable(false);
 
                 //---- prisonButton ----
                 prisonButton.setText("Go to prison");
                 prisonButton.setBackground(new Color(0xced9dc));
+                prisonButton.setFocusable(false);
 
                 //---- endTurnButton ----
                 endTurnButton.setText("End turn");
                 endTurnButton.setBackground(new Color(0xced9dc));
+                endTurnButton.setFocusable(false);
 
                 //---- quitButton ----
                 quitButton.setText("Quit");
                 quitButton.setBackground(new Color(0xced9dc));
+                quitButton.setFocusable(false);
 
                 //---- pawnLabel ----
                 pawnLabel.setIcon(null);
 
                 //======== contractsScrollPane ========
                 {
+                    contractsScrollPane.setFocusable(false);
 
                     //---- contractsTextPane ----
                     contractsTextPane.setFont(new Font("Noto Sans", Font.BOLD, 20));
                     contractsTextPane.setEditable(false);
+                    contractsTextPane.setFocusable(false);
                     contractsScrollPane.setViewportView(contractsTextPane);
                 }
 
@@ -316,6 +361,7 @@ public class GameForm {
                 timerTextPane.setForeground(Color.black);
                 timerTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 timerTextPane.setEditable(false);
+                timerTextPane.setFocusable(false);
 
                 //---- timerTextArea ----
                 timerTextArea.setBackground(new Color(0xfefffe));
@@ -323,6 +369,7 @@ public class GameForm {
                 timerTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 timerTextArea.setText("End of turn:");
                 timerTextArea.setEditable(false);
+                timerTextArea.setFocusable(false);
 
                 GroupLayout gamePanelLayout = new GroupLayout(gamePanel);
                 gamePanel.setLayout(gamePanelLayout);

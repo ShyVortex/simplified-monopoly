@@ -79,15 +79,18 @@ public class RollForm {
                 playerTextArea.setBackground(new Color(0xfefffe));
                 playerTextArea.setForeground(new Color(0x7a8c93));
                 playerTextArea.setEditable(false);
+                playerTextArea.setFocusable(false);
 
                 //---- playerTextPane ----
                 playerTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 playerTextPane.setBackground(new Color(0xfefffe));
                 playerTextPane.setForeground(new Color(0x7a8c93));
                 playerTextPane.setEditable(false);
+                playerTextPane.setFocusable(false);
 
                 //---- diceLabel ----
                 diceLabel.setIcon(new ImageIcon(getClass().getResource("/Dice.png")));
+                diceLabel.setFocusable(false);
 
                 //---- diceRollTextArea ----
                 diceRollTextArea.setText("Rolling the dice...");
@@ -96,6 +99,7 @@ public class RollForm {
                 diceRollTextArea.setForeground(new Color(0x7a8c93));
                 diceRollTextArea.setEditable(false);
                 diceRollTextArea.setAutoscrolls(false);
+                diceRollTextArea.setFocusable(false);
 
                 //---- positionTextArea ----
                 positionTextArea.setFont(new Font("Noto Sans", Font.BOLD, 40));
@@ -104,17 +108,20 @@ public class RollForm {
                 positionTextArea.setForeground(new Color(0x7a8c93));
                 positionTextArea.setEditable(false);
                 positionTextArea.setAutoscrolls(false);
+                positionTextArea.setFocusable(false);
 
                 //---- positionIDTextPane ----
                 positionIDTextPane.setFont(new Font("Noto Sans", Font.BOLD, 40));
                 positionIDTextPane.setBackground(new Color(0xfefffe));
                 positionIDTextPane.setForeground(new Color(0x7a8c93));
+                positionIDTextPane.setFocusable(false);
 
                 //---- positionNameTextPane ----
                 positionNameTextPane.setBackground(new Color(0xfefffe));
                 positionNameTextPane.setForeground(Color.black);
                 positionNameTextPane.setFont(new Font("Noto Sans", Font.BOLD, 30));
                 positionNameTextPane.setEditable(false);
+                positionNameTextPane.setFocusable(false);
 
                 //---- okButton ----
                 okButton.setText("OK");
