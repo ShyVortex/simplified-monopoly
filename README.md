@@ -20,10 +20,11 @@ Second, I'd love if what I've learned with this course can be of help to other s
 in learning Java or programming as a whole, since it's not an easy subject and it requires patience and many attempts to get what you want done right.  
 
 # Screenshots
-![Schermata del 2022-08-16 13 17 35](https://user-images.githubusercontent.com/111277410/184867372-a01db479-8379-45a3-9e15-f694c5b8767f.png)
-![Schermata del 2022-08-16 13 19 41](https://user-images.githubusercontent.com/111277410/184867661-6d0799c5-d15c-4532-8864-83874ecefb2d.png)
-![Schermata del 2022-08-16 13 20 08](https://user-images.githubusercontent.com/111277410/184867677-3f2c8e1a-2bb8-4762-978f-6a475953ab77.png)
-![Schermata del 2022-08-16 13 20 22](https://user-images.githubusercontent.com/111277410/184867689-7d662546-d759-450e-bea4-2be37fece90b.png)
+![Screenshot_20231029_155155](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/8977b57c-cfa5-4878-8d93-0045b746605f)
+![Screenshot_20231029_155312](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/5c5cfb6d-8385-4b86-a04d-7f1e2608fddc)
+![Screenshot_20231029_155950](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/7a934b06-a476-4f73-ac15-dcf6f6d77c96)
+![Screenshot_20231029_160038](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/b78cec10-883d-4196-9a9e-4973d814c206)
+![Screenshot_20231029_155627](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/ec1fe832-3cac-4dbb-b56d-bed6837abc47)
 
 # License
 - This project is distributed under the [BSD-3-Clause License](https://github.com/ShyVortex/simplified-monopoly/blob/master/LICENSE.md).
