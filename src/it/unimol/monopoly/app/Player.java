@@ -148,7 +148,7 @@ public class Player implements Serializable {
      */
     public void rollDice() {
         Random random = new Random();
-        int steps = random.nextInt(12) + 1; // 0-11 + 1 = 1-12
+        int steps = random.nextInt(11) + 2; // 0-10 + 2 = 2-12
         this.addSteps(steps);
         if (this.position >= PositionManager.getInstance().getPositions().size()) {
             Turn turn = Turn.getInstance();
