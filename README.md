@@ -21,7 +21,7 @@ in learning Java or programming as a whole, since it's not an easy subject and i
 
 # Screenshots
 ![Screenshot_20231029_155155](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/8977b57c-cfa5-4878-8d93-0045b746605f)
-![Screenshot_20231029_155312](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/5c5cfb6d-8385-4b86-a04d-7f1e2608fddc)
+![Screenshot_20231102_103009](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/cb08bed8-c87e-4293-aa2d-70636d2254b2)
 ![Screenshot_20231029_155950](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/7a934b06-a476-4f73-ac15-dcf6f6d77c96)
 ![Screenshot_20231029_160038](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/b78cec10-883d-4196-9a9e-4973d814c206)
 ![Screenshot_20231029_155627](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/ec1fe832-3cac-4dbb-b56d-bed6837abc47)
