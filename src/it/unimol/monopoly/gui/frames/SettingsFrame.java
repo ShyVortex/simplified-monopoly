@@ -19,6 +19,7 @@ public class SettingsFrame extends JFrame {
         this.setSize(500,600);
         this.setTitle("MonopolySettings - " + Game.releaseVersion);
         this.setMinimumSize(new Dimension(450,400));
+        this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         try {
             URL iconUrl = ClassLoader.getSystemResource("Monopoly.png");

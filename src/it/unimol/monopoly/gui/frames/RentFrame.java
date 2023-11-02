@@ -19,7 +19,7 @@ public class RentFrame extends JFrame {
     public RentFrame(GameForm previousForm, Player player, PlayerManager players) {
         this.setSize(700,400);
         this.setTitle("Monopoly - Rents");
-        this.setMinimumSize(new Dimension(650, 300));
+        this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         try {

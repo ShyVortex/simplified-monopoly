@@ -110,9 +110,6 @@ public class SettingsForm {
             case 1:
                 this.resolutionBox.removeAllItems();
                 this.resolutionBox.addItem("Auto");
-                this.resolutionBox.addItem("640x480");
-                this.resolutionBox.addItem("800x600");
-                this.resolutionBox.addItem("960x720");
                 this.resolutionBox.addItem("1024x768");
                 this.resolutionBox.addItem("1280x960");
                 this.resolutionBox.addItem("1440x1050");
@@ -135,9 +132,6 @@ public class SettingsForm {
             case 3:
                 this.resolutionBox.removeAllItems();
                 this.resolutionBox.addItem("Auto");
-                this.resolutionBox.addItem("640x360");
-                this.resolutionBox.addItem("854x480");
-                this.resolutionBox.addItem("960x540");
                 this.resolutionBox.addItem("1024x576");
                 this.resolutionBox.addItem("1280x720");
                 this.resolutionBox.addItem("1366x768");

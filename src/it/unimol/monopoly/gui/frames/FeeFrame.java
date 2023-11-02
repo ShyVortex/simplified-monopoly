@@ -19,8 +19,7 @@ public class FeeFrame extends JFrame {
     public FeeFrame(GameForm previousForm, Player player, PlayerManager players) {
         this.setSize(400,100);
         this.setTitle("Monopoly - Fee");
-        this.setMinimumSize(new Dimension(300, 100));
-        this.setMaximumSize(new Dimension(600, 100));
+        this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         try {

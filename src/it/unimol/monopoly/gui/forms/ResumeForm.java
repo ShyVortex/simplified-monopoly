@@ -55,7 +55,7 @@ public class ResumeForm {
         this.playerArea.setText(players.toString());
 
         this.okButton.addActionListener(
-                actionEvent -> myFrame.dispose()
+                actionEvent -> this.playerListPanel.setVisible(false)
         );
     }
 

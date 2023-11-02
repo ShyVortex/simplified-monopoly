@@ -61,10 +61,6 @@ public class MainForm {
                 actionEvent -> exit(0)
         );
 
-        this.okButton.addActionListener(
-                actionEvent -> this.playerListPanel.setVisible(false)
-        );
-
         this.revertButton.addActionListener(
                 actionEvent -> this.playerPanel.setVisible(false)
         );
@@ -93,6 +89,10 @@ public class MainForm {
         this.playerArea.setText(giocatori.toString());
         if (giocatori.getPlayers().size() == 0)
             this.playerArea.setText("Still no players!");
+
+        this.okButton.addActionListener(
+                actionEvent -> this.playerListPanel.setVisible(false)
+        );
     }
 
     public void updatePlayerList(PlayerManager giocatori) {

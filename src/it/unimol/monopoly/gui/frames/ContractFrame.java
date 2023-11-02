@@ -20,7 +20,7 @@ public class ContractFrame extends JFrame {
     public ContractFrame(GameForm previousForm, Player player, ContractManager contracts, PlayerManager players) {
         this.setSize(500,600);
         this.setTitle("Monopoly - Contracts");
-        this.setMinimumSize(new Dimension(450,400));
+        this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         try {

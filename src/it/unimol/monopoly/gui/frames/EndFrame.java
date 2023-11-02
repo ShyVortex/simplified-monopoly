@@ -19,7 +19,7 @@ public class EndFrame extends JFrame {
 
         this.setSize(500,600);
         this.setTitle("MonopolyEnd - " + Game.releaseVersion);
-        this.setMinimumSize(new Dimension(450,400));
+        this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {
             URL iconUrl = ClassLoader.getSystemResource("Monopoly.png");
