@@ -1,5 +1,6 @@
 package it.unimol.monopoly.gui.frames;
 
+import it.unimol.monopoly.app.Game;
 import it.unimol.monopoly.app.Player;
 import it.unimol.monopoly.gui.forms.EndForm;
 
@@ -17,7 +18,7 @@ public class EndFrame extends JFrame {
         super();
 
         this.setSize(500,600);
-        this.setTitle("MonopolyEnd");
+        this.setTitle("MonopolyEnd - " + Game.releaseVersion);
         this.setMinimumSize(new Dimension(450,400));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {

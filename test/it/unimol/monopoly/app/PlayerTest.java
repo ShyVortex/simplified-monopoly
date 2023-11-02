@@ -39,9 +39,9 @@ class PlayerTest {
         assertNotEquals(player1.getPosition(), 0);
         assertNotEquals(player2.getPosition(), 0);
 
-        player1.getContracts().add(new Contract("Test", 100, 25));
+        player1.getContracts().add(new Contract("it.unimol.monopoly.app.Test", 100, 25));
         Contract.resetCounter();
-        player3.getContracts().add(new Contract("Test", 100, 25));
+        player3.getContracts().add(new Contract("it.unimol.monopoly.app.Test", 100, 25));
 
         assertNotEquals(player1, player3); // They're not equal yet because they have different IDs
 

@@ -4,5 +4,6 @@ it.unimol.monopoly.exceptions
 it.unimol.monopoly.gui
 it.unimol.monopoly.gui.forms
 it.unimol.monopoly.gui.frames
+it.unimol.monopoly.gui.frames.settings
 it.unimol.monopoly.threads
 it.unimol.monopoly.threads.interfaces

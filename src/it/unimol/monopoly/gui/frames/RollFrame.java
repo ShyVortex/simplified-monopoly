@@ -1,6 +1,7 @@
 package it.unimol.monopoly.gui.frames;
 
 import it.unimol.monopoly.app.ContractManager;
+import it.unimol.monopoly.app.Game;
 import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.app.Player;
 import it.unimol.monopoly.gui.forms.RollForm;
@@ -21,7 +22,7 @@ public class RollFrame extends JFrame {
         super();
 
         this.setSize(screenSize);
-        this.setTitle("Monopoly - Initialization");
+        this.setTitle("Monopoly - Initialization (" + Game.releaseVersion + ")");
         this.setResizable(FrameProperties.allowResizable);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 

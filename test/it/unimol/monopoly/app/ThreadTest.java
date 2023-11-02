@@ -1,11 +1,11 @@
-package it.unimol.monopoly;
+package it.unimol.monopoly.app;
 
 import it.unimol.monopoly.threads.Countdown;
 import it.unimol.monopoly.threads.StoppableThread;
 
 import static java.lang.System.exit;
 
-public class Test {
+public class ThreadTest {
     public static void main(String[] args) throws InterruptedException {
         int timeInt = 0;
         Countdown timer = new Countdown();
@@ -20,7 +20,7 @@ public class Test {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ignored) {}
-                    System.out.println("Test");
+                    System.out.println("it.unimol.monopoly.app.Test");
                 }
             }
         });

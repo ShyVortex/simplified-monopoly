@@ -1,5 +1,4 @@
 # Project exclude paths
-/doc/
 /out/
 contracts.sr
 players.sr

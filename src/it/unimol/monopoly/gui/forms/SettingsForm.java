@@ -23,6 +23,7 @@ public class SettingsForm {
     private JComboBox scalingBox;
     private JButton OFFButton;
     private JButton ONButton;
+    private JButton AR_219_Button;
     private JFrame givenFrame;
     private boolean borderless;
     private short aspectRatio;
@@ -74,6 +75,13 @@ public class SettingsForm {
         this.AR_169_Button.addActionListener(
                 actionEvent -> {
                     this.aspectRatio = 3;
+                    handleResolutions();
+                }
+        );
+
+        this.AR_219_Button.addActionListener(
+                actionEvent -> {
+                    this.aspectRatio = 4;
                     handleResolutions();
                 }
         );
@@ -139,6 +147,14 @@ public class SettingsForm {
                 this.resolutionBox.addItem("2560x1440");
                 this.resolutionBox.addItem("3200x1800");
                 this.resolutionBox.addItem("3840x2160");
+                break;
+            case 4:
+                this.resolutionBox.removeAllItems();
+                this.resolutionBox.addItem("Auto");
+                this.resolutionBox.addItem("2560x1080");
+                this.resolutionBox.addItem("3440x1440");
+                this.resolutionBox.addItem("3840x1600");
+                this.resolutionBox.addItem("5120x2160");
                 break;
             default:
                 break;

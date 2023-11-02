@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class Game {
     private int startingMoney;
     private int initialContracts;
+    public static final String releaseVersion = "2.0.2";
 
     /**
      * The variables of the class are set based on the number of players registered in the {@link PlayerManager}.

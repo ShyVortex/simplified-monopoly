@@ -1,6 +1,7 @@
 package it.unimol.monopoly.gui.frames;
 
 import it.unimol.monopoly.app.ContractManager;
+import it.unimol.monopoly.app.Game;
 import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.app.Turn;
 import it.unimol.monopoly.gui.forms.MainForm;
@@ -23,7 +24,7 @@ public class MainFrame extends JFrame {
         super();
 
         this.setSize(500,600);
-        this.setTitle("MonopolyMenu");
+        this.setTitle("MonopolyMenu - " + Game.releaseVersion);
         this.setMinimumSize(new Dimension(450,400));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         try {
