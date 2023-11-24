@@ -7,7 +7,7 @@ package it.unimol.monopoly.gui.forms;
 import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
-import it.unimol.monopoly.gui.frames.settings.FrameProperties;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 import it.unimol.monopoly.threads.StoppableThread;
 
 import java.awt.*;

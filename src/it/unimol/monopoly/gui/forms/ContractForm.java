@@ -5,6 +5,7 @@ import it.unimol.monopoly.app.ContractManager;
 import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.app.Player;
 import it.unimol.monopoly.gui.frames.ContractFrame;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.swing.*;
 
@@ -55,6 +56,7 @@ public class ContractForm {
             );
             ContractFrame.isDisposing = true;
             this.givenFrame.dispose();
+            FrameProperties.openContractFrame(false);
             ContractFrame.refreshMotherForm(gameForm, player, players);
         }
         else {
@@ -79,5 +81,6 @@ public class ContractForm {
 
     private void handleCancel() {
         this.givenFrame.dispose();
+        FrameProperties.openContractFrame(false);
     }
 }

@@ -6,7 +6,7 @@ import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.app.Player;
 import it.unimol.monopoly.gui.forms.GameForm;
 import it.unimol.monopoly.gui.forms.PrisonForm;
-import it.unimol.monopoly.gui.frames.settings.FrameProperties;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

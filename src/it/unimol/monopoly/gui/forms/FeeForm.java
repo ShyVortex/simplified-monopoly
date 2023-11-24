@@ -4,6 +4,7 @@ import it.unimol.monopoly.app.Fee;
 import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.app.Player;
 import it.unimol.monopoly.gui.frames.FeeFrame;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.swing.*;
 
@@ -48,6 +49,7 @@ public class FeeForm {
 
                 FeeFrame.isDisposing = true;
                 this.givenFrame.dispose();
+                FrameProperties.openFeeFrame(false);
                 FeeFrame.refreshMotherForm(gameForm, player, players);
             }
             else {
@@ -88,5 +90,6 @@ public class FeeForm {
 
     private void handleCancel() {
         this.givenFrame.dispose();
+        FrameProperties.openFeeFrame(false);
     }
 }

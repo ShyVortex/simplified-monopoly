@@ -6,9 +6,10 @@ package it.unimol.monopoly.gui.forms;
 
 import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.app.Box;
+import it.unimol.monopoly.exceptions.MultipleInstancesException;
 import it.unimol.monopoly.gui.LightsUI;
 import it.unimol.monopoly.gui.frames.*;
-import it.unimol.monopoly.gui.frames.settings.FrameProperties;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 import it.unimol.monopoly.threads.Countdown;
 import it.unimol.monopoly.threads.StoppableThread;
 
@@ -736,8 +737,22 @@ public class GameForm {
     }
 
     private void handleContractButton(Player player, ContractManager contracts, PlayerManager players) {
-        ContractFrame contractFrame = new ContractFrame(this, player, contracts, players);
-        contractFrame.setVisible(true);
+        try {
+            if (!FrameProperties.isContractFrameOpen()) {
+                ContractFrame contractFrame = new ContractFrame(this, player, contracts, players);
+                contractFrame.setVisible(true);
+                FrameProperties.openContractFrame(true);
+            } else
+                throw new MultipleInstancesException();
+
+        } catch (MultipleInstancesException e) {
+            JOptionPane.showMessageDialog(
+                    this.givenFrame,
+                    "You can't simultaneously open the contracts window more than once.",
+                    "ERROR: Multiple instances",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
     }
 
     private void updateBank(Player player) {
@@ -793,13 +808,41 @@ public class GameForm {
     }
 
     private void handleRentButton(Player player, PlayerManager players) {
-        RentFrame rentFrame = new RentFrame(this, player, players);
-        rentFrame.setVisible(true);
+        try {
+            if (!FrameProperties.isRentFrameOpen()) {
+                RentFrame rentFrame = new RentFrame(this, player, players);
+                rentFrame.setVisible(true);
+                FrameProperties.openRentFrame(true);
+            } else
+                throw new MultipleInstancesException();
+
+        } catch (MultipleInstancesException e) {
+            JOptionPane.showMessageDialog(
+                    this.givenFrame,
+                    "You can't simultaneously open the rent window more than once.",
+                    "ERROR: Multiple instances",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
     }
 
     private void handleFeeButton(Player player, PlayerManager players) {
-        FeeFrame feeFrame = new FeeFrame(this, player, players);
-        feeFrame.setVisible(true);
+        try {
+            if (!FrameProperties.isFeeFrameOpen()) {
+                FeeFrame feeFrame = new FeeFrame(this, player, players);
+                feeFrame.setVisible(true);
+                FrameProperties.openFeeFrame(true);
+            } else
+                throw new MultipleInstancesException();
+
+        } catch (MultipleInstancesException e) {
+            JOptionPane.showMessageDialog(
+                    this.givenFrame,
+                    "You can't simultaneously open the fee window more than once.",
+                    "ERROR: Multiple instances",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
     }
 
     private void handleGOButton(Player player, PlayerManager players) {

@@ -5,6 +5,7 @@ import it.unimol.monopoly.app.Rent;
 import it.unimol.monopoly.app.Contract;
 import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.gui.frames.RentFrame;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.swing.*;
 
@@ -86,6 +87,7 @@ public class RentForm {
 
     private void handleCancel() {
         this.givenFrame.dispose();
+        FrameProperties.openRentFrame(false);
     }
 
     private void handlePay(GameForm gameForm, Player player1, Player player2, PlayerManager players) {
@@ -104,6 +106,7 @@ public class RentForm {
 
             RentFrame.isDisposing = true;
             this.givenFrame.dispose();
+            FrameProperties.openRentFrame(false);
             RentFrame.refreshMotherForm(gameForm, player1, players);
         }
         else {
@@ -116,6 +119,7 @@ public class RentForm {
             );
 
             this.givenFrame.dispose();
+            FrameProperties.openRentFrame(false);
         }
     }
 

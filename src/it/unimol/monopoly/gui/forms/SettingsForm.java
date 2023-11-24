@@ -5,7 +5,7 @@ import it.unimol.monopoly.exceptions.NoVideoModeException;
 import it.unimol.monopoly.exceptions.UnsupportedResException;
 import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
-import it.unimol.monopoly.gui.frames.settings.FrameProperties;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,7 +51,10 @@ public class SettingsForm {
         );
 
         this.cancelButton.addActionListener(
-                actionEvent -> this.givenFrame.dispose()
+                actionEvent -> {
+                    this.givenFrame.dispose();
+                    FrameProperties.openSettingsPage(false);
+                }
         );
 
         this.applyButton.addActionListener(
@@ -207,7 +210,7 @@ public class SettingsForm {
                         throw new UnsupportedResException();
                 }
                 if (resolution.equals(FrameProperties.NATIVE_RES)) {
-                    FrameProperties.scalingFactor = 1;
+                    FrameProperties.setScalingFactor(1);
 
                     JOptionPane.showMessageDialog(
                             this.givenFrame,

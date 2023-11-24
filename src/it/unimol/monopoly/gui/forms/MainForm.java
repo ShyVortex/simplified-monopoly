@@ -2,15 +2,15 @@ package it.unimol.monopoly.gui.forms;
 
 import it.unimol.monopoly.app.*;
 import it.unimol.monopoly.exceptions.BlankNameException;
+import it.unimol.monopoly.exceptions.MultipleInstancesException;
 import it.unimol.monopoly.exceptions.SpecialCharException;
 import it.unimol.monopoly.exceptions.StartingSpaceException;
-import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
 import it.unimol.monopoly.gui.frames.SettingsFrame;
+import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.swing.*;
 
-import java.awt.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -87,7 +87,7 @@ public class MainForm {
     public void handlePlayerList(PlayerManager giocatori) {
         this.playerListPanel.setVisible(true);
         this.playerArea.setText(giocatori.toString());
-        if (giocatori.getPlayers().size() == 0)
+        if (giocatori.getPlayers().isEmpty())
             this.playerArea.setText("Still no players!");
 
         this.okButton.addActionListener(
@@ -184,8 +184,22 @@ public class MainForm {
     }
 
     public void handleSettingsMenu() {
-        SettingsFrame settingsFrame = new SettingsFrame();
-        settingsFrame.setVisible(true);
+        try {
+            if (!FrameProperties.isSettingsPageOpen()) {
+                SettingsFrame settingsFrame = new SettingsFrame();
+                settingsFrame.setVisible(true);
+                FrameProperties.openSettingsPage(true);
+            } else
+                throw new MultipleInstancesException();
+
+        } catch (MultipleInstancesException e) {
+            JOptionPane.showMessageDialog(
+                    this.givenFrame,
+                    "You can't simultaneously open the settings page more than once.",
+                    "ERROR: Multiple instances",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
     }
 
     public void handleStartGame(PlayerManager players, ContractManager contracts) {
