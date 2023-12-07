@@ -1,0 +1,385 @@
+JFDML JFormDesigner: "8.2.0.0.331" Java: "17.0.9" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+			name: "gameScrollPane"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space :p:62:p, par l:::p {seq l {comp parkingLab:::p:125:p, space :::p, comp kentuckyAvenueLab:::p:125:p, space :::p, comp indianaAvenueLab:::p:125:p, space :::p, comp illinoisAvenueLab:::p:125:p, space :::p, comp bEoRailroadLab:::p:125:p, space :::p, comp atlanticAvenueLab:::p:125:p, space :::p, comp ventnorAvenueLab:::p:125:p, space :::p, comp marvinGardensLab:::p:125:p}, comp nyAvenueLab::l:p:125:p, comp tennAvenueLab::l:p:125:p, comp stJamesLab::l:p:125:p, comp pennRailroadLab::l:p:125:p, comp virginiaAvenueLab::l:p:125:p, comp statesAvenueLab::l:p:125:p, comp stCharlesLab::l:p:125:p, seq l {comp prisonLabel:::p:125:p, space :::x, comp connecticutAveLab:::p:125:p, space :::p, comp vermontAvenueLab:::p:125:p, space :::p, comp orientalAvenueLab:::p:125:p, space :::p, comp readRailroadLab:::p:125:p, space :::p, comp waterWorksLab:::p:125:p, space :::p, comp balticAvenueLab:::p:125:p, space :::p, comp meditAvenueLab:::p:125:p}}, space :p::p, par l {comp pacificAvenueLab:::p:125:p, comp transitLabel:::p:125:p, comp northCarAvenueLab::l:p:125:p, comp pennAvenueLab::l:p:125:p, comp shortLineLab::l:p:125:p, comp electricCompanyLab::l:p:125:p, comp parkPlaceLab::l:p:125:p, comp boardwalkLab::l:p:125:p, comp goLabel::l:p:125:p}, space ::792:x, par l:::p {comp contractsTextArea::l:p::p, seq l {par t {comp contractButton:::p:137:p, comp feeButton:::p:137:p, comp prisonButton::t:p:137:p, comp quitButton::t:p:137:p}, space s:::p, par l {comp rentButton:::p:137:p, comp goButton:::p:137:p, comp endTurnButton:::p:137:p}}, comp contractsScrollPane::l:p:292:p, seq l {comp turnTextArea:::p::p, space :::p, comp turnTextPane:::p::p}, seq l {par l {comp bankTextPane::l:p::p, comp pawnLabel::l:p:65:p}, space :::x, par l:::p {comp timerTextArea:::p::p, comp timerTextPane:::p:217:p}}}, space :p:201:p}}"
+				"$verticalGroup": "par l {seq {space :p:42:p, par l {seq l {par l {comp parkingLab:::p:91:p, comp kentuckyAvenueLab:::p:91:p, comp indianaAvenueLab:::p:91:p, comp illinoisAvenueLab:::p:91:p, comp bEoRailroadLab:::p:91:p, comp atlanticAvenueLab:::p:91:p, comp ventnorAvenueLab:::p:91:p, comp marvinGardensLab:::p:91:p, comp transitLabel:::p:91:p}, space :::p, par l {comp pacificAvenueLab:::p:91:p, comp nyAvenueLab::t:p:91:p}}, seq t {par l {comp turnTextPane:::::x, comp turnTextArea:::p::p}, space :p::p, par l {seq l {comp bankTextPane:::p::p, space :0:0:x}, comp timerTextArea:::::x}, space :::p, par l {comp pawnLabel:::p:62:p, comp timerTextPane:::::x}, space :::p}}, par t {seq t {comp contractsTextArea:::p::p, space :::p, comp contractsScrollPane:::p:370:p, space :p:20:p}, seq t {par l {comp northCarAvenueLab:::p:91:p, comp tennAvenueLab:::p:91:p}, space :::p, par l {comp pennAvenueLab:::p:91:p, comp stJamesLab:::p:91:p}, space :::p, par l {comp shortLineLab:::p:91:p, comp pennRailroadLab:::p:91:p}, space :::p, par l {comp electricCompanyLab:::p:91:p, comp virginiaAvenueLab:::p:91:p}, space :::p, par l {comp parkPlaceLab:::p:91:p, comp statesAvenueLab:::p:91:p}}}, par l {seq l {par l {comp boardwalkLab:::p:91:p, comp stCharlesLab::l:p:91:p}, space :::p, par l {comp goLabel:::p:91:p, comp prisonLabel:::p:91:p, comp meditAvenueLab:::p:91:p, comp balticAvenueLab:::p:91:p, comp waterWorksLab:::p:91:p, comp readRailroadLab:::p:91:p, comp orientalAvenueLab:::p:91:p, comp vermontAvenueLab:::p:91:p, comp connecticutAveLab:::p:91:p}}, seq l {par b {comp contractButton::b:p:38:p, comp rentButton::b:p:38:p}, space u:::p, par b {comp feeButton::b:p:38:p, comp goButton::b:p:38:p}, space u:::p, par b {comp prisonButton::b:p:38:p, comp endTurnButton::b:p:38:p}, space u:::p, comp quitButton:::p:38:p}}, space :p:530:p}}"
+			} ) {
+				name: "gamePanel"
+				"background": new java.awt.Color( 254, 255, 254, 255 )
+				"minimumSize": new java.awt.Dimension( 640, 360 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "parkingLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Parking.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "nyAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/NewYorkAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "tennAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/TennesseeAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "stJamesLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/StJamesPlace.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "pennRailroadLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/PennsylvaniaRailroad.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "virginiaAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/VirginiaAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "statesAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/StatesAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "stCharlesLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/StCharlesPlace.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "prisonLabel"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Prison.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "connecticutAveLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ConnecticutAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "vermontAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/VermontAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "orientalAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/OrientalAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "readRailroadLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ReadingRailroad.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "waterWorksLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/WaterWorks.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "balticAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/BalticAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "meditAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/MediterraneanAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "goLabel"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/GOv2.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "kentuckyAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/KentuckyAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "indianaAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/IndianaAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "illinoisAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/IllinoisAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "bEoRailroadLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/B&ORailroad.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "atlanticAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/AtlanticAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "ventnorAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/VentnorAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "marvinGardensLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/MarvinGardens.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "transitLabel"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Transit.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "pacificAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/PacificAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "northCarAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/NorthCarolinaAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "pennAvenueLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/PennsylvaniaAvenue.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "shortLineLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ShortLine.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "electricCompanyLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ElectricCompany.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "parkPlaceLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/ParkPlace.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "boardwalkLab"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/BoardWalk.jpg" )
+					"focusable": false
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 1
+					}
+				} )
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "turnTextArea"
+					"text": "Turn of:"
+					"background": new java.awt.Color( 254, 255, 254, 255 )
+					"font": new java.awt.Font( "Noto Sans", 1, 40 )
+					"foreground": new java.awt.Color( 122, 140, 147, 255 )
+					"editable": false
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JTextPane" ) {
+					name: "turnTextPane"
+					"font": new java.awt.Font( "Noto Sans", 1, 40 )
+					"background": new java.awt.Color( 254, 255, 254, 255 )
+					"foreground": new java.awt.Color( 122, 140, 147, 255 )
+					"editable": false
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JTextPane" ) {
+					name: "bankTextPane"
+					"font": new java.awt.Font( "Noto Sans", 1, 34 )
+					"background": new java.awt.Color( 254, 255, 254, 255 )
+					"foreground": new java.awt.Color( 122, 140, 147, 255 )
+					"editable": false
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "contractsTextArea"
+					"font": new java.awt.Font( "Noto Sans", 1, 36 )
+					"text": "Contracts:"
+					"background": new java.awt.Color( 254, 255, 254, 255 )
+					"foreground": new java.awt.Color( 122, 140, 147, 255 )
+					"editable": false
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "contractButton"
+					"text": "Buy contract"
+					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "rentButton"
+					"text": "Pay rent"
+					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "feeButton"
+					"text": "Pay fee"
+					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "goButton"
+					"text": "Pass by GO!"
+					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "prisonButton"
+					"text": "Go to prison"
+					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "endTurnButton"
+					"text": "End turn"
+					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "quitButton"
+					"text": "Quit"
+					"background": new java.awt.Color( 206, 217, 220, 255 )
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "pawnLabel"
+					"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "contractsScrollPane"
+					"focusable": false
+					add( new FormComponent( "javax.swing.JTextPane" ) {
+						name: "contractsTextPane"
+						"font": new java.awt.Font( "Noto Sans", 1, 20 )
+						"editable": false
+						"focusable": false
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JTextPane" ) {
+					name: "timerTextPane"
+					"background": new java.awt.Color( 254, 255, 254, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"font": new java.awt.Font( "Noto Sans", 1, 40 )
+					"editable": false
+					"focusable": false
+				} )
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "timerTextArea"
+					"background": new java.awt.Color( 254, 255, 254, 255 )
+					"foreground": new java.awt.Color( 204, 51, 0, 255 )
+					"font": new java.awt.Font( "Noto Sans", 1, 40 )
+					"text": "End of turn:"
+					"editable": false
+					"focusable": false
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1900, 1766 )
+		} )
+	}
+}

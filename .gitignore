@@ -1,5 +1,7 @@
 # Project exclude paths
+/target/
 /out/
+dependency-reduced-pom.xml
 contracts.sr
 players.sr
 turn.sr

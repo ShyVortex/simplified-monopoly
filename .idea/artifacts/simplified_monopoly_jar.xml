@@ -6,8 +6,24 @@
         <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
       </element>
       <element id="module-output" name="simplified-monopoly" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/flatlaf-3.2.5.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/flatlaf-intellij-themes-3.2.5.jar" path-in-jar="/" />
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: com.formdev:flatlaf-intellij-themes:3.2.5" />
+        <element id="library" level="project" name="Maven: com.formdev:flatlaf:3.2.5" />
+        <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.2" />
+        <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.8.1" />
+        <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.2.0" />
+        <element id="library" level="project" name="Maven: com.jetbrains.intellij.java:java-compiler-ant-tasks:232.10227.8" />
+        <element id="library" level="project" name="Maven: com.jetbrains.intellij.java:java-compiler-instrumentation-util-java8:232.10227.8" />
+        <element id="library" level="project" name="Maven: com.jetbrains.intellij.java:java-compiler-instrumentation-util:232.10227.8" />
+        <element id="library" level="project" name="Maven: com.jetbrains.intellij.java:java-gui-forms-rt:232.10227.8" />
+        <element id="library" level="project" name="Maven: com.jetbrains.intellij.java:java-gui-forms-compiler:232.10227.8" />
+        <element id="library" level="project" name="Maven: com.jetbrains.intellij.platform:util-jdom:232.10227.8" />
+        <element id="library" level="project" name="Maven: com.jgoodies:forms:1.1-preview" />
+        <element id="library" level="project" name="Maven: jaxen:jaxen:1.2.0" />
+        <element id="library" level="project" name="Maven: org.jetbrains.intellij.deps:asm-all:9.5" />
+        <element id="library" level="project" name="Maven: org.jetbrains:annotations:24.0.0" />
+        <element id="dir-copy" path="$PROJECT_DIR$/src/main/java/com" />
+      </element>
     </root>
   </artifact>
 </component>
