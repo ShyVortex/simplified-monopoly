@@ -17,7 +17,23 @@ I have two main goals by uploading this project.
 First, I'd like to have my own record of projects publicly available so that I can hopefully see my progress over the years, 
 as I learn more programming languages and I become more expert and efficient in coding. 
 Second, I'd love if what I've learned with this course can be of help to other students across the globe who are facing some difficulties 
-in learning Java or programming as a whole, since it's not an easy subject and it requires patience and many attempts to get what you want done right.  
+in learning Java or programming as a whole, since it's not an easy subject and it requires patience and many attempts to get what you want done right.
+
+# Building
+Executable packages can be downloaded from [Releases](https://github.com/ShyVortex/simplified-monopoly/releases) or manually built instead.
+In order to build the project from source, the following prerequisites are required:
+- Open Java Development Kit (OpenJDK) 17 or above
+- Apache Maven (at least version 3.6.3 is recommended)
+
+Once you're in the project directory, type the following in a terminal to download the dependencies and compile all the classes:
+ ```shell
+ mvn clean install
+ ```
+Then, if you also want a runnable .jar archive, type:
+ ```shell
+ mvn package
+ ```
+With these commands, a new folder named 'target' is created containing the compiled project as well as the executable file.
 
 # Screenshots
 ![Screenshot_20231029_155155](https://github.com/ShyVortex/simplified-monopoly/assets/111277410/8977b57c-cfa5-4878-8d93-0045b746605f)
