@@ -126,4 +126,5 @@ public class RentForm {
         this.payButton.setVisible(false);
         this.revertButton.setVisible(false);
     }
+
 }

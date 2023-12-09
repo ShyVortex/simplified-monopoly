@@ -4,13 +4,10 @@ import it.unimol.monopoly.app.ContractManager;
 import it.unimol.monopoly.app.PlayerManager;
 import it.unimol.monopoly.app.Player;
 import it.unimol.monopoly.app.Turn;
-import it.unimol.monopoly.gui.frames.GameFrame;
 import it.unimol.monopoly.gui.frames.RollFrame;
 import it.unimol.monopoly.gui.frames.SettingsFrame;
 
 import javax.swing.*;
-
-import java.awt.*;
 
 import static java.lang.System.exit;
 

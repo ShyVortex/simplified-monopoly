@@ -7,7 +7,6 @@ import it.unimol.monopoly.gui.frames.FeeFrame;
 import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class FeeForm {
     private JTextField feeField;

@@ -4,13 +4,10 @@ import it.unimol.monopoly.app.Player;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Locale;
 
 public class EndForm {
     private JLabel gameOverLabel;

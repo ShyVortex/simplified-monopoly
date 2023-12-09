@@ -8,7 +8,6 @@ import it.unimol.monopoly.gui.frames.ContractFrame;
 import it.unimol.monopoly.gui.frames.properties.FrameProperties;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class ContractForm {
     private JList listContract;
