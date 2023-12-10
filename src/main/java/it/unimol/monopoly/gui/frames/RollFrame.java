@@ -23,11 +23,11 @@ public class RollFrame extends JFrame {
 
         this.setSize(screenSize);
         this.setTitle("Monopoly - Initialization (" + Game.releaseVersion + ")");
-        this.setResizable(FrameProperties.allowResizable);
+        this.setResizable(FrameProperties.getResizable());
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //              Borderless               //
-        if (FrameProperties.displayValue == 1) {
+        if (FrameProperties.getDisplayValue() == 1) {
             this.setExtendedState(JFrame.MAXIMIZED_BOTH);
             this.setUndecorated(true);
         }

@@ -12,7 +12,6 @@ package it.unimol.monopoly.app;
  */
 
 public class Prison {
-
     private static Prison instance = new Prison();
     private Turn turn = Turn.getInstance();
     private final int exitFee = 125;

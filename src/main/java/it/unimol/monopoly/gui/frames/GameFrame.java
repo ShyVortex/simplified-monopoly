@@ -25,11 +25,11 @@ public class GameFrame extends JFrame {
 
         this.setSize(screenSize);
         this.setTitle("MonopolyGame - " + Game.releaseVersion);
-        this.setResizable(FrameProperties.allowResizable);
+        this.setResizable(FrameProperties.getResizable());
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //              Borderless               //
-        if (FrameProperties.displayValue == 1)
+        if (FrameProperties.getDisplayValue() == 1)
             this.setUndecorated(true);
         ////////////////////////////////////////////
 

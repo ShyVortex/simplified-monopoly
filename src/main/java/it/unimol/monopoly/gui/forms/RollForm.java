@@ -37,7 +37,7 @@ public class RollForm {
         initComponents();
         this.givenFrame = myFrame;
         messageFrame = this.givenFrame;
-        if (FrameProperties.scalingFactor == 2)
+        if (FrameProperties.getScalingFactor() == 2)
             autoResize();
         else
             applyResolution();
@@ -45,7 +45,7 @@ public class RollForm {
         initialize(player);
         elaboratePosition(player);
         bindKeyToButton();
-        if (FrameProperties.allowResizable)
+        if (FrameProperties.getResizable())
             checkResizing();
 
         this.okButton.addActionListener(

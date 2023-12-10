@@ -20,10 +20,11 @@ public class SettingsForm {
     private JButton AR_43_Button;
     private JButton AR_1610_Button;
     private JButton AR_169_Button;
-    private JComboBox scalingBox;
     private JButton OFFButton;
     private JButton ONButton;
     private JButton AR_219_Button;
+    private JRadioButton linearRadioButton;
+    private JRadioButton zoomInRadioButton;
     private JFrame givenFrame;
     private boolean borderless;
     private short aspectRatio;
@@ -38,16 +39,9 @@ public class SettingsForm {
         this.videoBox.addItem("Windowed");
         this.videoBox.addItem("Borderless");
         this.resolutionBox.addItem("Auto");
-        this.scalingBox.addItem("");
-        this.scalingBox.addItem("Zoom In");
-        this.scalingBox.addItem("Linear");
 
         this.videoBox.addActionListener(
                 actionEvent -> handleVideoMode()
-        );
-
-        this.scalingBox.addActionListener(
-                actionEvent -> handleScalingMethod()
         );
 
         this.cancelButton.addActionListener(
@@ -89,16 +83,24 @@ public class SettingsForm {
                 }
         );
 
+        this.linearRadioButton.addActionListener(
+                actionEvent -> handleLinearScaling()
+        );
+
+        this.zoomInRadioButton.addActionListener(
+                actionEvent -> handleZoomInScaling()
+        );
+
         this.OFFButton.addActionListener(
-                actionEvent -> FrameProperties.allowResizable = false
+                actionEvent -> FrameProperties.setResizable(false)
         );
 
         this.ONButton.addActionListener(
-                actionEvent -> FrameProperties.allowResizable = true
+                actionEvent -> FrameProperties.setResizable(true)
         );
     }
 
-    public void handleVideoMode() {
+    private void handleVideoMode() {
         this.videoBox.removeItem("");
         String selectedInput = Objects.requireNonNull(this.videoBox.getSelectedItem()).toString();
 
@@ -108,7 +110,7 @@ public class SettingsForm {
             this.borderless = true;
     }
 
-    public void handleResolutions() {
+    private void handleResolutions() {
         switch (this.aspectRatio) {
             case 1:
                 this.resolutionBox.removeAllItems();
@@ -158,21 +160,25 @@ public class SettingsForm {
         }
     }
 
-    public void handleScalingMethod() {
-        this.scalingBox.removeItem("");
+    private void handleLinearScaling() {
+        if (zoomInRadioButton.isSelected())
+            this.zoomInRadioButton.setSelected(false);
 
-        String selectedInput = Objects.requireNonNull(this.scalingBox.getSelectedItem()).toString();
-
-        if (selectedInput.equals("Zoom In"))
-            FrameProperties.scalingFactor = 1;
-        else
-            FrameProperties.scalingFactor = 2;
+        this.linearRadioButton.setSelected(true);
+        FrameProperties.setScalingFactor(2);
     }
 
-    public void handleApply() {
+    private void handleZoomInScaling() {
+        if (linearRadioButton.isSelected())
+            this.linearRadioButton.setSelected(false);
+
+        this.zoomInRadioButton.setSelected(true);
+        FrameProperties.setScalingFactor(1);
+    }
+
+    private void handleApply() {
         String vidBreakable = Objects.requireNonNull(this.videoBox.getSelectedItem()).toString();
         String resBreakable = Objects.requireNonNull(this.resolutionBox.getSelectedItem()).toString();
-        String scaleBreakable = Objects.requireNonNull(this.scalingBox.getSelectedItem()).toString();
 
         String[] input = new String[2];
         if (!resBreakable.equals("Auto"))
@@ -189,13 +195,14 @@ public class SettingsForm {
         try {
             if (vidBreakable.isEmpty())
                 throw new NoVideoModeException();
-            if (scaleBreakable.isEmpty() && !resolution.equals(FrameProperties.NATIVE_RES))
+            if (!linearRadioButton.isSelected() && !zoomInRadioButton.isSelected()
+                    && !resolution.equals(FrameProperties.NATIVE_RES))
                 throw new NoScalingMethodException();
 
             if (borderless)
-                FrameProperties.displayValue = 1;
+                FrameProperties.setDisplayValue(1);
             else
-                FrameProperties.displayValue = 0;
+                FrameProperties.setDisplayValue(0);
 
             String videoInput = Objects.requireNonNull(this.resolutionBox.getSelectedItem()).toString();
             Dimension maxDisplaySize = Toolkit.getDefaultToolkit().getScreenSize();

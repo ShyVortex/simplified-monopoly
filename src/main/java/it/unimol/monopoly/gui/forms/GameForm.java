@@ -42,13 +42,13 @@ public class GameForm {
     public GameForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         initComponents();
         this.givenFrame = myFrame;
-        if (FrameProperties.scalingFactor == 2)
+        if (FrameProperties.getScalingFactor() == 2)
             autoResize();
         else
             applyResolution();
         this.givenFrame.add(this.gameScrollPane);
         spawnPlayer(player, players, contracts);
-        if (FrameProperties.allowResizable)
+        if (FrameProperties.getResizable())
             checkResizing();
 
         // Allows to quit the game by using a custom shortcut instead of a mouse click
@@ -749,7 +749,7 @@ public class GameForm {
         updateTimer(player, players, contracts);
 
         // Box illumination
-        if (FrameProperties.scalingFactor == 1)
+        if (FrameProperties.getScalingFactor() == 1)
             this.setBoxLight(player);
     }
 
@@ -1045,7 +1045,7 @@ public class GameForm {
         }
     }
 
-    public void checkGameOver(PlayerManager players) {
+    private void checkGameOver(PlayerManager players) {
         Player winner = null;
         int limit = players.getPlayers().size() - 1;
         int counter = 0;

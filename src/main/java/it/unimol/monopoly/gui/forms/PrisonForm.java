@@ -32,13 +32,13 @@ public class PrisonForm {
     public PrisonForm(JFrame myFrame, Player player, PlayerManager players, ContractManager contracts) {
         initComponents();
         this.givenFrame = myFrame;
-        if (FrameProperties.scalingFactor == 2)
+        if (FrameProperties.getScalingFactor() == 2)
             autoResize();
         else
             applyResolution();
         this.givenFrame.add(this.prisonScrollPane);
         spawnPlayer(player);
-        if (FrameProperties.allowResizable)
+        if (FrameProperties.getResizable())
             checkResizing();
 
         // Allows to quit the game by using a custom shortcut instead of a mouse click
@@ -712,7 +712,7 @@ public class PrisonForm {
         this.positionTextPane.setText(positions.getPositions().get(player.getPosition()).getName());
 
         // Box illumination
-        if (FrameProperties.scalingFactor == 1)
+        if (FrameProperties.getScalingFactor() == 1)
             this.setBoxLight();
     }
 

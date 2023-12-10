@@ -37,15 +37,6 @@ public class Turn implements Serializable {
     }
 
     /**
-     * It makes the player to go to prison, setting the {@code isPrisoner} variable to {@code true}.
-     *
-     * @param player The current player.
-     */
-    public void goToPrison(Player player) {
-        player.setPrisoner(true);
-    }
-
-    /**
      * It allows the player to end their turn, passing their ID to the {@link #playerId} variable.
      *
      * @param player The player who has to change turn.

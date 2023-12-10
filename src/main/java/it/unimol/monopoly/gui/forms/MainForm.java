@@ -75,7 +75,7 @@ public class MainForm {
         );
     }
 
-    public void handleInsertUI() {
+    private void handleInsertUI() {
         this.playerPanel.setVisible(true);
         this.pawnBox.addItem("WHEELBARROW");
         this.pawnBox.addItem("SHOE");
@@ -85,7 +85,7 @@ public class MainForm {
         this.pawnBox.addItem("BATTLESHIP");
     }
 
-    public void handlePlayerList(PlayerManager giocatori) {
+    private void handlePlayerList(PlayerManager giocatori) {
         this.playerListPanel.setVisible(true);
         this.playerArea.setText(giocatori.toString());
         if (giocatori.getPlayers().isEmpty())
@@ -96,11 +96,11 @@ public class MainForm {
         );
     }
 
-    public void updatePlayerList(PlayerManager giocatori) {
+    private void updatePlayerList(PlayerManager giocatori) {
         this.playerArea.setText(giocatori.toString());
     }
 
-    public void handleAddPlayer(PlayerManager giocatori) {
+    private void handleAddPlayer(PlayerManager giocatori) {
         if (giocatori.getPlayers().size() < 6) {
             try {
                 this.pawns = PawnManager.getInstance();
@@ -201,7 +201,7 @@ public class MainForm {
         }
     }
 
-    public void handleStartGame(PlayerManager players, ContractManager contracts) {
+    private void handleStartGame(PlayerManager players, ContractManager contracts) {
         if (players.getPlayers().size() < 2) {
             JOptionPane.showMessageDialog(
                     this.givenFrame,

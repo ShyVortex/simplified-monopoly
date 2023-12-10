@@ -47,7 +47,7 @@ public class ResumeForm {
         );
     }
 
-    public void handlePlayerList(JFrame myFrame, PlayerManager players) {
+    private void handlePlayerList(JFrame myFrame, PlayerManager players) {
         this.playerListPanel.setVisible(true);
         this.playerArea.setText(players.toString());
 
@@ -56,12 +56,12 @@ public class ResumeForm {
         );
     }
 
-    public void handleSettingsMenu() {
+    private void handleSettingsMenu() {
         SettingsFrame settingsFrame = new SettingsFrame();
         settingsFrame.setVisible(true);
     }
 
-    public void handleResume(PlayerManager players, ContractManager contracts) {
+    private void handleResume(PlayerManager players, ContractManager contracts) {
         Player lastPlayer = players.changePlayer(Turn.playerId);
 
         RollFrame rollFrame = new RollFrame(lastPlayer, players, contracts);
