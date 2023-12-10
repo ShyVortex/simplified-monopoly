@@ -48,8 +48,10 @@ public class EndForm {
     }
 
     private void setWinnerText(Player player) {
+        Font f = new Font(Font.SANS_SERIF, Font.BOLD, 24);
         this.gameOverPane.setText("GAME OVER!\n" +
                 "Winner: " + player.getName());
+        this.gameOverPane.setFont(f);
     }
 
     private void handleEndGame() {
