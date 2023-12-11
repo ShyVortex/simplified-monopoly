@@ -209,7 +209,8 @@ public class Player implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Player player = (Player) o;
-        return id == player.id && money == player.money && numContracts == player.numContracts && name.equals(player.name) && ownedContracts.equals(player.ownedContracts) && pawn.equals(player.pawn);
+        return id == player.id && money == player.money && numContracts == player.numContracts
+                && name.equals(player.name) && ownedContracts.equals(player.ownedContracts) && pawn.equals(player.pawn);
     }
 
     /**

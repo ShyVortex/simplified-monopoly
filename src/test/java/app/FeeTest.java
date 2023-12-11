@@ -1,5 +1,10 @@
-package it.unimol.monopoly.app;
+package app;
 
+import it.unimol.monopoly.app.Fee;
+import it.unimol.monopoly.app.Pawn;
+import it.unimol.monopoly.app.Player;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import javax.imageio.ImageIO;
@@ -10,18 +15,28 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Tests for the Fee class")
 class FeeTest {
-    public static void main(String[] args) throws IOException {
-        Image carPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Car.png"));
-        ImageIcon carIcon = new ImageIcon(carPic);
-        Pawn car = new Pawn("CAR", carIcon);
-        Player player1 = new Player("Angelo", car);
+    Image carPic, shoePic;
+    ImageIcon carIcon, shoeIcon;
+    Pawn car, shoe;
+    Player player1, player2;
 
-        Image shoePic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Shoe.png"));
-        ImageIcon shoeIcon = new ImageIcon(shoePic);
-        Pawn shoe = new Pawn("SHOE", shoeIcon);
-        Player player2 = new Player("Antonio", shoe);
+    @BeforeEach
+    public void init() throws IOException {
+        carPic = ImageIO.read(new File("src/main/resources/pawns/Car.png"));
+        carIcon = new ImageIcon(carPic);
+        car = new Pawn("CAR", carIcon);
+        player1 = new Player("Angelo", car);
 
+        shoePic = ImageIO.read(new File("src/main/resources/pawns/Shoe.png"));
+        shoeIcon = new ImageIcon(shoePic);
+        shoe = new Pawn("SHOE", shoeIcon);
+        player2 = new Player("Antonio", shoe);
+    }
+
+    @Test
+    public void mainTest() {
         assertNotNull(car);
         assertNotNull(shoe);
         assertNotNull(player1);
@@ -42,10 +57,9 @@ class FeeTest {
         assertEquals(player1.getMoney(), 400);
         assertEquals(player2.getMoney(), 0);
 
-        System.out.println("TEST SUCCESSFUL.");
+        System.out.println("TEST SUCCESSFUL.\n");
     }
 
-    @Test
     public static boolean payFee(Player player, Fee fee) {
         if (player.getMoney() >= fee.getValue()) {
             player.subMoney(fee.getValue());

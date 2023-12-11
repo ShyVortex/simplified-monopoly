@@ -1,12 +1,19 @@
-package it.unimol.monopoly.app;
+package app;
+
+import it.unimol.monopoly.app.Box;
+import it.unimol.monopoly.app.PositionManager;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Test for the Position Manager")
 class PositionManagerTest {
-    public static void main(String[] args) {
+    @Test
+    public void mainTest() {
         Map<Integer, Box> positions = new HashMap<>();
 
         Box go = new Box("GO");
@@ -71,18 +78,19 @@ class PositionManagerTest {
         positions.put(parkPlace.getId(), parkPlace);
         positions.put(boardWalk.getId(), boardWalk);
 
+        Box.aux = 0;
         PositionManager realPositions = PositionManager.getInstance();
 
-        int i = 30;
-        int j = 0;
+        int i = 0;
         for (Box x : positions.values()) {
             Box y = realPositions.getPositions().get(i);
-            y.setId(j);
-            assertEquals(x, y);
+            assertEquals(x.getId(), y.getId());
+            assertEquals(x.getName(), y.getName());
+            assertNotSame(x.hashCode(), y.hashCode());
             i++;
-            j++;
         }
 
-        System.out.println("TEST SUCCESSFUL.");
+        System.out.println("TEST SUCCESSFUL.\n");
+        Box.aux = 0;
     }
 }

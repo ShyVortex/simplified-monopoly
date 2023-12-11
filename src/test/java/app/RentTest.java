@@ -1,5 +1,9 @@
-package it.unimol.monopoly.app;
+package app;
 
+import it.unimol.monopoly.app.Contract;
+import it.unimol.monopoly.app.Pawn;
+import it.unimol.monopoly.app.Player;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import javax.imageio.ImageIO;
@@ -10,18 +14,16 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Tests for the Rent class")
 class RentTest {
-
-    RentTest() throws IOException {
-    }
-
-    public static void main(String[] args) throws IOException {
-        Image carPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Car.png"));
+    @Test
+    public void mainTest() throws IOException {
+        Image carPic = ImageIO.read(new File("src/main/resources/pawns/Car.png"));
         ImageIcon carIcon = new ImageIcon(carPic);
         Pawn car = new Pawn("CAR", carIcon);
         Player player1 = new Player("Angelo", car);
 
-        Image shoePic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Shoe.png"));
+        Image shoePic = ImageIO.read(new File("src/main/resources/pawns/Shoe.png"));
         ImageIcon shoeIcon = new ImageIcon(shoePic);
         Pawn shoe = new Pawn("SHOE", shoeIcon);
         Player player2 = new Player("Antonio", shoe);
@@ -46,11 +48,10 @@ class RentTest {
         boolean fourthTest = payRent(player2, player1, test2);
 
         if (firstTest && secondTest && thirdTest && fourthTest)
-            System.out.println("TEST SUCCESSFUL.");
+            System.out.println("TEST SUCCESSFUL.\n");
     }
 
-    @Test
-    public static boolean payRent(Player player1, Player player2, Contract contract) {
+    public boolean payRent(Player player1, Player player2, Contract contract) {
         if (player1.getMoney() >= contract.getRentValue()) {
             player1.subMoney(contract.getRentValue());
             player2.addMoney(contract.getRentValue());

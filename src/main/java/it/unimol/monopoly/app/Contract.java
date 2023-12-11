@@ -161,7 +161,8 @@ public class Contract implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contract contract = (Contract) o;
-        return id == contract.id && price == contract.price && rentValue == contract.rentValue && isAvailable == contract.isAvailable && name.equals(contract.name);
+        return price == contract.price && rentValue == contract.rentValue && isAvailable == contract.isAvailable
+                && name.equals(contract.name);
     }
 
     /**

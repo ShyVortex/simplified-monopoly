@@ -1,5 +1,11 @@
-package it.unimol.monopoly.app;
+package app;
 
+import it.unimol.monopoly.app.Pawn;
+import it.unimol.monopoly.app.Player;
+import it.unimol.monopoly.app.Prison;
+import it.unimol.monopoly.app.Turn;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import javax.imageio.ImageIO;
@@ -10,18 +16,28 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Tests for the Prison class")
 class PrisonTest {
-    public static void main(String[] args) throws IOException {
-        Image carPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Car.png"));
-        ImageIcon carIcon = new ImageIcon(carPic);
-        Pawn car = new Pawn("CAR", carIcon);
-        Player player1 = new Player("Angelo", car);
+    Image carPic, shoePic;
+    ImageIcon carIcon, shoeIcon;
+    Pawn car, shoe;
+    Player player1, player2;
 
-        Image shoePic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Shoe.png"));
-        ImageIcon shoeIcon = new ImageIcon(shoePic);
-        Pawn shoe = new Pawn("SHOE", shoeIcon);
-        Player player2 = new Player("Antonio", shoe);
+    @BeforeEach
+    public void init() throws IOException {
+        carPic = ImageIO.read(new File("src/main/resources/pawns/Car.png"));
+        carIcon = new ImageIcon(carPic);
+        car = new Pawn("CAR", carIcon);
+        player1 = new Player("Angelo", car);
 
+        shoePic = ImageIO.read(new File("src/main/resources/pawns/Shoe.png"));
+        shoeIcon = new ImageIcon(shoePic);
+        shoe = new Pawn("SHOE", shoeIcon);
+        player2 = new Player("Antonio", shoe);
+    }
+
+    @Test
+    public void mainTest() throws IOException {
         assertNotNull(car);
         assertNotNull(shoe);
         assertNotNull(player1);
@@ -44,23 +60,24 @@ class PrisonTest {
         boolean hasMoneyTest = paidExit(player1, prison);
         boolean noMoneyTest = paidExit(player2, prison);
 
+        assertEquals(player1.getMoney(), 500 - Prison.getInstance().getExitFee());
         assertEquals(player2.getMoney(), 10);
+        assertTrue(hasMoneyTest);
+        assertFalse(noMoneyTest);
 
         stay(player2);
 
         assertFalse(player1.isPrisoner());
         assertTrue(player2.isPrisoner());
 
-        System.out.println("TEST SUCCESSFUL.");
+        System.out.println("TEST SUCCESSFUL.\n");
     }
 
-    @Test
-    public static void freeExit(Player player) {
+    public void freeExit(Player player) {
         player.setPrisoner(false);
     }
 
-    @Test
-    public static boolean paidExit(Player player, Prison prison) {
+    public boolean paidExit(Player player, Prison prison) {
         if (player.getMoney() >= prison.getExitFee()) {
             player.subMoney(prison.getExitFee());
             player.setPrisoner(false);
@@ -71,8 +88,7 @@ class PrisonTest {
         }
     }
 
-    @Test
-    public static void stay(Player player) {
+    public void stay(Player player) {
         Turn turn = Turn.getInstance();
         turn.endTurn(player);
     }

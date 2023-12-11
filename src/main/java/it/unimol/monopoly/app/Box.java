@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Box {
     private String name;
     private int id;
-    private static int aux = 0;
+    public static int aux = 0;
 
     /**
      * It creates a Box object.

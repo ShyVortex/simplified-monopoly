@@ -1,5 +1,9 @@
-package it.unimol.monopoly.app;
+package app;
 
+import it.unimol.monopoly.app.Pawn;
+import it.unimol.monopoly.app.Player;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import javax.imageio.ImageIO;
@@ -9,12 +13,18 @@ import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Tests for the Turn class")
 class TurnTest {
     static int playerId;
     static boolean loadSuccess;
+    int instanceId;
+    Image carPic, shoePic;
+    ImageIcon carIcon, shoeIcon;
+    Pawn car, shoe;
+    Player player1, player2;
 
-    public static void main(String[] args) throws IOException {
-        int instanceId;
+    @BeforeEach
+    public void init() throws IOException {
         try {
             instanceId = loadTurn();
             loadSuccess = true;
@@ -23,47 +33,48 @@ class TurnTest {
             loadSuccess = false;
         }
 
-        Image carPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Car.png"));
-        ImageIcon carIcon = new ImageIcon(carPic);
-        Pawn car = new Pawn("CAR", carIcon);
-        Player player1 = new Player("Angelo", car);
+        carPic = ImageIO.read(new File("src/main/resources/pawns/Car.png"));
+        carIcon = new ImageIcon(carPic);
+        car = new Pawn("CAR", carIcon);
+        player1 = new Player("Angelo", car);
 
-        Image shoePic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Shoe.png"));
-        ImageIcon shoeIcon = new ImageIcon(shoePic);
-        Pawn shoe = new Pawn("SCARPA", shoeIcon);
-        Player player2 = new Player("Antonio", shoe);
+        shoePic = ImageIO.read(new File("src/main/resources/pawns/Shoe.png"));
+        shoeIcon = new ImageIcon(shoePic);
+        shoe = new Pawn("SCARPA", shoeIcon);
+        player2 = new Player("Antonio", shoe);
+    }
 
+    @Test
+    public void mainTest() throws IOException {
         assertNotNull(car);
         assertNotNull(shoe);
         assertNotNull(player1);
         assertNotNull(player2);
         assertNotEquals(player1, player2);
 
-        endTurn(player1);
-        endTurn(player2);
-
-        assertEquals(playerId, player2.getId());
-
         if (loadSuccess)
             assertEquals(playerId, instanceId);
         else
             assertNotEquals(playerId, instanceId);
 
+        endTurn(player1);
+        endTurn(player2);
+
+        assertEquals(playerId, player2.getId());
+
         saveTurn();
 
-        System.out.println("TEST SUCCESSFUL.");
+        System.out.println("TEST SUCCESSFUL.\n");
     }
 
-    @Test
-    public static boolean endTurn(Player player) {
+    public void endTurn(Player player) {
         playerId = player.getId();
-        return true;
     }
 
     @Test
-    public static void saveTurn() {
+    public void saveTurn() {
         try (
-                FileOutputStream fileOutStr = new FileOutputStream("test/it/unimol/monopoly/app/testsaves/turn.sr");
+                FileOutputStream fileOutStr = new FileOutputStream("src/test/testsaves/turn.sr");
                 ObjectOutputStream objOutStr = new ObjectOutputStream(fileOutStr);
         ) {
             objOutStr.writeObject(playerId);
@@ -72,10 +83,9 @@ class TurnTest {
         }
     }
 
-    @Test
-    public static int loadTurn() throws FileNotFoundException {
+    public int loadTurn() throws FileNotFoundException {
         try (
-                FileInputStream fileInStr = new FileInputStream("test/it/unimol/monopoly/app/testsaves/turn.sr");
+                FileInputStream fileInStr = new FileInputStream("src/test/testsaves/turn.sr");
                 ObjectInputStream objInStr = new ObjectInputStream(fileInStr);
         ) {
             playerId = (int) objInStr.readObject();

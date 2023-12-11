@@ -1,9 +1,15 @@
-package it.unimol.monopoly.app;
+package app;
+
+import it.unimol.monopoly.app.Box;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Test for the Box class")
 class BoxTest {
-    public static void main(String[] args) {
+    @Test
+    public void mainTest() {
         Box box1 = new Box("Test1");
         Box box2 = new Box("Test2");
 
@@ -32,5 +38,8 @@ class BoxTest {
 
         assertNull(box1.getName());
         assertNull(box2.getName());
+
+        System.out.println("\nTEST SUCCESSFUL.\n");
+        Box.aux = 0;
     }
 }

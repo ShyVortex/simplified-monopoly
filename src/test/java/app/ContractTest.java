@@ -1,5 +1,10 @@
-package it.unimol.monopoly.app;
+package app;
 
+import it.unimol.monopoly.app.Contract;
+import it.unimol.monopoly.app.Pawn;
+import it.unimol.monopoly.app.Player;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import javax.imageio.ImageIO;
@@ -10,26 +15,37 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Tests for the Contract class")
 class ContractTest {
-    public static void main(String[] args) throws IOException {
-        Contract contract1 = new Contract("Test1", 100, 25);
-        Contract contract2 = new Contract("Test2", 85, 15);
+    Contract contract1, contract2, contract3;
+    Image carPic;
+    ImageIcon carIcon;
+    Pawn car;
+    Player player;
 
-        Image carPic = ImageIO.read(new File("src/it/unimol/monopoly/pawns/Car.png"));
-        ImageIcon carIcon = new ImageIcon(carPic);
-        Pawn car = new Pawn("CAR", carIcon);
-        Player player = new Player("Angelo", car);
+    @BeforeEach
+    public void init() throws IOException {
+        contract1 = new Contract("Test1", 100, 25);
+        contract2 = new Contract("Test2", 85, 15);
+
+        carPic = ImageIO.read(new File("src/main/resources/pawns/Car.png"));
+        carIcon = new ImageIcon(carPic);
+        car = new Pawn("CAR", carIcon);
+        player = new Player("Angelo", car);
         player.setMoney(500);
 
+        contract3 = new Contract("Test1", 100, 25);
+        contract3.setId(contract1.getId());
+    }
+
+    @Test
+    public void mainTest() {
         assertNotNull(contract1);
         assertNotNull(contract2);
+        assertNotNull(contract3);
         assertNotNull(car);
         assertNotNull(player);
-
         assertNotEquals(contract1, contract2);
-
-        Contract contract3 = new Contract("Test1", 100, 25);
-        contract3.setId(contract1.getId());
         assertEquals(contract1, contract3);
 
         boolean firstTest = buyContract(player, contract1);
@@ -41,11 +57,10 @@ class ContractTest {
         boolean fourthTest = buyContract(player, contract2);
 
         if (firstTest && secondTest && !thirdTest && !fourthTest)
-            System.out.println("TEST SUCCESSFUL.");
+            System.out.println("TEST SUCCESSFUL.\n");
     }
 
-    @Test
-    public static boolean buyContract(Player player, Contract contract) {
+    public boolean buyContract(Player player, Contract contract) {
         if (contract.isAvailable()) {
             if (player.getMoney() >= contract.getPrice()) {
                 contract.setAvailability(false);
