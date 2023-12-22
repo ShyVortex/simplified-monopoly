@@ -1,0 +1,13 @@
+version: '3'
+services:
+  simplified-monopoly:
+    build:
+      context: .
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/home/user/.Xauthority
+    network_mode: host
+    # default user UID:GID, change if needed
+    user: 1000:1000
