@@ -812,7 +812,7 @@ public class GameForm {
     private void updateTimer(Player player, PlayerManager players, ContractManager contracts) {
         remainingTime = Integer.parseInt(this.timerTextPane.getText());
         this.timer = new Countdown();
-        timer.start(timer);
+        timer.start();
 
         this.textUpdater = new StoppableThread(() -> {
             while (timer.isRunning()) {
@@ -823,7 +823,7 @@ public class GameForm {
                 timerTextPane.setText(Integer.toString(remainingTime));
             }
         });
-        textUpdater.start(textUpdater);
+        textUpdater.start();
 
         handleNoTimeLeft(timer, player, players, contracts);
     }
@@ -845,7 +845,7 @@ public class GameForm {
             refreshProcess.stop(refreshProcess);
         });
 
-        refreshProcess.start(refreshProcess);
+        refreshProcess.start();
     }
 
     private void handleRentButton(Player player, PlayerManager players) {
@@ -1016,7 +1016,7 @@ public class GameForm {
                 elapsedTurnChange(player, players, contracts);
             }
         });
-        turnChanger.start(turnChanger);
+        turnChanger.start();
     }
 
     private void elapsedTurnChange(Player player, PlayerManager players, ContractManager contracts) {

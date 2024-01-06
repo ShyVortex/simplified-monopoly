@@ -38,7 +38,7 @@ public class Countdown extends Thread implements Stoppable {
     }
 
     /**
-     * It defines the thread's execution job. Once started the countdown through {@link #start(Countdown)},
+     * It defines the thread's execution job. Once started the countdown through {@link #start()},
      * it runs the code of this method, that sets the execution flag of the thread to {@code true}, sets the timer
      * executes it, and stops the countdown once completed the rest.
      */
@@ -95,17 +95,6 @@ public class Countdown extends Thread implements Stoppable {
     }
 
     /**
-     * It allows for the execution of a {@link Countdown} thread and sets its execution flag to {@code true}.
-     *
-     * @param timer The timer to start.
-     */
-    @Override
-    public void start(Countdown timer) {
-        timer.start();
-        timer.running.set(true);
-    }
-
-    /**
      * It allows for the termination of a {@link Countdown} thread and sets its execution flag to {@code false}.
      *
      * @param timer The timer to start.
@@ -119,14 +108,6 @@ public class Countdown extends Thread implements Stoppable {
      * Method of the {@link Stoppable} interface.
      * 
      * @param thread Thread to execute.
-     */
-    @Override
-    public void start(StoppableThread thread) {}
-
-    /**
-     * Method of the {@link Stoppable} interface.
-     *
-     * @param thread Thread to terminate.
      */
     @Override
     public void stop(StoppableThread thread) {}

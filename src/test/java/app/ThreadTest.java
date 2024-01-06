@@ -15,7 +15,7 @@ public class ThreadTest {
         Countdown timer = new Countdown();
         StoppableThread testThread;
 
-        timer.start(timer);
+        timer.start();
 
         testThread = new StoppableThread(() -> {
             while (timer.isRunning()) {
@@ -27,7 +27,7 @@ public class ThreadTest {
                 System.out.println("OK");
             }
         });
-        testThread.start(testThread);
+        testThread.start();
 
 
         while (timer.isRunning() && timeInt < 5) {
