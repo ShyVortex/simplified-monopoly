@@ -38,11 +38,12 @@ public class StoppableThread extends Thread implements Stoppable {
     }
 
     /**
-     * It gives information on the state of the countdown.
+     * Method from the {@link Stoppable} interface, it gives information on the state of the countdown.
      *
      * @return A casting of the atomic boolean variable to a boolean one through the method {@link AtomicBoolean#get()}
      * of the execution flag.
      */
+    @Override
     public boolean isRunning() {
         return this.running.get();
     }
@@ -68,7 +69,7 @@ public class StoppableThread extends Thread implements Stoppable {
     }
 
     /**
-     * Method of the {@link Stoppable} interface.
+     * Method from the {@link Stoppable} interface.
      *
      * @param timer Timer to stop.
      */

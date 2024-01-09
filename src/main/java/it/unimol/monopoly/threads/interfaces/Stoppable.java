@@ -13,6 +13,13 @@ import it.unimol.monopoly.threads.StoppableThread;
 
 public interface Stoppable {
     /**
+     * It checks if a process by either {@link StoppableThread} or {@link Countdown} is running.
+     *
+     * @return {@code true} if the running flag is also true, {@code false} otherwise.
+     */
+    boolean isRunning();
+
+    /**
      * It defines the stop of execution of a {@link StoppableThread}.
      *
      * @param thread The thread to stop.

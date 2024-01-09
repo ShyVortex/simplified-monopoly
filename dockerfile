@@ -16,5 +16,5 @@ COPY . .
 RUN mvn clean package
 
 # CMD to run the Java application
-CMD ["java", "-jar", "target/simplified-monopoly-2.1.3.jar"]
+CMD ["java", "-jar", "target/simplified-monopoly-2.1.4.jar"]
 
