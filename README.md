@@ -39,12 +39,12 @@ With these commands, a new folder named 'target' is created containing the compi
 Assuming you're on a Linux system, if you have docker and docker-compose installed and don't want to build the project locally, you can build and run it
 in a container instead. Open a terminal window inside the project directory and type the following to build a container image:
  ```shell
- sudo docker-compose build simplified-monopoly
+ sudo docker compose build simplified-monopoly
  ```
 This will build the image, download all necessary dependencies and setup all the required services.
 After it's done building, type:
  ```shell
- sudo docker-compose run simplified-monopoly
+ sudo docker compose run simplified-monopoly
  ```
 This should run the image and launch the application.
 

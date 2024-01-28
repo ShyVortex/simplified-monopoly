@@ -1,6 +1,7 @@
 version: '3'
 services:
   simplified-monopoly:
+    image: simplified-monopoly
     build:
       context: .
     environment:
